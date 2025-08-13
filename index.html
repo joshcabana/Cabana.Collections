@@ -789,9 +789,9 @@
           onloadedmetadata="this.muted = true; this.playsInline = true;"
           onplay="this.playsInline = true;"
           class="w-full h-full object-cover"
-          poster="/assets/Images/HERO-BANNER.webp"
+          poster="/assets/Images/HERO-BANNER.png"
           data-offscreen-pause
-          preload="none"
+          preload="auto"
           style="display: none"
           aria-hidden="true"
         >
@@ -1019,9 +1019,9 @@
       </section>
 
       <!-- Collection Section -->
-      <section class="py-32 md:py-48 relative overflow-hidden" aria-labelledby="collection-heading">
-        <!-- Background: Clean, minimal design -->
-        <div class="absolute inset-0 z-0 bg-white"></div>
+       <section class="py-32 md:py-48 relative overflow-hidden" aria-labelledby="collection-heading" style="background-image:url('/assets/Images/MobileHome.png');background-size:cover;background-position:center;">
+        <!-- Background: Clean, minimal design with MobileHome.png applied -->
+        <div class="absolute inset-0 z-0 bg-white/30" aria-hidden="true"></div>
 
         <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <!-- Section Header -->
@@ -1891,42 +1891,24 @@
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         if (heroVideo) {
-          const allowMotion = !saveData && !prefersReduced && window.innerWidth >= 768;
+          const allowMotion = !saveData && !prefersReduced; // play on both desktop and mobile
 
           if (!allowMotion) {
-            // Keep fast image background; do not show the video
-            try {
-              heroVideo.pause();
-            } catch (_) {}
+            try { heroVideo.pause(); } catch (_) {}
             heroVideo.removeAttribute('autoplay');
             heroVideo.style.display = 'none';
             if (heroImage) heroImage.style.display = 'block';
           } else {
-            // Reveal video and hide image once playing; manage play/pause via IO
             heroVideo.style.display = 'block';
-            heroVideo.addEventListener(
-              'playing',
-              () => {
-                if (heroImage) heroImage.style.display = 'none';
-              },
-              { once: true }
-            );
+            heroVideo.addEventListener('playing', () => { if (heroImage) heroImage.style.display = 'none'; }, { once: true });
 
             if ('IntersectionObserver' in window) {
-              const obs = new IntersectionObserver(
-                (entries) => {
-                  entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                      heroVideo.play().catch(() => {});
-                    } else {
-                      try {
-                        heroVideo.pause();
-                      } catch (_) {}
-                    }
-                  });
-                },
-                { threshold: 0.1 }
-              );
+              const obs = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) { heroVideo.play().catch(() => {}); }
+                  else { try { heroVideo.pause(); } catch (_) {} }
+                });
+              }, { threshold: 0.1 });
               obs.observe(heroVideo);
             } else {
               heroVideo.play().catch(() => {});

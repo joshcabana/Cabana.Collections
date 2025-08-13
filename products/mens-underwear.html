@@ -8,7 +8,7 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CABANA Men’s Boxer Brief — Modal Comfort, Anatomical Pouch & U‑Mesh Ventilation</title>
+    <title>CABANA Men's 1st Classics — Modal Comfort, Anatomical Pouch & U‑Mesh Ventilation</title>
     <meta
       name="description"
       content="CABANA boxer brief pairs modal softness with an anatomical pouch and a discreet U‑mesh cradle for airflow. Cooler, smoother comfort that disappears under clothes."
@@ -17,7 +17,7 @@
     <!-- UPDATED: Open Graph (absolute values, one set) -->
     <meta
       property="og:title"
-      content="CABANA Men’s Boxer Brief — Modal Comfort, Anatomical Pouch & U‑Mesh"
+      content="CABANA Men's 1st Classics — Modal Comfort, Anatomical Pouch & U‑Mesh"
     />
     <meta
       property="og:description"
@@ -365,7 +365,7 @@
       {
         "@context": "https://schema.org/",
         "@type": "Product",
-        "name": "CABANA Men’s Boxer Brief",
+        "name": "CABANA Men's 1st Classics",
         "image": [
           "https://cabanacollections.com.au/assets/Images/CABANA-BOXERS-FRONT.png",
           "https://cabanacollections.com.au/assets/Images/CABANA-BOXERS-BACK.png",
@@ -519,7 +519,7 @@
         <li aria-hidden="true">/</li>
         <li><a href="mens-underwear.html" class="hover:text-gold">Men</a></li>
         <li aria-hidden="true">/</li>
-        <li aria-current="page" class="text-black">Essential Boxer Brief</li>
+        <li aria-current="page" class="text-black">CABANA Men's 1st Classics</li>
       </ol>
     </nav>
 
@@ -546,9 +546,10 @@
                 id="mainVideo"
                 class="w-full h-full object-cover zoomable-image hidden"
                 muted
+                autoplay
                 loop
                 playsinline
-                preload="metadata"
+                preload="auto"
                 aria-describedby="video-instruction"
               >
                 <source
@@ -669,7 +670,7 @@
               </button>
               <button
                 class="thumbnail border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold"
-                onclick="changeTo360Video()"
+                  onclick="changeTo360Video()"
                 aria-label="View 360° video"
                 aria-pressed="false"
                 id="360-video-thumbnail"
@@ -705,7 +706,7 @@
             <!-- Title and Price -->
             <header>
               <h1 class="font-heading text-4xl md:text-5xl font-light mb-4">
-                CABANA Men’s Boxer Brief
+                CABANA Men's 1st Classics
               </h1>
               <div class="flex items-baseline gap-4 mb-6 flex-wrap">
                 <p class="font-heading text-3xl font-light">$50 AUD</p>
@@ -945,7 +946,7 @@
               <button
                 class="luxury-button w-full bg-black text-white py-5 text-sm tracking-widest hover:bg-gray-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
                 id="addToCartBtn"
-                aria-label="Add Essential Boxer Brief to cart"
+                aria-label="Add CABANA Men's 1st Classics to cart"
               >
                 <span class="button-text transition-transform group-active:scale-95"
                   >ADD TO CART</span
@@ -1703,6 +1704,20 @@
       // Initialize gallery
       const productGallery = new ProductGallery();
 
+      // Autoplay 360° video immediately on load (desktop and mobile)
+      document.addEventListener('DOMContentLoaded', () => {
+        if (typeof changeTo360Video === 'function') {
+          try {
+            changeTo360Video();
+            const mainVideo = document.getElementById('mainVideo');
+            if (mainVideo) {
+              mainVideo.muted = true;
+              mainVideo.play().catch(() => {});
+            }
+          } catch (_) {}
+        }
+      });
+
       // Legacy function for backward compatibility
       function changeImage(src, altText, thumbnail) {
         productGallery.changeImage(src, altText, thumbnail);
@@ -2432,7 +2447,7 @@
         <!-- Product Info -->
         <div class="flex-1">
           <div class="text-lg font-medium text-black">$50 AUD</div>
-          <div class="text-sm text-gray-500">Essential Boxer Brief</div>
+              <div class="text-sm text-gray-500">CABANA Men's 1st Classics</div>
         </div>
 
         <!-- Size Display -->
