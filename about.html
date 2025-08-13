@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <!-- UPDATED: Open Graph (general page) -->
+    <meta property="og:title" content="About | CABANA" />
+    <meta
+      property="og:description"
+      content="Discover CABANA's philosophy of conscious craft. Ethically made essentials designed for comfort and positive impact."
+    />
+    <meta property="og:url" content="https://cabanacollections.com.au/about.html" />
+    <meta
+      property="og:image"
+      content="https://cabanacollections.com.au/assets/Images/social-share-1200x630.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <!-- UPDATED: canonical -->
+    <link rel="canonical" href="https://cabanacollections.com.au/about.html" />
+    <!-- UPDATED: WebPage JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "url": "https://cabanacollections.com.au/about.html",
+        "name": "About | CABANA",
+        "description": "Discover CABANA's philosophy of conscious craft. Ethically made essentials designed for comfort and positive impact."
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <!-- Mobile + notch safety -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>About | CABANA</title>
+    <meta
+      name="description"
+      content="Discover CABANA's philosophy of conscious craft. Ethically made essentials designed for comfort and positive impact."
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
+    <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
+
+    <style>
+      /* Custom styles */
+      .font-heading {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+      }
+      .font-sans {
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Letter spacing for luxury feel */
+      .tracking-luxury {
+        letter-spacing: 0.3em;
+      }
+
+      /* Enhanced quote styling */
+      .cabana-quote {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        line-height: 1.3;
+        font-style: italic;
+        position: relative;
+        padding: 0 2rem;
+      }
+
+      .cabana-quote::before,
+      .cabana-quote::after {
+        content: '“';
+        font-size: 4rem;
+        opacity: 0.1;
+        position: absolute;
+      }
+
+      .cabana-quote::before {
+        top: -2rem;
+        left: 0;
+      }
+
+      .cabana-quote::after {
+        content: '”';
+        bottom: -2rem;
+        right: 0;
+      }
+
+      /* Card enhancements */
+      .impact-card {
+        border: none;
+        background: linear-gradient(145deg, #ffffff, #f8f8f8);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .impact-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Partner cards */
+      .partner-card {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .partner-card:hover {
+        border-color: rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Animated counter */
+      .counter {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Subtle section transitions */
+      section {
+        position: relative;
+        overflow: hidden;
+      }
+
+      section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+      }
+
+      /* Brand gold color */
+      .text-gold {
+        color: #d4af37;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-black font-sans">
+    <style>
+      /* moved from inline style to satisfy linter */
+      .about-green-bg {
+        background-image: url('/assets/Images/homepage-green.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+    <!-- New Sticky Header + Mobile Drawer -->
+    <header class="sticky-header" role="banner">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+        <a href="/" class="font-heading tracking-luxury font-light leading-tight">
+          <span class="block text-2xl">CABANA</span>
+          <span class="block text-xs tracking-wider -mt-0.5">Collections</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10" aria-label="Primary">
+          <a href="/" class="link-hover text-xs tracking-widest">HOME</a>
+          <a href="/products/mens-boxer-brief-black.html" class="link-hover text-xs tracking-widest"
+            >MEN</a
+          >
+          <a href="/products/womens-set.html" class="link-hover text-xs tracking-widest">WOMEN</a>
+          <a
+            href="/about.html"
+            class="link-hover text-xs tracking-widest text-gold"
+            aria-current="page"
+            >ABOUT</a
+          >
+          <a href="/impact.html" class="link-hover text-xs tracking-widest">IMPACT</a>
+          <a href="/contact.html" class="link-hover text-xs tracking-widest">CONTACT</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-overlay" data-mobile-overlay></div>
+    <aside
+      class="mobile-drawer"
+      data-mobile-drawer
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Mobile Menu"
+    >
+      <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
+      <nav class="drawer-nav mt-6" aria-label="Mobile">
+        <a href="/">Home</a>
+        <a href="/products/mens-boxer-brief-black.html">Men</a>
+        <a href="/products/womens-set.html">Women</a>
+        <a href="/about.html" aria-current="page">About</a>
+        <a href="/impact.html">Impact</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/cart.html">Cart</a>
+      </nav>
+    </aside>
+
+    <!-- Hero Section with Video Background -->
+    <section class="pt-24 pb-16 min-h-[70vh] flex items-center relative overflow-hidden">
+      <!-- Subtle animated background -->
+      <div class="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-50"></div>
+
+      <div class="container mx-auto px-6 md:px-12 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="font-heading text-5xl md:text-7xl mb-8">Our Story</h1>
+          <p class="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Where premium craftsmanship meets conscious living. Every thread woven with purpose,
+            every purchase creating ripples of positive change.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section - Enhanced -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+          <blockquote class="cabana-quote font-heading text-center mb-20 text-gray-800">
+            "Excellence isn't proclaimed. It's the whisper of modal against skin, the confidence of
+            perfect fit, the peace of knowing your choices honour both body and earth."
+          </blockquote>
+
+          <div class="grid md:grid-cols-2 gap-16">
+            <div>
+              <h2 class="font-heading text-3xl mb-6">Our Philosophy</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                CABANA emerges from a profound conviction: exceptional craftsmanship must foster
+                positive transformation. In an era of abundance, we embrace restraint. Amid fleeting
+                trends, we pursue enduring elegance.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Each creation reflects deliberate artistry—where comfort converges with
+                consciousness, quality transcends quantity, and the ordinary ascends to the
+                extraordinary.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="font-heading text-3xl mb-6">Our Promise</h2>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                We pledge garments that honour both body and earth. Every fibre selected with
+                purpose, every seam crafted with precision, every piece destined to become an
+                essential companion.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                This is intimate apparel reimagined—not as mere necessity, but as the foundation of
+                graceful living.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-24">
+      <div class="container mx-auto px-6 md:px-12">
+        <h2 class="font-heading text-4xl md:text-5xl text-center mb-16">Our Values</h2>
+
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+          <!-- Comfort First -->
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl mb-4">Comfort First</h3>
+            <p class="text-gray-600 leading-relaxed">
+              We obsess over every detail that touches your skin. From fibre selection to fit
+              testing, comfort guides every decision we make.
+            </p>
+          </div>
+
+          <!-- Sustainable Materials -->
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl mb-4">Sustainable Materials</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Our modal comes from sustainably managed beech forests. Every fibre is traceable,
+              every process transparent, every choice intentional.
+            </p>
+          </div>
+
+          <!-- Ethical Production -->
+          <div class="text-center">
+            <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-heading text-2xl mb-4">Ethical Production</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Made in Australia by artisans who share our values. Fair wages, safe conditions, and
+              respect for craft are non-negotiable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Material Excellence Section -->
+    <section class="py-24 bg-gray-50">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-16">
+          <h2 class="font-heading text-4xl md:text-5xl mb-6">The Fabric of Tomorrow</h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Premium modal from sustainably managed beech forests—nature's answer to refinement
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div class="impact-card bg-white p-8 text-center">
+            <div class="text-5xl font-heading text-gold mb-4">95%</div>
+            <h3 class="font-medium mb-2">Less Water</h3>
+            <p class="text-sm text-gray-600">Than conventional cotton production</p>
+          </div>
+
+          <div class="impact-card bg-white p-8 text-center">
+            <div class="text-5xl font-heading text-gold mb-4">100%</div>
+            <h3 class="font-medium mb-2">Biodegradable</h3>
+            <p class="text-sm text-gray-600">Returns to earth naturally</p>
+          </div>
+
+          <div class="impact-card bg-white p-8 text-center">
+            <div class="text-5xl font-heading text-gold mb-4">50%</div>
+            <h3 class="font-medium mb-2">More Absorbent</h3>
+            <p class="text-sm text-gray-600">Superior moisture management</p>
+          </div>
+
+          <div class="impact-card bg-white p-8 text-center">
+            <div class="text-5xl font-heading text-gold mb-4">0</div>
+            <h3 class="font-medium mb-2">Microplastics</h3>
+            <p class="text-sm text-gray-600">Pure, natural fibres only</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Green by Nature Section - Enhanced -->
+    <section class="py-24 md:py-32 relative overflow-hidden about-green-bg">
+      <!-- Overlay to preserve legibility over the background image -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/20 pointer-events-none"
+      ></div>
+      <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <div class="mb-12">
+          <div
+            class="inline-flex items-center justify-center w-20 h-20 bg-gold/20 rounded-full mb-8"
+          >
+            <svg
+              class="w-10 h-10 text-gold"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+              ></path>
+            </svg>
+          </div>
+          <h2 class="font-heading text-4xl md:text-5xl font-light mb-6 text-white">
+            Green by Nature
+          </h2>
+          <div
+            class="w-20 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-8"
+            aria-hidden="true"
+          ></div>
+        </div>
+
+        <div class="space-y-8 text-lg md:text-xl leading-relaxed text-gray-300 font-light">
+          <p>
+            Not every creation finds its place—and when it doesn't, we return it gently to its
+            origins.
+          </p>
+
+          <p>
+            Born from nature, returning to nature. Our biodegradable fibres dissolve gracefully,
+            enriching the soil rather than burdening it.
+          </p>
+
+          <p class="font-heading text-xl md:text-2xl italic text-gold font-normal">
+            No residue. Only renewal—a silent vow to preserve our earth's vital balance.
+          </p>
+        </div>
+
+        <!-- Environmental Stats -->
+        <div class="grid md:grid-cols-3 gap-8 mt-16">
+          <div class="text-center">
+            <div class="font-heading text-3xl text-gold mb-2 counter">95%</div>
+            <p class="text-sm tracking-wider text-gray-400 uppercase">Less Water Than Cotton</p>
+          </div>
+          <div class="text-center">
+            <div class="font-heading text-3xl text-gold mb-2 counter">100%</div>
+            <p class="text-sm tracking-wider text-gray-400 uppercase">Biodegradable Materials</p>
+          </div>
+          <div class="text-center">
+            <div class="font-heading text-3xl text-gold mb-2 counter">0</div>
+            <p class="text-sm tracking-wider text-gray-400 uppercase">Microplastic Pollution</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Impact Partners Section -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="text-center mb-16">
+          <h2 class="font-heading text-4xl md:text-5xl mb-6">Our Impact Partners</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Each acquisition channels 15% to organisations forging genuine progress. No action
+            required—simply commerce with conscience.
+          </p>
+        </div>
+
+        <!-- Impact Stats Banner -->
+        <div class="bg-black text-white py-12 mb-16">
+          <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <div class="font-heading text-4xl text-gold mb-2 counter" id="totalDonated">
+                $12,450
+              </div>
+              <p class="text-sm tracking-wider opacity-70">TOTAL DONATED</p>
+            </div>
+            <div>
+              <div class="font-heading text-4xl mb-2 counter" id="livesImpacted">2,490</div>
+              <p class="text-sm tracking-wider opacity-70">LIVES IMPACTED</p>
+            </div>
+            <div>
+              <div class="font-heading text-4xl mb-2">15%</div>
+              <p class="text-sm tracking-wider opacity-70">OF EVERY PURCHASE</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partners Grid -->
+        <div class="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+          <!-- Men's Mental Health Column -->
+          <div>
+            <h3 class="font-heading text-2xl mb-8 text-center">Supporting Men's Mental Health</h3>
+            <p class="text-sm text-gray-600 uppercase tracking-wider text-center mb-8">
+              FROM EVERY MEN'S PURCHASE
+            </p>
+
+            <div class="space-y-6">
+              <!-- Menslink -->
+              <div class="bg-gray-50 p-6 hover:bg-gray-100 transition-colors">
+                <h4 class="font-heading text-lg mb-2">Menslink</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Providing free counselling and mentoring for young men in Canberra, creating safe
+                  spaces for vulnerability and growth.
+                </p>
+                <a
+                  href="https://menslink.org.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs tracking-wider uppercase text-gold hover:text-black transition-colors"
+                >
+                  Visit Site →
+                </a>
+              </div>
+
+              <!-- EveryMan -->
+              <div class="bg-gray-50 p-6 hover:bg-gray-100 transition-colors">
+                <h4 class="font-heading text-lg mb-2">EveryMan</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Supporting men navigating mental health challenges, housing instability, or
+                  domestic violence with compassionate assistance.
+                </p>
+                <a
+                  href="https://everyman.org.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs tracking-wider uppercase text-gold hover:text-black transition-colors"
+                >
+                  Visit Site →
+                </a>
+              </div>
+
+              <!-- Beyond Blue -->
+              <a
+                href="https://beyondblue.org.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div
+                  class="bg-blue-50 p-6 hover:bg-blue-100 transition-colors border border-blue-200 cursor-pointer"
+                >
+                  <h4 class="font-heading text-lg mb-2 text-blue-900">Beyond Blue</h4>
+                  <p class="text-sm text-blue-700 mb-4">
+                    Australia's most well-known mental health organisation, providing support to
+                    those experiencing anxiety, depression, and suicide.
+                  </p>
+                  <span
+                    class="inline-block bg-blue-600 text-white px-4 py-2 text-xs tracking-wider uppercase hover:bg-blue-700 transition-colors rounded"
+                  >
+                    Visit Site →
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Women's Empowerment Column -->
+          <div>
+            <h3 class="font-heading text-2xl mb-8 text-center">Supporting Women's Empowerment</h3>
+            <p class="text-sm text-gray-600 uppercase tracking-wider text-center mb-8">
+              FROM EVERY WOMEN'S PURCHASE
+            </p>
+
+            <div class="space-y-6">
+              <!-- YWCA -->
+              <div class="bg-gray-50 p-6 hover:bg-gray-100 transition-colors">
+                <h4 class="font-heading text-lg mb-2">YWCA Canberra</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Championing women's advocacy, housing support, and leadership development,
+                  creating pathways to independence and empowerment.
+                </p>
+                <a
+                  href="https://ywca-canberra.org.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs tracking-wider uppercase text-gold hover:text-black transition-colors"
+                >
+                  Visit Site →
+                </a>
+              </div>
+
+              <!-- Fearless Women -->
+              <div class="bg-gray-50 p-6 hover:bg-gray-100 transition-colors">
+                <h4 class="font-heading text-lg mb-2">Fearless Women</h4>
+                <p class="text-sm text-gray-600 mb-4">
+                  Mentoring and confidence-building programs for young girls, nurturing the fearless
+                  leaders of tomorrow.
+                </p>
+                <a
+                  href="https://fearlesswomen.org.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs tracking-wider uppercase text-gold hover:text-black transition-colors"
+                >
+                  Visit Site →
+                </a>
+              </div>
+
+              <!-- UN Women -->
+              <a
+                href="https://unwomen.org.au"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div
+                  class="bg-pink-50 p-6 hover:bg-pink-100 transition-colors border border-pink-200 cursor-pointer"
+                >
+                  <h4 class="font-heading text-lg mb-2 text-pink-900">UN Women Australia</h4>
+                  <p class="text-sm text-pink-700 mb-4">
+                    Leading global advocacy for women's rights and gender equality, creating
+                    systemic change that uplifts women worldwide.
+                  </p>
+                  <span
+                    class="inline-block bg-pink-600 text-white px-4 py-2 text-xs tracking-wider uppercase hover:bg-pink-700 transition-colors rounded"
+                  >
+                    Visit Site →
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-16">
+          <p class="font-heading text-xl text-gray-700 mb-8">
+            Your purchase isn't just about you. It's about us—all of us.
+          </p>
+          <a
+            href="/impact.html"
+            class="inline-block bg-black text-white px-8 py-4 text-sm tracking-wider uppercase hover:bg-gray-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          >
+            See Our Full Impact
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 bg-gray-50">
+      <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 class="font-heading text-3xl md:text-4xl mb-8">Discover the Difference</h2>
+        <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+          Join us in elevating the everyday—for your well-being, your assurance, our shared world.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a
+            href="/products/mens-boxer-brief-black.html"
+            class="inline-block bg-black text-white px-8 py-4 text-sm tracking-wider uppercase hover:bg-gray-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          >
+            Shop Men's
+          </a>
+          <a
+            href="/products/womens-set.html"
+            class="inline-block border border-black px-8 py-4 text-sm tracking-wider uppercase hover:bg-black hover:text-white hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+          >
+            Shop Women's
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10 footer-textured">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="col-span-1 flex flex-col items-start">
+          <h4 class="font-heading text-2xl tracking-luxury mb-4">CABANA</h4>
+          <p class="text-sm text-gray-400">Quiet refinement for body and earth.</p>
+        </div>
+
+        <!-- Customer Care -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Customer Care</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/shipping-policy.html" class="hover:text-gold">Shipping Policy</a></li>
+            <li><a href="/return-policy.html" class="hover:text-gold">Return Policy</a></li>
+            <li><a href="/privacy-policy.html" class="hover:text-gold">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html" class="hover:text-gold">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">About</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/about.html" class="hover:text-gold">Our Story</a></li>
+            <li><a href="/legal/index.html" class="hover:text-gold">Legal & Policies</a></li>
+            <li><a href="/contact.html" class="hover:text-gold">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.instagram.com/cabana.collections/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <svg class="h-5 w-5 hover:text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 1.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"
+                />
+              </svg>
+            </a>
+            <!-- Removed Facebook link per request -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom note -->
+      <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+        &copy; 2025 Cabana Collections. All rights reserved.
+        <p class="mt-1">ABN 91302503433</p>
+      </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Mobile nav handled by /js/nav.js
+
+      // Animated Counter
+      function animateCounter(element, target, prefix = '$', suffix = '') {
+        const duration = 2000;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          element.textContent = prefix + Math.floor(current).toLocaleString() + suffix;
+        }, 16);
+      }
+
+      // Trigger counter animation when in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll('.counter');
+            counters.forEach((counter) => {
+              if (counter.id === 'totalDonated') {
+                animateCounter(counter, 12450);
+              } else if (counter.id === 'livesImpacted') {
+                animateCounter(counter, 2490, '');
+              }
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      const statsSection = document.querySelector('.bg-black');
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+
+      // Cart Count
+      function updateCartCount() {
+        const cartCount = localStorage.getItem('cabanaCartCount') || 0;
+        const cartCountElements = document.querySelectorAll('.cabana-cart-count');
+
+        cartCountElements.forEach((el) => {
+          if (cartCount > 0) {
+            el.textContent = cartCount;
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        });
+      }
+
+      // Initialize cart count
+      updateCartCount();
+    </script>
+    <!-- Mobile Nav Drawer -->
+    <script src="/js/nav.js" defer></script>
+  </body>
+</html>

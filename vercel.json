@@ -1,0 +1,33 @@
+{
+  "redirects": [
+    {
+      "source": "/products/mens-underwear.html",
+      "destination": "/products/mens-boxer-brief-black.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/mens-underwear",
+      "destination": "/products/mens-boxer-brief-black.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/mens-underwear/",
+      "destination": "/products/mens-boxer-brief-black.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)\\.(png|jpg|jpeg|webp|avif|gif|svg|mp4|woff2)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}

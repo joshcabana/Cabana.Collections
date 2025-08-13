@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Mobile + notch safety -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Women's Essential Set — Black | CABANA</title>
+    <meta name="description" content="Women's Essential Set in Black. Wireless bralette and high-waisted brief in modal-soft stretch. Sizes XS–XXL." />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
+    <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
+  </head>
+  <body class="bg-white text-black font-body">
+    <header class="sticky-header" role="banner">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+        <a href="/" class="font-heading tracking-luxury font-light leading-tight">
+          <span class="block text-2xl">CABANA</span>
+          <span class="block text-xs tracking-wider -mt-0.5">Collections</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10" aria-label="Primary">
+          <a href="/" class="link-hover text-xs tracking-widest">HOME</a>
+          <a href="/products/mens-boxer-brief-black.html" class="link-hover text-xs tracking-widest">MEN</a>
+          <a href="/products/womens-set.html" class="link-hover text-xs tracking-widest text-gold" aria-current="page">WOMEN</a>
+          <a href="/about.html" class="link-hover text-xs tracking-widest">ABOUT</a>
+          <a href="/impact.html" class="link-hover text-xs tracking-widest">IMPACT</a>
+          <a href="/contact.html" class="link-hover text-xs tracking-widest">CONTACT</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-overlay" data-mobile-overlay></div>
+    <aside class="mobile-drawer" data-mobile-drawer aria-hidden="true" role="dialog" aria-label="Mobile Menu">
+      <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
+      <nav class="drawer-nav mt-6" aria-label="Mobile">
+        <a href="/">Home</a>
+        <a href="/products/mens-boxer-brief-black.html">Men</a>
+        <a href="/products/womens-set.html" aria-current="page">Women</a>
+        <a href="/about.html">About</a>
+        <a href="/impact.html">Impact</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/cart.html">Cart</a>
+      </nav>
+    </aside>
+
+    <main class="pt-24 pb-16">
+      <section class="max-w-6xl mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+          <div>
+            <picture>
+              <source srcset="/assets/Images/CABANA-WOMEN.webp" type="image/webp" />
+              <img src="/assets/Images/CABANA-WOMEN.PNG" alt="Women's Essential Set — Black" width="800" height="1000" loading="eager" decoding="async" />
+            </picture>
+          </div>
+          <div>
+            <h1 class="font-heading text-3xl md:text-4xl mb-4">Women's Essential Set — Black</h1>
+            <p class="text-gray-700 mb-2">Modal‑soft stretch</p>
+            <p class="text-xl mb-6">$125 AUD</p>
+            <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
+              <li>Wireless bralette with seamless construction</li>
+              <li>High‑waisted brief with full coverage</li>
+              <li>Designed for all‑day comfort and movement</li>
+              <li>Coordinated set for a refined look</li>
+            </ul>
+            <div class="flex gap-3">
+              <button class="cabana-button-primary" onclick="addToCart()">Add to Cart</button>
+              <a href="/size-guide.html" class="cabana-button-secondary">Size Guide</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black text-white py-10 footer-textured">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div><h4 class="font-heading text-2xl tracking-luxury mb-4">CABANA</h4><p class="text-sm text-gray-400">Quiet refinement for body and earth.</p></div>
+        <div><h3 class="text-white font-semibold mb-4">Customer Care</h3><ul class="space-y-2 text-sm"><li><a href="/shipping-policy.html" class="hover:text-gold">Shipping Policy</a></li><li><a href="/return-policy.html" class="hover:text-gold">Return Policy</a></li><li><a href="/privacy-policy.html" class="hover:text-gold">Privacy Policy</a></li><li><a href="/terms-of-service.html" class="hover:text-gold">Terms of Service</a></li></ul></div>
+        <div><h3 class="text-white font-semibold mb-4">About</h3><ul class="space-y-2 text-sm"><li><a href="/about.html" class="hover:text-gold">Our Story</a></li><li><a href="/legal/index.html" class="hover:text-gold">Legal & Policies</a></li><li><a href="/contact.html" class="hover:text-gold">Contact Us</a></li></ul></div>
+        <div><h3 class="text-white font-semibold mb-4">Follow Us</h3><div class="flex space-x-4"><a href="https://www.instagram.com/cabana.collections/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="h-5 w-5 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 1.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg></a></div></div>
+      </div>
+      <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">&copy; 2025 Cabana Collections. All rights reserved. <p class="mt-1">ABN 91302503433</p></div>
+    </footer>
+
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/nav.js" defer></script>
+    <script>
+      function addToCart() {
+        const cart = JSON.parse(localStorage.getItem('cabanaCart') || '[]');
+        cart.push({ name: "Women's Essential Set — Black", price: 125, quantity: 1, size: 'S', image: '/assets/Images/CABANA-WOMEN.PNG' });
+        localStorage.setItem('cabanaCart', JSON.stringify(cart));
+        const count = cart.reduce((s, i) => s + i.quantity, 0);
+        localStorage.setItem('cabanaCartCount', count);
+        alert('Added to cart');
+      }
+    </script>
+  </body>
+  </html>
+
+

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Sitemap: https://cabanacollections.com.au/sitemap.xml
+
+

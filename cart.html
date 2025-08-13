@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <!-- UPDATED: Open Graph (general page) -->
+    <meta property="og:title" content="Cart | CABANA" />
+    <meta
+      property="og:description"
+      content="Your CABANA shopping cart. Review items before checkout."
+    />
+    <meta property="og:url" content="https://cabanacollections.com.au/cart.html" />
+    <meta
+      property="og:image"
+      content="https://cabanacollections.com.au/assets/Images/social-share-1200x630.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <!-- UPDATED: canonical -->
+    <link rel="canonical" href="https://cabanacollections.com.au/cart.html" />
+    <!-- UPDATED: WebPage JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "url": "https://cabanacollections.com.au/cart.html",
+        "name": "Cart | CABANA",
+        "description": "Your CABANA shopping cart. Review items before checkout."
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <!-- Mobile + notch safety -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Shopping Cart | CABANA</title>
+    <meta
+      name="description"
+      content="Your CABANA shopping cart. Review your conscious craft selections and proceed to checkout."
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
+    <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/nav.js" defer></script>
+
+    <style>
+      /* Custom styles */
+      .font-heading {
+        font-family: 'Playfair Display', serif;
+      }
+      .font-sans {
+        font-family: 'Inter', sans-serif;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Letter spacing for luxury feel */
+      .tracking-luxury {
+        letter-spacing: 0.3em;
+      }
+
+      /* Quantity selector */
+      .cabana-quantity-btn {
+        transition: all 0.2s ease;
+      }
+
+      .cabana-quantity-btn:hover {
+        background-color: #f3f4f6;
+      }
+
+      .cabana-quantity-btn:active {
+        transform: scale(0.95);
+      }
+
+      /* Remove item animation */
+      .cart-item {
+        transition: all 0.3s ease;
+      }
+
+      .cart-item.removing {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      /* Checkout button */
+      .cabana-checkout {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cabana-checkout:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-white text-black font-sans pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
+  >
+    <!-- New Sticky Header + Mobile Drawer -->
+    <header class="sticky-header" role="banner">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+        <a href="/" class="font-heading tracking-luxury font-light leading-tight cabana-logo-nav">
+          <span class="block text-2xl">CABANA</span>
+          <span class="block text-xs tracking-wider -mt-0.5">Collections</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10" aria-label="Primary">
+          <a href="/" class="link-hover text-xs tracking-widest">HOME</a>
+          <a href="/products/mens-boxer-brief-black.html" class="link-hover text-xs tracking-widest"
+            >MEN</a
+          >
+          <a href="/products/womens-set.html" class="link-hover text-xs tracking-widest">WOMEN</a>
+          <a href="/about.html" class="link-hover text-xs tracking-widest">ABOUT</a>
+          <a href="/impact.html" class="link-hover text-xs tracking-widest">IMPACT</a>
+          <a href="/contact.html" class="link-hover text-xs tracking-widest">CONTACT</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-overlay" data-mobile-overlay></div>
+    <aside
+      class="mobile-drawer"
+      data-mobile-drawer
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Mobile Menu"
+    >
+      <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
+      <nav class="drawer-nav mt-6" aria-label="Mobile">
+        <a href="/">Home</a>
+        <a href="/products/mens-boxer-brief-black.html">Men</a>
+        <a href="/products/womens-set.html">Women</a>
+        <a href="/about.html">About</a>
+        <a href="/impact.html">Impact</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/cart.html" aria-current="page">Cart</a>
+      </nav>
+    </aside>
+
+    <!-- Cart Section -->
+    <section class="pt-24 pb-16 min-h-screen">
+      <div class="container mx-auto px-6 md:px-12">
+        <h1 class="font-heading text-4xl md:text-5xl text-center mb-12">Shopping Cart</h1>
+
+        <!-- Cart Content -->
+        <div class="max-w-6xl mx-auto">
+          <!-- Cart Items Container -->
+          <div id="cartContainer" class="space-y-8">
+            <!-- Cart items will be dynamically inserted here -->
+          </div>
+
+          <!-- Empty Cart Message -->
+          <div id="emptyCart" class="text-center py-16 hidden">
+            <p class="text-xl text-gray-600 mb-8">Your cart is empty</p>
+            <a
+              href="/index.html"
+              class="inline-block bg-black text-white px-8 py-4 text-sm tracking-wider uppercase hover:bg-gray-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+            >
+              Continue Shopping
+            </a>
+          </div>
+
+          <!-- Cart Summary -->
+          <div id="cartSummary" class="mt-12 border-t pt-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <!-- Promo Code -->
+              <div>
+                <h3 class="text-sm font-medium tracking-wider uppercase mb-4">Promo Code</h3>
+                <div class="flex gap-2">
+                  <input
+                    type="text"
+                    id="promoCode"
+                    placeholder="Enter code"
+                    class="flex-1 px-4 py-3 border border-gray-300 focus:outline-none focus:border-black transition-colors"
+                  />
+                  <button
+                    onclick="applyPromo()"
+                    class="px-6 py-3 border border-black hover:bg-black hover:text-white transition-colors text-sm tracking-wider uppercase"
+                  >
+                    Apply
+                  </button>
+                </div>
+                <p id="promoMessage" class="text-sm mt-2 hidden"></p>
+              </div>
+
+              <!-- Order Summary -->
+              <div class="md:text-right">
+                <div class="space-y-2 mb-6">
+                  <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Shipping</span>
+                    <span id="shipping">$0</span>
+                  </div>
+                  <div id="discountRow" class="flex justify-between text-green-600 hidden">
+                    <span>Discount</span>
+                    <span id="discount">-$0</span>
+                  </div>
+                  <div class="flex justify-between font-medium text-lg pt-4 border-t">
+                    <span>Total</span>
+                    <span id="total">$0</span>
+                  </div>
+                  <div class="flex justify-between text-sm text-gold pt-2">
+                    <span>Impact Donation (15%)</span>
+                    <span id="impactAmount">$0</span>
+                  </div>
+                </div>
+
+                <button
+                  onclick="proceedToCheckout()"
+                  class="cabana-checkout w-full md:w-auto bg-black text-white px-12 py-4 text-sm tracking-wider uppercase hover:bg-gray-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300"
+                >
+                  Proceed to Checkout
+                </button>
+
+                <p class="text-sm text-gray-600 mt-4">Free shipping on orders over $200</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendations -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-6 md:px-12">
+        <h2 class="font-heading text-3xl text-center mb-12">Complete Your Collection</h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <a href="/products/mens-boxer-brief-black.html" class="group block">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[3/4]">
+              <img
+                src="/assets/Images/CABANA-BOXERS-FRONT.png"
+                alt="Men's Essential Brief"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="800"
+              />
+            </div>
+            <div class="mt-6 text-center">
+              <h3 class="font-heading text-2xl mb-2">Men's Collection</h3>
+              <p class="text-gray-600">Essential Brief - $50</p>
+            </div>
+          </a>
+
+          <a href="/products/womens-set.html" class="group block">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[3/4]">
+              <img
+                src="/assets/Images/CABANA-WOMEN.PNG"
+                alt="Women's Essential Set"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+                decoding="async"
+                width="600"
+                height="800"
+              />
+            </div>
+            <div class="mt-6 text-center">
+              <h3 class="font-heading text-2xl mb-2">Women's Collection</h3>
+              <p class="text-gray-600">Essential Set - $125</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="col-span-1 flex flex-col items-start">
+          <h4 class="font-heading text-2xl tracking-luxury mb-4">CABANA</h4>
+          <p class="text-sm text-gray-400">Quiet refinement for body and earth.</p>
+        </div>
+
+        <!-- Customer Care -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Customer Care</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/shipping-policy.html" class="hover:text-gold">Shipping Policy</a></li>
+            <li><a href="/return-policy.html" class="hover:text-gold">Return Policy</a></li>
+            <li><a href="/privacy-policy.html" class="hover:text-gold">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html" class="hover:text-gold">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">About</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/about.html" class="hover:text-gold">Our Story</a></li>
+            <li><a href="/legal/index.html" class="hover:text-gold">Legal & Policies</a></li>
+            <li><a href="/contact.html" class="hover:text-gold">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.instagram.com/cabana.collections/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <svg class="h-5 w-5 hover:text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 1.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"
+                />
+              </svg>
+            </a>
+            <!-- Removed Facebook link per request -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom note -->
+      <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+        &copy; 2025 Cabana Collections. All rights reserved.
+        <p class="mt-1">ABN 91302503433</p>
+      </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Mobile menu handled by /js/nav.js
+
+      // Cart functionality
+      let cart = [];
+      let discountAmount = 0;
+      const SHIPPING_COST = 10;
+      const FREE_SHIPPING_THRESHOLD = 200;
+
+      // Load cart from localStorage
+      function loadCart() {
+        cart = JSON.parse(localStorage.getItem('cabanaCart') || '[]');
+        renderCart();
+      }
+
+      // Render cart items
+      function renderCart() {
+        const cartContainer = document.getElementById('cartContainer');
+        const emptyCart = document.getElementById('emptyCart');
+        const cartSummary = document.getElementById('cartSummary');
+
+        if (cart.length === 0) {
+          cartContainer.innerHTML = '';
+          emptyCart.classList.remove('hidden');
+          cartSummary.classList.add('hidden');
+          return;
+        }
+
+        emptyCart.classList.add('hidden');
+        cartSummary.classList.remove('hidden');
+
+        cartContainer.innerHTML = cart
+          .map(
+            (item, index) => `
+                <div class="cart-item border-b pb-8" data-index="${index}">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                        <!-- Product Image -->
+                        <div class="md:col-span-1">
+                            <img src="${item.image}" alt="${item.name}" class="w-full aspect-square object-cover bg-gray-100">
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="md:col-span-2 space-y-2">
+                            <h3 class="font-heading text-xl">${item.name}</h3>
+                            <p class="text-gray-600">Size: ${item.size}</p>
+                            <p class="text-lg">$${item.price} AUD</p>
+
+                            <!-- Quantity Selector -->
+                            <div class="flex items-center gap-4 mt-4">
+                                <button
+                                    onclick="updateQuantity(${index}, -1)"
+                                    class="cabana-quantity-btn w-8 h-8 border border-gray-300 flex items-center justify-center hover:border-black transition-colors"
+                                >
+                                    -
+                                </button>
+                                <span class="w-12 text-center">${item.quantity}</span>
+                                <button
+                                    onclick="updateQuantity(${index}, 1)"
+                                    class="cabana-quantity-btn w-8 h-8 border border-gray-300 flex items-center justify-center hover:border-black transition-colors"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="md:col-span-1 text-right space-y-4">
+                            <p class="text-xl font-medium">$${(item.price * item.quantity).toFixed(2)}</p>
+                            <button
+                                onclick="removeItem(${index})"
+                                class="text-sm text-gray-600 underline hover:text-gold transition-colors"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `
+          )
+          .join('');
+
+        updateSummary();
+      }
+
+      // Update quantity
+      function updateQuantity(index, change) {
+        cart[index].quantity += change;
+
+        if (cart[index].quantity <= 0) {
+          removeItem(index);
+        } else {
+          saveCart();
+          renderCart();
+        }
+      }
+
+      // Remove item
+      function removeItem(index) {
+        const item = document.querySelector(`[data-index="${index}"]`);
+        item.classList.add('removing');
+
+        setTimeout(() => {
+          cart.splice(index, 1);
+          saveCart();
+          renderCart();
+        }, 300);
+      }
+
+      // Save cart
+      function saveCart() {
+        localStorage.setItem('cabanaCart', JSON.stringify(cart));
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        localStorage.setItem('cabanaCartCount', totalItems);
+        updateCartCount();
+      }
+
+      // Update summary
+      function updateSummary() {
+        const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+        const total = subtotal + shipping - discountAmount;
+        const impactAmount = subtotal * 0.15; // 15% of subtotal goes to charity
+
+        document.getElementById('subtotal').textContent = `${subtotal.toFixed(2)}`;
+        document.getElementById('shipping').textContent =
+          shipping === 0 ? 'Free' : `${shipping.toFixed(2)}`;
+        document.getElementById('total').textContent = `${total.toFixed(2)}`;
+        document.getElementById('impactAmount').textContent = `${impactAmount.toFixed(2)}`;
+
+        if (discountAmount > 0) {
+          document.getElementById('discountRow').classList.remove('hidden');
+          document.getElementById('discount').textContent = `-${discountAmount.toFixed(2)}`;
+        }
+      }
+
+      // Apply promo code
+      function applyPromo() {
+        const promoCode = document.getElementById('promoCode').value.toUpperCase();
+        const promoMessage = document.getElementById('promoMessage');
+
+        if (promoCode === 'WELCOME10') {
+          discountAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0) * 0.1;
+          promoMessage.textContent = 'Promo code applied successfully!';
+          promoMessage.classList.remove('hidden', 'text-red-600');
+          promoMessage.classList.add('text-green-600');
+          updateSummary();
+        } else if (promoCode) {
+          promoMessage.textContent = 'Invalid promo code';
+          promoMessage.classList.remove('hidden', 'text-green-600');
+          promoMessage.classList.add('text-red-600');
+        }
+      }
+
+      // Proceed to checkout
+      function proceedToCheckout() {
+        alert(
+          'This is a demo store. In a real implementation, this would redirect to a secure checkout page (e.g., Stripe Checkout).'
+        );
+      }
+
+      // Cart Count
+      function updateCartCount() {
+        const cartCount = localStorage.getItem('cabanaCartCount') || 0;
+        const cartCountElements = document.querySelectorAll('.cabana-cart-count');
+
+        cartCountElements.forEach((el) => {
+          if (cartCount > 0) {
+            el.textContent = cartCount;
+            el.classList.remove('hidden');
+          } else {
+            el.classList.add('hidden');
+          }
+        });
+      }
+
+      // Initialize
+      loadCart();
+      updateCartCount();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1348 @@
+/* CABANA - Main Stylesheet */
+
+/* Conscious Craft Design System */
+
+/* ===========================
+   Heading Font
+   =========================== */
+.font-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+}
+
+.font-body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 300;
+}
+
+/* ===========================
+   Enhanced Color System
+   =========================== */
+:root {
+  /* Core Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gold: #d4af37;
+
+  /* Nature-Inspired Palette */
+  --color-sage: #9caf88;
+  --color-sage-light: #b8c8a5;
+  --color-sage-dark: #7a9b6a;
+  --color-terracotta: #c77b5b;
+  --color-terracotta-light: #d49378;
+  --color-terracotta-dark: #a85e43;
+  --color-forest: #4a5d23;
+  --color-forest-light: #6b7a42;
+  --color-forest-dark: #3a4a1c;
+  --color-cream: #f7f3e9;
+  --color-cream-light: #fefbf4;
+  --color-cream-dark: #f0e8d6;
+  --color-stone: #8b8680;
+  --color-stone-light: #a8a298;
+  --color-stone-dark: #6e6b66;
+
+  /* Ocean Accent */
+  --color-ocean: #4c7c7b;
+  --color-ocean-light: #6b9b99;
+  --color-ocean-dark: #3a605f;
+
+  /* Warm Accent */
+  --color-amber: #e6a532;
+  --color-amber-light: #f0b94f;
+  --color-amber-dark: #cc8f1e;
+
+  /* Enhanced Grays */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+}
+
+/* Color Utilities */
+.text-gold {
+  color: var(--color-gold);
+}
+
+.border-gold {
+  border-color: var(--color-gold);
+}
+
+.bg-gold {
+  background-color: var(--color-gold);
+}
+
+/* Nature Colors */
+.text-sage {
+  color: var(--color-sage);
+}
+
+.bg-sage {
+  background-color: var(--color-sage);
+}
+
+.bg-sage-light {
+  background-color: var(--color-sage-light);
+}
+
+.bg-sage-dark {
+  background-color: var(--color-sage-dark);
+}
+
+.border-sage {
+  border-color: var(--color-sage);
+}
+
+.text-terracotta {
+  color: var(--color-terracotta);
+}
+
+.bg-terracotta {
+  background-color: var(--color-terracotta);
+}
+
+.bg-terracotta-light {
+  background-color: var(--color-terracotta-light);
+}
+
+.border-terracotta {
+  border-color: var(--color-terracotta);
+}
+
+.text-forest {
+  color: var(--color-forest);
+}
+
+.bg-forest {
+  background-color: var(--color-forest);
+}
+
+.bg-forest-light {
+  background-color: var(--color-forest-light);
+}
+
+.border-forest {
+  border-color: var(--color-forest);
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+}
+
+.bg-cream-light {
+  background-color: var(--color-cream-light);
+}
+
+.bg-cream-dark {
+  background-color: var(--color-cream-dark);
+}
+
+.text-stone {
+  color: var(--color-stone);
+}
+
+.bg-stone {
+  background-color: var(--color-stone);
+}
+
+.text-stone-light {
+  color: var(--color-stone-light);
+}
+
+.text-ocean {
+  color: var(--color-ocean);
+}
+
+.bg-ocean {
+  background-color: var(--color-ocean);
+}
+
+.bg-ocean-light {
+  background-color: var(--color-ocean-light);
+}
+
+.border-ocean {
+  border-color: var(--color-ocean);
+}
+
+.text-amber {
+  color: var(--color-amber);
+}
+
+.bg-amber {
+  background-color: var(--color-amber);
+}
+
+.bg-amber-light {
+  background-color: var(--color-amber-light);
+}
+
+.border-amber {
+  border-color: var(--color-amber);
+}
+
+/* ===========================
+   Base Styles
+   =========================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  /* Fallback then modern viewport height to avoid iOS 100vh bug */
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Mobile upgrade additions */
+
+/* Safe area vars merged into primary :root above */
+
+body.is-locked {
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: var(--safe-top);
+}
+
+/* Brand lockup: CABANA + Collections stack */
+
+.brand-lockup {
+  line-height: 1.05;
+}
+
+.brand-lockup .brand-title {
+  letter-spacing: 0.4em;
+}
+
+.brand-lockup .brand-sub {
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
+
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100svh;
+  width: min(20rem, 90vw);
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  padding: calc(1rem + var(--safe-top)) 1rem calc(1rem + var(--safe-bottom));
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+}
+
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+.drawer-close {
+  align-self: flex-end;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.drawer-nav a {
+  display: block;
+  padding: 0.875rem 0;
+  letter-spacing: 0.12em;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+/* Images: avoid squish; reduce CLS */
+img {
+  height: auto;
+  max-width: 100%;
+}
+img[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Headings scale */
+h1 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+/* No horizontal scroll at small widths */
+@media (max-width: 430px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-weight: 300;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+
+  /* Fallback then modern viewport height to avoid iOS 100vh bug */
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* ===========================
+   Typography - Conscious Craft
+   =========================== */
+.tracking-luxury {
+  letter-spacing: 0.4em;
+}
+
+/* Aliases: refined naming (avoid visible use of the word) */
+.tracking-refined {
+  letter-spacing: 0.4em;
+}
+
+.tracking-ultra {
+  letter-spacing: 0.6em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Chopard, 'Playfair Display', serif;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Editorial Typography Scale */
+.text-editorial-xl {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.9;
+}
+
+.text-editorial-lg {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1;
+}
+
+.text-editorial-md {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+/* ===========================
+   Navigation - Minimal Craft
+   =========================== */
+.cabana-nav {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.cabana-nav.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Navigation Links */
+.cabana-nav a {
+  position: relative;
+}
+
+.cabana-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cabana-nav a:hover::after {
+  width: 100%;
+}
+
+/* ===========================
+   Hero Section - Cinematic with Hero Banner
+   =========================== */
+.cabana-hero {
+  /* Fallback then modern viewport height to avoid iOS 100vh bug */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+}
+
+/* Enhanced CABANA Title Styling */
+.cabana-hero-title {
+  position: relative;
+  z-index: 30;
+}
+
+/* Responsive Typography for CABANA */
+@media (max-width: 640px) {
+  .cabana-hero-title span {
+    font-size: clamp(3rem, 12vw, 6rem) !important;
+    letter-spacing: clamp(0.15em, 1.5vw, 0.4em) !important;
+    line-height: 0.8 !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cabana-hero-title span {
+    font-size: clamp(6rem, 12vw, 12rem) !important;
+    letter-spacing: clamp(0.3em, 1.8vw, 0.6em) !important;
+    line-height: 0.85 !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .cabana-hero-title span {
+    font-size: clamp(12rem, 15vw, 20rem) !important;
+    letter-spacing: clamp(0.4em, 2vw, 0.8em) !important;
+    line-height: 0.9 !important;
+  }
+}
+
+.cabana-logo-hero {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Cinematic fade-in */
+@keyframes cinematicFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-cinematic {
+  animation: cinematicFade 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===========================
+   Buttons - Conscious Craft Style
+   =========================== */
+.cabana-button-primary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1.25rem 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 300;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--color-black);
+}
+
+.cabana-button-primary:hover {
+  background-color: transparent;
+  color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.cabana-button-secondary {
+  background-color: transparent;
+  color: var(--color-black);
+  padding: 1.25rem 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 300;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--color-black);
+}
+
+.cabana-button-secondary:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* Gold accent button */
+.cabana-button-gold {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  padding: 1.25rem 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  font-weight: 300;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--color-gold);
+}
+
+.cabana-button-gold:hover {
+  background-color: transparent;
+  color: var(--color-gold);
+}
+
+/* ===========================
+   Luxury CTA Button - Discover Collection
+   =========================== */
+.cabana-cta-discover {
+  position: relative;
+  box-shadow:
+    0 8px 25px rgba(212, 175, 55, 0.25),
+    0 0 0 1px rgba(212, 175, 55, 0.1);
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+}
+
+.cabana-cta-discover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cabana-cta-discover:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:
+    0 15px 35px rgba(212, 175, 55, 0.4),
+    0 0 0 1px rgba(212, 175, 55, 0.3),
+    0 0 40px rgba(212, 175, 55, 0.2);
+  background: linear-gradient(45deg, #d4af37, #f39c12, #d4af37);
+}
+
+.cabana-cta-discover:hover::before {
+  opacity: 1;
+}
+
+.cabana-cta-discover:active {
+  transform: translateY(-1px) scale(1.02);
+  transition-duration: 0.1s;
+}
+
+/* Smooth scroll behavior */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Mobile optimisation for CTA */
+@media (max-width: 640px) {
+  .cabana-cta-discover {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 1rem 2rem;
+    font-size: 0.75rem;
+  }
+
+  .cabana-cta-discover:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+}
+
+/* ===========================
+   CTA Links - Minimal Style
+   =========================== */
+.cabana-cta {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transition: color 0.4s ease;
+}
+
+.cabana-cta::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cabana-cta:hover {
+  color: var(--color-gold);
+}
+
+.cabana-cta:hover::before {
+  width: 100%;
+}
+
+/* UPDATED: global refined link hover underline */
+.link-hover {
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link-hover:hover::after,
+.link-hover:focus-visible::after {
+  width: 100%;
+}
+
+/* ===========================
+   Editorial Image Styles
+   =========================== */
+.editorial-image {
+  overflow: hidden;
+  background: var(--color-black);
+  position: relative;
+}
+
+.editorial-image img {
+  transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Object-position utility for hero image */
+.hero-object-pos {
+  object-position: center 75%;
+}
+
+.editorial-image:hover img {
+  transform: scale(1.08);
+  opacity: 0.9;
+}
+
+/* Editorial grid spacing */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 4rem;
+}
+
+/* ===========================
+   Product Cards - Elevated Style
+   =========================== */
+.cabana-product-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cabana-product-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Ensure horizontal swipe doesn't block vertical scroll on mobile galleries */
+.product-gallery {
+  touch-action: pan-y;
+  overscroll-behavior-y: contain;
+}
+
+/* Gentle shadow for sticky nav on scroll */
+.nav-shadow {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Mobile swipe hint under galleries */
+@keyframes fadeOutHint {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.swipe-hint {
+  opacity: 0.9;
+  animation: fadeOutHint 1.2s ease 3s forwards;
+}
+
+/* Larger touch target for gallery thumbnails */
+.thumbnail {
+  padding: 4px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ===========================
+   Form Elements - Minimal
+   =========================== */
+.cabana-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-gray-300);
+  padding: 1rem 0;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.cabana-input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.cabana-input::placeholder {
+  color: var(--color-gray-400);
+  font-weight: 300;
+}
+
+/* Size selector - Refined style */
+.cabana-size-option {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.cabana-size-option:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.cabana-size-option.selected {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+/* ===========================
+   Cart Elements
+   =========================== */
+.cabana-cart-count {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+  font-size: 0.65rem;
+  font-weight: 400;
+}
+
+/* ===========================
+   Legal Content - Clean Style
+   =========================== */
+.legal-content {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+/* Prevent horizontal overflow on narrow viewports (long URLs/words) */
+.legal-content,
+.legal-content p,
+.legal-content li,
+.legal-content a,
+.legal-content td,
+.legal-content th {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Utility: force wrap anywhere for edge cases */
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.legal-content h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: Chopard, 'Playfair Display', serif;
+  font-weight: 300;
+  font-size: 2rem;
+}
+
+.legal-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+}
+
+.legal-content p,
+.legal-content li {
+  line-height: 1.8;
+  color: var(--color-gray-700);
+  font-weight: 300;
+}
+
+/* ===========================
+   Animations - Cinematic
+   =========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* ===========================
+   Loading States - Elegant
+   =========================== */
+.loading {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--color-gray-300);
+  border-top: 1px solid var(--color-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===========================
+   Advanced Visual Enhancements
+   =========================== */
+
+/* Gradient Backgrounds */
+.gradient-sage {
+  background: linear-gradient(
+    135deg,
+    var(--color-sage-light) 0%,
+    var(--color-sage) 50%,
+    var(--color-sage-dark) 100%
+  );
+}
+
+/* Luxe, desaturated champagne → sage gradient for high-end feel */
+.gradient-champagne-sage {
+  background: linear-gradient(135deg, #f5f1e8 0%, #efe9dd 35%, #e6e7df 60%, #d6dfcf 100%);
+}
+
+.gradient-terracotta {
+  background: linear-gradient(
+    135deg,
+    var(--color-terracotta-light) 0%,
+    var(--color-terracotta) 50%,
+    var(--color-terracotta-dark) 100%
+  );
+}
+
+.gradient-ocean {
+  background: linear-gradient(
+    135deg,
+    var(--color-ocean-light) 0%,
+    var(--color-ocean) 50%,
+    var(--color-ocean-dark) 100%
+  );
+}
+
+.gradient-earth {
+  background: linear-gradient(
+    135deg,
+    var(--color-cream) 0%,
+    var(--color-sage-light) 30%,
+    var(--color-terracotta-light) 70%,
+    var(--color-amber-light) 100%
+  );
+}
+
+/* Subtle luxe texture overlay (uses pseudo-element) */
+.luxe-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.luxe-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  opacity: 0.06;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(1deg);
+  }
+}
+
+/* Color Pulse Animation */
+@keyframes colorPulse {
+  0%,
+  100% {
+    background-color: var(--color-sage-light);
+  }
+
+  25% {
+    background-color: var(--color-terracotta-light);
+  }
+
+  50% {
+    background-color: var(--color-ocean-light);
+  }
+
+  75% {
+    background-color: var(--color-amber-light);
+  }
+}
+
+/* Organic Reveal Animation */
+@keyframes organicReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Breathing Animation */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Color Shift on Hover */
+.color-shift {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.color-shift:hover {
+  filter: hue-rotate(15deg) saturate(1.2);
+  transform: translateY(-2px);
+}
+
+/* Enhanced Card Animations */
+.enhanced-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.enhanced-card:hover::before {
+  left: 100%;
+}
+
+.enhanced-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Morphing Shapes */
+.morphing-shape {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
+  transition: clip-path 0.5s ease-in-out;
+}
+
+.morphing-shape:hover {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+/* Animation delay utility for decorative shape */
+.anim-delay-1s {
+  animation-delay: 1s;
+}
+
+/* Text Reveal Animation */
+.text-reveal {
+  overflow: hidden;
+  position: relative;
+}
+
+.text-reveal span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: textReveal 0.8s ease-out forwards;
+}
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Parallax Elements */
+.parallax-element {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Interactive Glow */
+.interactive-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-glow::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-sage-light), transparent);
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Shimmer accent for pill links/buttons */
+.pill-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.pill-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.18) 50%,
+    transparent 100%
+  );
+  transform: translateX(-200%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.pill-shimmer:hover::before,
+.pill-shimmer:focus-visible::before {
+  transform: translateX(200%);
+}
+
+.interactive-glow:hover::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0.1;
+}
+
+/* UPDATED: hairline divider utility */
+.hairline {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-dark {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* UPDATED: subtle footer pinstripe texture */
+.footer-textured {
+  background-image:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size:
+    100% 16px,
+    16px 100%;
+  background-blend-mode: overlay;
+}
+
+/* ===========================
+   Performance Optimisations
+   =========================== */
+
+/* SIMPLIFIED: Essential hardware acceleration only */
+.luxury-hover,
+.luxury-button,
+.cabana-product-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimise transitions for 60fps */
+.luxury-hover,
+.cabana-nav a,
+.luxury-button {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+/* Refined aliases */
+.refined-hover {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.refined-button {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+/* Background aliases */
+.bg-refined-cream {
+  background: linear-gradient(135deg, #fafaf8 0%, #f8f6f3 100%);
+}
+
+.bg-refined-white {
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+}
+
+.bg-refined-charcoal {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+.bg-refined-gradient {
+  background: linear-gradient(135deg, #fafaf8 0%, #fff 50%, #f8f6f3 100%);
+}
+
+/* Texture overlays extracted from inline styles */
+.gold-dots-overlay {
+  background-image: radial-gradient(circle at 1px 1px, rgba(212, 175, 55, 0.3) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.gold-dots-bg-02 {
+  background-image: radial-gradient(circle at 1px 1px, rgba(212, 175, 55, 0.3) 1px, transparent 0);
+  background-size: 20px 20px;
+  opacity: 0.02;
+}
+
+/* Animation utility classes to replace inline animation styles */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .hero-breathe,
+  .float-gentle,
+  .luxury-hover,
+  .cabana-nav a {
+    transition: none;
+  }
+}
+
+/* ===========================
+   Responsive - Mobile First
+   =========================== */
+@media (max-width: 768px) {
+  .tracking-luxury {
+    letter-spacing: 0.3em;
+  }
+
+  .tracking-ultra {
+    letter-spacing: 0.4em;
+  }
+
+  .text-editorial-xl {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .cabana-button-primary,
+  .cabana-button-secondary,
+  .cabana-button-gold {
+    padding: 1rem 2.5rem;
+    font-size: 0.7rem;
+  }
+
+  /* DISABLED: Animations removed for mobile performance */
+  .hero-breathe,
+  .float-gentle {
+    animation: none; /* Disabled for better mobile performance */
+  }
+}
+
+/* ===========================
+   Layout Fixes
+   =========================== */
+
+/* UPDATED: accessible focus rings */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Ensure footer is always visible and properly positioned */
+footer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  clear: both;
+}
+
+/* Prevent content from being cut off */
+main {
+  position: relative;
+  z-index: 0;
+}
+
+/* Ensure sections stack properly */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Fix potential transform issues */
+.parallax-slow,
+.hero-breathe,
+.float-gentle {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: auto;
+}
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+  nav,
+  .cabana-cart-count,
+  .cabana-nav {
+    display: none;
+  }
+
+  footer {
+    display: block !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+}

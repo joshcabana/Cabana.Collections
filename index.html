@@ -1,0 +1,2024 @@
+<!doctype html>
+<html lang="en-AU" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Mobile + notch safety -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>CABANA | Quiet Refinement for Body and Earth</title>
+    <!-- UPDATED: SEO meta -->
+    <meta
+      name="description"
+      content="CABANA — sustainable essentials crafted from premium modal. Timeless men's and women's underwear and apparel, with 15% of every purchase funding mental health and women's empowerment."
+    />
+
+    <!-- UPDATED: Open Graph -->
+    <meta property="og:title" content="CABANA | Quiet Refinement for Body and Earth" />
+    <meta
+      property="og:description"
+      content="CABANA — sustainable essentials crafted from premium modal. Timeless men's and women's underwear and apparel, with 15% of every purchase funding mental health and women's empowerment."
+    />
+    <meta property="og:url" content="https://cabanacollections.com.au/" />
+    <meta
+      property="og:image"
+      content="https://cabanacollections.com.au/assets/Images/social-share-1200x630.jpg"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- ========== ANALYTICS ========== -->
+    <!-- Google Analytics -->
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W997HDC19"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      // GA4 measurement ID
+      gtag('config', 'G-3W997HDC19', {
+        page_title: 'CABANA Homepage',
+        page_location: window.location.href,
+      });
+
+      // Enhanced ecommerce tracking
+      function trackPurchase(transactionId, value, items) {
+        gtag('event', 'purchase', {
+          transaction_id: transactionId,
+          value: value,
+          currency: 'AUD',
+          items: items,
+        });
+      }
+
+      function trackAddToCart(itemId, itemName, category, quantity, price) {
+        gtag('event', 'add_to_cart', {
+          currency: 'AUD',
+          value: price * quantity,
+          items: [
+            {
+              item_id: itemId,
+              item_name: itemName,
+              category: category,
+              quantity: quantity,
+              price: price,
+            },
+          ],
+        });
+      }
+
+      function trackBeginCheckout(value, items) {
+        gtag('event', 'begin_checkout', {
+          currency: 'AUD',
+          value: value,
+          items: items,
+        });
+      }
+    </script>
+
+    <!-- ========== PERFORMANCE OPTIMISATIONS ========== -->
+
+    <!-- 1. Resource Hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- 2. Preload Critical Resources -->
+    <!-- LCP image preload — HOME ONLY -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/Images/HERO-BANNER.webp"
+      imagesrcset="/assets/Images/HERO-BANNER-mobile.webp 768w, /assets/Images/HERO-BANNER.webp 1920w"
+      imagesizes="100vw"
+    />
+
+    <!-- 3. Critical Inline CSS (above-the-fold styles) -->
+    <style>
+      /* Critical CSS for immediate render */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+        background: linear-gradient(135deg, #fafaf8 0%, #f8f6f3 50%, #ffffff 100%);
+        overflow-x: hidden;
+        /* UPDATED: remove GPU transforms on body to fix fixed nav on Safari/WebKit */
+      }
+      .font-heading {
+        font-family: 'Playfair Display', serif;
+      }
+      .text-gold {
+        color: #d4af37;
+      }
+      .bg-gold {
+        background-color: #d4af37;
+      }
+      .tracking-luxury {
+        letter-spacing: 0.3em;
+      }
+
+      /* Luxury Background System */
+      .bg-luxury-cream {
+        background: linear-gradient(135deg, #fafaf8 0%, #f8f6f3 100%);
+      }
+      .bg-luxury-charcoal {
+        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+      }
+      .bg-luxury-white {
+        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      }
+      .section-dark {
+        background: linear-gradient(180deg, #0b0b0b 0%, #111111 60%, #1a1a1a 100%);
+        color: #fff;
+      }
+      .section-stone {
+        background: linear-gradient(180deg, #f7f7f7 0%, #efefef 100%);
+      }
+      .gold-rule {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        opacity: 0.5;
+      }
+      .section-dark.bg-noise {
+        position: relative;
+      }
+      .section-dark.bg-noise::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(#ffffff11 1px, transparent 1px);
+        background-size: 3px 3px;
+        opacity: 0.05;
+        mix-blend-mode: overlay;
+      }
+      .bg-luxury-gradient {
+        background: linear-gradient(135deg, #fafaf8 0%, #ffffff 50%, #f8f6f3 100%);
+        position: relative;
+      }
+      .bg-luxury-gradient::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(212, 175, 55, 0.02) 0%,
+          transparent 50%,
+          rgba(212, 175, 55, 0.01) 100%
+        );
+        pointer-events: none;
+      }
+
+      /* Subtle Texture Overlay */
+      .texture-overlay::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle at 1px 1px,
+          rgba(0, 0, 0, 0.02) 1px,
+          transparent 0
+        );
+        background-size: 20px 20px;
+        pointer-events: none;
+        opacity: 0.3;
+      }
+
+      /* Hero section critical styles */
+      .cabana-hero {
+        /* Fallback then modern viewport height to avoid iOS 100vh bug */
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      /* REMOVED: Breathing animation for better performance */
+      .hero-breathe {
+        /* Animation removed to eliminate constant GPU usage */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+
+      /* Elegant fade animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-up {
+        animation: fadeInUp 1.2s ease-out forwards;
+      }
+      .fade-in-down {
+        animation: fadeInDown 1.2s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Luxury hover effects */
+      .luxury-hover {
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .luxury-hover::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 0%,
+          rgba(212, 175, 55, 0.05) 50%,
+          transparent 100%
+        );
+        transform: translateX(-200%);
+        transition: transform 0.8s ease;
+      }
+
+      .luxury-hover:hover::before {
+        transform: translateX(200%);
+      }
+
+      .luxury-hover:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
+      }
+
+      /* Enhanced Navigation Styles */
+      .nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.2s ease-out;
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      .nav-wrapper.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .nav-wrapper.nav-scrolled {
+        background: rgba(0, 0, 0, 0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+      }
+
+      /* Enhanced hero animations */
+      .hero-content {
+        animation: heroFadeUp 1.2s ease-out forwards;
+      }
+
+      @keyframes heroFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Luxury hover effects */
+      .luxury-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .luxury-hover:hover {
+        transform: translateY(-2px);
+        color: #d4af37;
+      }
+
+      /* UPDATED: reduce motion for users who prefer less */
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in-up,
+        .fade-in-down,
+        .hero-content,
+        .luxury-hover::before,
+        .luxury-button::before {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* Luxury Button Animations */
+      .luxury-button {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .luxury-button::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 100%
+        );
+        transform: translateX(-200%);
+        transition: transform 0.6s ease;
+      }
+
+      .luxury-button:hover::before {
+        transform: translateX(200%);
+      }
+
+      .luxury-button:active {
+        transform: translateY(1px);
+      }
+
+      /* REMOVED: Float animation for better performance */
+      .float-gentle {
+        /* Animation removed to reduce continuous GPU load */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+
+      /* SIMPLIFIED: Parallax effect */
+      .parallax-slow {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+      }
+
+      /* Smooth page transitions */
+      .page-transition {
+        opacity: 0;
+        animation: pageEnter 1s ease-out forwards;
+      }
+
+      @keyframes pageEnter {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Prevent layout shift */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .lazy-img {
+        background: linear-gradient(135deg, #f5f5f5 0%, #f0f0f0 100%);
+        transition: all 0.3s ease;
+      }
+
+      /* CABANA Logo Smooth Transition Effect - GUCCI Style */
+      .cabana-logo-nav {
+        display: inline-block;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        transform: translateY(0);
+      }
+
+      .cabana-logo-nav:hover {
+        transform: translateY(-3px);
+        color: #d4af37;
+      }
+
+      /* Add subtle shadow on hover */
+      .cabana-logo-nav::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 0;
+      }
+
+      .cabana-logo-nav:hover::after {
+        width: 100%;
+        opacity: 0.8;
+      }
+
+      /* Reusable gold underline + color for links */
+      .link-hover {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .link-hover::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -6px;
+        height: 2px;
+        width: 0;
+        background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        opacity: 0;
+        transition:
+          width 0.3s ease,
+          opacity 0.3s ease;
+      }
+      .link-hover:hover,
+      .link-hover:focus-visible {
+        color: #d4af37;
+      }
+      .link-hover:hover::after,
+      .link-hover:focus-visible::after {
+        width: 100%;
+        opacity: 0.8;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .link-hover,
+        .link-hover::after {
+          transition: none;
+        }
+      }
+
+      /* Impact Banner Styles */
+      .impact-banner {
+        background: linear-gradient(90deg, #d4af37, #f5d061);
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 60;
+      }
+
+      .impact-banner.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .impact-banner.hidden {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      .impact-banner-text {
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        color: #000;
+        text-transform: none;
+      }
+
+      .impact-banner-close {
+        opacity: 0.6;
+        transition: opacity 0.2s ease;
+        color: #000;
+      }
+
+      .impact-banner-close:hover {
+        opacity: 1;
+      }
+
+      /* Adjust navigation for banner */
+      .nav-with-banner {
+        top: 40px;
+      }
+
+      .nav-with-banner.nav-scrolled {
+        top: 0;
+        transition: top 0.3s ease-out;
+      }
+      /* UPDATED: Performance – lazy-render below-the-fold sections */
+      section[aria-labelledby='mid-newsletter-heading'],
+      section[aria-labelledby='collection-heading'],
+      section[aria-labelledby='impact-heading'],
+      section[aria-labelledby='newsletter-heading'] {
+        content-visibility: auto;
+        contain-intrinsic-size: 800px 1000px;
+      }
+
+      /* Louis Vuitton-inspired editorial theme (scoped) */
+      .lv-page {
+        --lv-ink: #111111;
+        --lv-ebony: #1d1a16;
+        --lv-cognac: #6e4c1e;
+        --lv-gold: #b98d38;
+        --lv-ivory: #f6f1e7;
+      }
+
+      .lv-page .font-heading {
+        font-family: 'Cinzel', serif !important;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .lv-page .text-gold {
+        color: var(--lv-gold);
+      }
+
+      /* LV pill CTA */
+      .lv-page .lv-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 2.5rem;
+        border-radius: 9999px;
+        border: 1px solid var(--lv-ink);
+        background: #ffffff;
+        color: var(--lv-ink);
+        font-family: 'Cinzel', serif;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.2s ease;
+        box-shadow: none;
+      }
+      .lv-page .lv-cta:hover {
+        background: var(--lv-ink);
+        color: #ffffff;
+        border-color: var(--lv-ink);
+        transform: translateY(-1px);
+      }
+
+      /* Section hairline rules (subtle) */
+      .lv-page .lv-hairline {
+        height: 1px;
+        background: #e5e0d7;
+        opacity: 0.9;
+      }
+      .lv-page .lv-underline {
+        display: block;
+        height: 3px;
+        width: 120px;
+        margin: 0.75rem auto 0;
+        background: linear-gradient(90deg, transparent, var(--lv-gold), transparent);
+      }
+    </style>
+
+    <!-- 4. Optimised Favicon Setup -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/Images/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/Images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/Images/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/Images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- 5. Async Font Loading with display=swap -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&display=swap"
+      as="style"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- 6. Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- UPDATED: global stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
+    <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
+    <link rel="stylesheet" href="/assets/css/mobile.css" />
+
+    <!-- REMOVED: duplicate OG/Twitter block to keep one clean OG set only -->
+
+    <!-- Structured Data for SEO -->
+    <!-- UPDATED: JSON-LD with real domain and priceRange -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "CABANA",
+        "description": "Refined essentials with embedded purpose. Supporting mental health and women's empowerment through conscious craft.",
+        "url": "https://cabanacollections.com.au",
+        "logo": "https://cabanacollections.com.au/assets/Images/CABANA-Logo-06.jpg",
+        "priceRange": "$$",
+        "sameAs": ["https://www.instagram.com/cabana.collections/"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AU"
+        }
+      }
+    </script>
+    <!-- UPDATED: SEO canonical -->
+    <link rel="canonical" href="https://cabanacollections.com.au/" />
+  </head>
+  <body
+    class="lv-page bg-white text-black font-body gradient-champagne-sage luxe-texture pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
+  >
+    <!-- Impact Banner -->
+    <div class="impact-banner fixed top-0 left-0 right-0 z-[60] py-2" id="impactBanner">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <div class="flex-1 text-center">
+          <p class="impact-banner-text text-black">
+            15% of every purchase supports mental health and women's empowerment.
+          </p>
+        </div>
+        <button
+          class="impact-banner-close text-black ml-4 p-1 hover:text-gold transition-colors duration-200"
+          onclick="dismissImpactBanner()"
+          aria-label="Close impact banner"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Skip to content link for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 z-50"
+      >Skip to main content</a
+    >
+
+    <!-- New Sticky Header + Mobile Drawer -->
+    <header class="sticky-header" role="banner" id="mainNav">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+        <a href="/" class="font-heading tracking-luxury font-light leading-tight">
+          <span class="block text-2xl">CABANA</span>
+          <span class="block text-xs tracking-wider -mt-0.5">Collections</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10" aria-label="Primary">
+          <a href="/" class="link-hover text-xs tracking-widest" aria-current="page">HOME</a>
+          <a href="/products/mens-boxer-brief-black.html" class="link-hover text-xs tracking-widest"
+            >MEN</a
+          >
+          <a href="/products/womens-set.html" class="link-hover text-xs tracking-widest">WOMEN</a>
+          <a href="/about.html" class="link-hover text-xs tracking-widest">ABOUT</a>
+          <a href="/impact.html" class="link-hover text-xs tracking-widest">IMPACT</a>
+          <a href="/contact.html" class="link-hover text-xs tracking-widest">CONTACT</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="mobile-overlay" data-mobile-overlay></div>
+    <aside
+      class="mobile-drawer"
+      data-mobile-drawer
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Mobile Menu"
+    >
+      <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
+      <nav class="drawer-nav mt-6" aria-label="Mobile">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/products/mens-boxer-brief-black.html">Men</a>
+        <a href="/products/womens-set.html">Women</a>
+        <a href="/about.html">About</a>
+        <a href="/impact.html">Impact</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/cart.html">Cart</a>
+      </nav>
+    </aside>
+
+    <!-- Hero Section -->
+    <!-- Hero Section (Updated Gucci-Style) -->
+    <section
+      class="cabana-hero min-h-screen flex items-center justify-center relative pt-32 overflow-hidden"
+      id="heroSection"
+    >
+      <!-- Background: switch to static image for best LCP -->
+      <div class="absolute inset-0 z-0">
+        <!-- Image-first for fast LCP; video is revealed later when allowed -->
+        <picture id="heroImageWrap" class="absolute inset-0 block z-0">
+          <source
+            srcset="
+              /assets/Images/HERO-BANNER.webp        1920w,
+              /assets/Images/HERO-BANNER-mobile.webp  768w
+            "
+            type="image/webp"
+            sizes="100vw"
+          />
+          <img
+            id="heroImageFallback"
+            src="/assets/Images/HERO-BANNER.webp"
+            srcset="/assets/Images/HERO-BANNER-mobile.webp 768w, /assets/Images/HERO-BANNER.webp 1920w"
+            sizes="100vw"
+            alt="CABANA hero background"
+            class="w-full h-full object-cover"
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+
+        <video
+          id="heroBgVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          onloadedmetadata="this.muted = true; this.playsInline = true;"
+          onplay="this.playsInline = true;"
+          class="w-full h-full object-cover"
+          poster="/assets/Images/HERO-BANNER.webp"
+          data-offscreen-pause
+          preload="none"
+          style="display: none"
+          aria-hidden="true"
+        >
+          <source src="/assets/Images/HERO-BANNER.mp4" type="video/mp4" />
+          <!-- Fallback for browsers that don't support video -->
+          <div class="w-full h-full bg-gradient-to-br from-slate-900 via-black to-slate-800"></div>
+        </video>
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-black/35" aria-hidden="true"></div>
+      </div>
+
+      <!-- Hero Content -->
+      <div
+        class="absolute inset-0 z-20 mx-auto px-6 w-full max-w-6xl text-center flex items-center justify-center"
+      >
+        <!-- Headline -->
+        <h1
+          class="font-heading tracking-tight text-white leading-[1.08] text-[clamp(2rem,5.5vw,4.5rem)]"
+        >
+          <span class="block">Timeless Design, Born From Nature</span>
+          <span class="block mt-4 text-[clamp(1rem,2.1vw,1.35rem)] text-white/90">
+            15% of every purchase supports mental health and women's empowerment.
+          </span>
+          <!-- Rotating text carousel -->
+          <span
+            id="heroTextCarousel"
+            class="block mt-5 text-[clamp(0.95rem,1.9vw,1.2rem)] text-white/80"
+          ></span>
+        </h1>
+      </div>
+
+      <!-- CTAs -->
+      <div
+        class="absolute bottom-0 left-0 right-0 z-20 mx-auto px-6 pb-16 md:pb-20 w-full max-w-6xl text-center"
+      >
+        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-8 max-w-[80%] mx-auto">
+          <a
+            href="/products/mens-boxer-brief-black.html"
+            class="lv-cta"
+            aria-label="Tailored for Him"
+          >
+            Tailored for Him
+          </a>
+          <a href="/products/womens-set.html" class="lv-cta" aria-label="Designed for Her">
+            Designed for Her
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <!-- Mid-Page Newsletter (after Philosophy, before Collection) -->
+      <section class="py-16 md:py-20 bg-white" aria-labelledby="mid-newsletter-heading">
+        <div class="max-w-4xl mx-auto px-6 md:px-12 text-center">
+          <h2
+            id="mid-newsletter-heading"
+            class="font-heading text-2xl md:text-3xl font-light mb-3 text-gray-900"
+          >
+            Stay Connected to CABANA
+          </h2>
+          <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Get early access to new releases, impact updates, and behind-the-scenes stories.
+          </p>
+          <div class="flex items-center justify-center">
+            <a
+              href="#newsletter-email"
+              onclick="setTimeout(()=>document.getElementById('newsletter-email')?.focus(), 50)"
+              class="inline-flex items-center justify-center bg-gradient-to-r from-gold to-yellow-400 text-black px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase transition-all duration-300 hover:shadow-lg hover:shadow-gold/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2"
+            >
+              Join the Newsletter
+            </a>
+          </div>
+          <p id="mid-newsletter-description" class="text-xs text-gray-500 mt-4 max-w-sm mx-auto">
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+      </section>
+      <!-- Philosophy Section -->
+      <section class="py-32 md:py-48 relative overflow-hidden" aria-labelledby="philosophy-heading">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            onloadedmetadata="this.muted = true; this.playsInline = true;"
+            onplay="this.playsInline = true;"
+            class="w-full h-full object-cover"
+            poster="/assets/Images/Women.png"
+            data-offscreen-pause
+          >
+            <source src="/assets/Images/Women.mp4" type="video/mp4" />
+            <!-- Fallback for browsers that don't support video -->
+            <div
+              class="w-full h-full bg-gradient-to-br from-slate-900 via-black to-slate-800"
+            ></div>
+          </video>
+          <!-- Dark overlay for text readability -->
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"
+          ></div>
+        </div>
+
+        <!-- Luxury texture overlay -->
+        <div class="absolute inset-0 opacity-5 z-10 gold-dots-overlay" aria-hidden="true"></div>
+
+        <!-- Floating decorative elements -->
+        <div
+          class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-gold/20 to-yellow-400/20 rounded-full opacity-20 z-10 animate-float"
+        ></div>
+        <div
+          class="absolute top-40 right-20 w-16 h-16 bg-gradient-to-br from-white/10 to-gray-300/10 rounded-full opacity-15 z-10 animate-float-slow"
+        ></div>
+        <div
+          class="absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-to-br from-gold/15 to-amber-400/15 rounded-full opacity-25 z-10 animate-float-slower"
+        ></div>
+
+        <div class="max-w-6xl mx-auto px-8 md:px-16 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
+            <div class="luxury-hover">
+              <h2
+                id="philosophy-heading"
+                class="font-heading text-3xl md:text-4xl font-light mb-8 text-white"
+              >
+                Our Philosophy
+              </h2>
+              <div
+                class="w-16 h-px bg-gradient-to-r from-gold to-transparent mb-8"
+                aria-hidden="true"
+              ></div>
+              <!-- UPDATED: Philosophy short copy + CTA -->
+              <p class="text-gray-300 mb-6 leading-relaxed text-lg font-light">
+                Refinement with purpose. We make premium modal essentials that last—and 15% of every
+                purchase funds men's mental health and women's empowerment in Australia. Quality
+                that feels good and does good.
+              </p>
+              <div class="mb-8">
+                <a
+                  href="/impact.html"
+                  class="link-hover text-gold hover:text-white transition-colors duration-300 font-medium"
+                  aria-label="Learn how our 15% give-back works"
+                >
+                  <span aria-hidden="true">How the 15% works →</span>
+                  <span class="sr-only">Learn how our 15% give-back works on the Impact page</span>
+                </a>
+              </div>
+
+              <!-- Impact Badges -->
+              <div class="flex flex-wrap gap-4 mb-8">
+                <div
+                  class="flex items-center gap-2 bg-green-600/20 text-green-400 px-4 py-2 rounded-full border border-green-500/30"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-sm font-medium">Zero Waste Impact</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full border border-blue-500/30"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-sm font-medium">Mental Health First</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-pink-600/20 text-pink-400 px-4 py-2 rounded-full border border-pink-500/30"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
+                    ></path>
+                  </svg>
+                  <span class="text-sm font-medium">Women's Empowerment</span>
+                </div>
+                <div
+                  class="flex items-center gap-2 bg-amber-600/20 text-amber-400 px-4 py-2 rounded-full border border-amber-500/30"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
+                    ></path>
+                  </svg>
+                  <span class="text-sm font-medium">Conscious Craft</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Impact Statistics -->
+            <div class="flex justify-center lg:justify-end">
+              <div
+                class="text-center bg-black/30 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+              >
+                <div
+                  class="font-heading text-6xl md:text-7xl font-light mb-2 text-gold impact-number"
+                >
+                  15<span class="text-4xl">%</span>
+                </div>
+                <p class="text-white text-lg font-light mb-2">of every purchase</p>
+                <p class="text-gray-400 text-sm font-medium leading-relaxed">
+                  funds verified mental health programs
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collection Section -->
+      <section class="py-32 md:py-48 relative overflow-hidden" aria-labelledby="collection-heading">
+        <!-- Background: Clean, minimal design -->
+        <div class="absolute inset-0 z-0 bg-white"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+          <!-- Section Header -->
+          <div class="text-center mb-20">
+            <h2
+              id="collection-heading"
+              class="font-heading text-4xl md:text-5xl font-light mb-6 text-gray-900"
+            >
+              The Collection
+            </h2>
+            <div
+              class="w-20 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6"
+              aria-hidden="true"
+            ></div>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg font-light">
+              Designed for everyday rituals. Rooted in nature, crafted for those who believe what
+              you wear should reflect what you stand for.
+            </p>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+            <!-- Men's Collection -->
+            <article class="group cursor-pointer luxury-hover">
+              <a href="/products/mens-boxer-brief-black.html" class="block">
+                <div
+                  class="relative aspect-[3/4] mb-8 overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-all duration-700 bg-white"
+                >
+                  <picture>
+                    <source
+                      srcset="/assets/Images/CABANA-MODEL-BOXERS-FRONT.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      data-src="/assets/Images/CABANA-MODEL-BOXERS-FRONT.png"
+                      alt="Men's Essential Brief - Black underwear on male model"
+                      class="w-full h-full object-cover lazy-load group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="800"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </picture>
+                  <noscript>
+                    <img
+                      src="/assets/Images/CABANA-MODEL-BOXERS-FRONT.png"
+                      alt="Men's Essential Brief - Black underwear on male model"
+                      class="w-full h-full object-cover"
+                    />
+                  </noscript>
+                  <!-- Hover overlay with CTA -->
+                  <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"
+                  >
+                    <div class="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full luxury-button">
+                      <span class="text-black font-medium text-sm tracking-wider"
+                        >EXPLORE COLLECTION</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="text-center group-hover:transform group-hover:-translate-y-1 transition-transform duration-300"
+                >
+                  <h3
+                    class="font-heading text-2xl font-light mb-3 text-gray-900 group-hover:text-gold transition-colors duration-300"
+                  >
+                    Men's Essential
+                  </h3>
+                  <p class="text-gray-600 mb-4 text-base font-light">
+                    Clean lines, breathable comfort. Support for your body, and support for the
+                    minds that often go unheard.
+                  </p>
+                  <p class="text-xs tracking-wider text-gold font-medium uppercase">
+                    EMPOWERING MEN'S MENTAL RESILIENCE
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- Women's Collection -->
+            <article class="group cursor-pointer luxury-hover">
+              <a href="/products/womens-set.html" class="block">
+                <div
+                  class="relative aspect-[3/4] mb-8 overflow-hidden rounded-lg shadow-lg group-hover:shadow-2xl transition-all duration-700 bg-white"
+                >
+                  <picture>
+                    <source srcset="/assets/Images/CABANA-WOMEN.webp" type="image/webp" />
+                    <img
+                      data-src="/assets/Images/CABANA-WOMEN.PNG"
+                      alt="Women's Essential Set - Black lingerie set on female model"
+                      class="w-full h-full object-cover lazy-load group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="800"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </picture>
+                  <noscript>
+                    <img
+                      src="/assets/Images/CABANA-WOMEN.PNG"
+                      alt="Women's Essential Set - Black lingerie set on female model"
+                      class="w-full h-full object-cover"
+                    />
+                  </noscript>
+                  <!-- Hover overlay with CTA -->
+                  <div
+                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"
+                  >
+                    <div class="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full">
+                      <span class="text-black font-medium text-sm tracking-wider"
+                        >EXPLORE COLLECTION</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="text-center group-hover:transform group-hover:-translate-y-1 transition-transform duration-300"
+                >
+                  <h3
+                    class="font-heading text-2xl font-light mb-3 text-gray-900 group-hover:text-gold transition-colors duration-300"
+                  >
+                    Women's Essential
+                  </h3>
+                  <p class="text-gray-600 mb-4 text-base font-light">
+                    Sculpted softness with purpose. Designed to move with you and contribute to
+                    something greater.
+                  </p>
+                  <p class="text-xs tracking-wider text-gold font-medium uppercase">
+                    ELEVATING WOMEN'S EMPOWERMENT
+                  </p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section
+        class="py-32 md:py-48 bg-luxury-charcoal text-white relative overflow-hidden"
+        aria-labelledby="impact-heading"
+      >
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 id="impact-heading" class="font-heading text-3xl md:text-4xl font-light mb-6">
+                Impact, Woven In
+              </h2>
+              <div class="w-16 h-px bg-gold mb-8" aria-hidden="true"></div>
+              <p class="text-gray-300 mb-8 leading-relaxed">
+                CABANA turns everyday essentials into quiet impact. With every $50 purchase, $7.50
+                is donated—funding mental health support and gender equity initiatives across
+                Australia.
+              </p>
+              <a href="/impact.html" class="link-hover inline-block text-sm tracking-wider">
+                DISCOVER OUR IMPACT
+              </a>
+            </div>
+            <div>
+              <div class="space-y-8">
+                <div>
+                  <div class="font-heading text-4xl text-gold mb-2 impact-number" id="totalDonated">
+                    $12,450
+                  </div>
+                  <p class="text-sm tracking-wider opacity-70">TOTAL DONATED TO DATE</p>
+                  <!-- UPDATED: Impact note for consistency -->
+                  <p class="text-[11px] text-gray-400 mt-1">
+                    15% donated (e.g., $7.50 per $50). See
+                    <a href="/impact.html" class="underline">Impact</a> for details.
+                  </p>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                  <div>
+                    <div class="font-heading text-2xl mb-2 impact-number" id="mentalHealthTotal">
+                      $7,230
+                    </div>
+                    <p class="text-xs tracking-wider opacity-70">TO MENTAL HEALTH</p>
+                  </div>
+                  <div>
+                    <div class="font-heading text-2xl mb-2 impact-number" id="empowermentTotal">
+                      $5,220
+                    </div>
+                    <p class="text-xs tracking-wider opacity-70">TO EMPOWERMENT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Newsletter Signup Section -->
+    <section
+      class="py-32 md:py-48 gradient-champagne-sage luxe-texture relative overflow-hidden"
+      aria-labelledby="newsletter-heading"
+    >
+      <!-- Background texture -->
+      <div class="absolute inset-0 gold-dots-bg-02" aria-hidden="true"></div>
+
+      <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <div class="mb-12">
+          <h2
+            id="newsletter-heading"
+            class="font-heading text-3xl md:text-4xl font-light mb-6 text-gray-800"
+          >
+            Updates from CABANA
+          </h2>
+          <div
+            class="w-20 h-px bg-gradient-to-r from-transparent via-cream to-transparent mx-auto mb-6"
+            aria-hidden="true"
+          ></div>
+          <p class="text-gray-600 text-lg font-light max-w-2xl mx-auto leading-relaxed">
+            Be first to hear about new releases, impact updates and occasional behind‑the‑scenes
+            notes.
+          </p>
+        </div>
+
+        <!-- Newsletter Form -->
+        <form class="newsletter-form mb-8" onsubmit="subscribeNewsletter(event)" novalidate>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <div class="flex-1">
+              <label for="newsletter-email" class="sr-only">Email address</label>
+              <input
+                type="email"
+                id="newsletter-email"
+                name="email"
+                required
+                autocomplete="email"
+                inputmode="email"
+                placeholder="Enter your email address"
+                class="w-full px-6 py-4 border border-gray-300 rounded-full focus:ring-2 focus:ring-gold focus:border-transparent outline-none transition-all duration-300 text-center sm:text-left placeholder-gray-400"
+                aria-describedby="newsletter-description"
+              />
+              <div
+                id="newsletter-error"
+                class="hidden text-red-500 text-sm mt-2 text-left"
+                role="alert"
+              ></div>
+              <input
+                type="text"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+                class="hidden"
+                aria-hidden="true"
+              />
+            </div>
+            <button
+              type="submit"
+              class="newsletter-submit bg-gradient-to-r from-gold to-yellow-400 text-black px-8 py-4 rounded-full font-medium text-sm tracking-wider uppercase transition-all duration-300 hover:shadow-lg hover:shadow-gold/30 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-describedby="newsletter-description"
+            >
+              <span class="submit-text">Subscribe</span>
+              <span class="loading-text hidden">
+                <svg
+                  class="animate-spin -ml-1 mr-3 h-4 w-4 text-black inline"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Joining...
+              </span>
+            </button>
+          </div>
+          <p id="newsletter-description" class="text-xs text-gray-500 mt-4 max-w-sm mx-auto">
+            We respect your privacy. Unsubscribe at any time. No spam, just conscious updates.
+            <a href="/privacy-policy.html" class="underline">Privacy Policy</a>
+          </p>
+        </form>
+
+        <!-- Success Message -->
+        <div
+          id="newsletter-success"
+          role="status"
+          aria-live="polite"
+          class="hidden bg-green-50 border border-green-200 rounded-lg p-6 max-w-md mx-auto"
+        >
+          <div class="flex items-center">
+            <svg
+              class="w-6 h-6 text-green-600 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              ></path>
+            </svg>
+            <div>
+              <h3 class="text-green-800 font-medium">Thank you.</h3>
+              <p class="text-green-600 text-sm mt-1">
+                Please check your inbox to confirm your subscription.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-luxury-charcoal text-white py-20 relative overflow-hidden" role="contentinfo">
+      <!-- Optimised texture overlay -->
+      <div class="absolute inset-0 opacity-5 pointer-events-none">
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold/10 via-transparent to-transparent"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <!-- Main Footer Content -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-8 lg:gap-12 mb-16">
+          <!-- Brand -->
+          <div class="col-span-2 md:col-span-1">
+            <a href="/" class="inline-block mb-6">
+              <h4
+                class="font-heading text-3xl tracking-luxury font-light text-white hover:text-gold transition-colors duration-300"
+              >
+                CABANA
+              </h4>
+            </a>
+            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+              Conscious craft that creates meaningful change through considered essentials.
+            </p>
+            <p class="text-xs text-gold font-medium uppercase tracking-wider">
+              15% OF EVERY PURCHASE GIVES BACK
+            </p>
+          </div>
+
+          <!-- Shop Collection -->
+          <div>
+            <h5 class="text-xs tracking-widest mb-6 text-white font-medium">SHOP</h5>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <a
+                  href="/products/mens-boxer-brief-black.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Men's Essential</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/products/womens-set.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Women's Essential</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/cart.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Shopping Cart</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h5 class="text-xs tracking-widest mb-6 text-white font-medium">COMPANY</h5>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <a
+                  href="/about.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Our Story</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/impact.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Our Impact</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/contact.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Contact Us</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Customer Care -->
+          <div>
+            <h5 class="text-xs tracking-widest mb-6 text-white font-medium">CUSTOMER CARE</h5>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <a
+                  href="/return-policy.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Returns & Exchanges</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/size-guide.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Size Guide</span
+                  >
+                </a>
+              </li>
+              <li>
+                <!-- UPDATED: footer care link -->
+                <a
+                  href="/care-instructions.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Care Instructions</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h5 class="text-xs tracking-widest mb-6 text-white font-medium">LEGAL</h5>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <a
+                  href="/privacy-policy.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Privacy Policy</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/terms-of-service.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Terms of Service</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/return-policy.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Return Policy</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/legal/index.html"
+                  class="link-hover text-gray-300 focus:outline-none flex items-center group"
+                >
+                  <span class="group-hover:translate-x-1 transition-transform duration-300"
+                    >Legal & Policies</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="hairline pt-8 flex flex-col lg:flex-row justify-between items-center">
+          <div class="flex flex-col sm:flex-row items-center gap-4 mb-4 lg:mb-0">
+            <p class="text-xs text-gray-400 tracking-wider">
+              &copy; 2025 CABANA. ALL RIGHTS RESERVED.
+            </p>
+            <span class="hidden sm:inline text-gray-600">•</span>
+            <p class="text-xs text-gray-400 tracking-wider">DESIGNED IN AUSTRALIA</p>
+          </div>
+          <p class="text-xs text-gold tracking-wider font-medium">EVERY THREAD LEAVES A MARK</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Optimised JavaScript -->
+    <script>
+      // Lazy Loading Images
+      document.addEventListener('DOMContentLoaded', function () {
+        const lazyImages = document.querySelectorAll('.lazy-load');
+
+        if ('IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.add('loaded');
+                img.parentElement.classList.add('loaded');
+                imageObserver.unobserve(img);
+              }
+            });
+          });
+
+          lazyImages.forEach((img) => imageObserver.observe(img));
+        } else {
+          // Fallback for browsers that don't support IntersectionObserver
+          lazyImages.forEach((img) => {
+            img.src = img.dataset.src;
+            img.classList.add('loaded');
+          });
+        }
+      });
+
+      // Enhanced Navigation with Impact Banner
+      const mainNav = document.getElementById('mainNav');
+      const impactBanner = document.getElementById('impactBanner');
+      const heroSection = document.getElementById('heroSection');
+
+      let lastScroll = 0;
+      let ticking = false;
+      let bannerDismissed = localStorage.getItem('cabanaImpactBannerDismissed') === 'true';
+
+      // Initialize banner state - banner starts hidden by CSS, only show if not dismissed
+      if (bannerDismissed) {
+        impactBanner.classList.add('hidden');
+        mainNav.classList.remove('nav-with-banner');
+        heroSection.style.paddingTop = '5rem'; // pt-20
+      } else {
+        // Remove the nav-with-banner class since we're handling positioning with transform
+        mainNav.classList.remove('nav-with-banner');
+      }
+
+      function updateNavigation() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Navigation visibility and positioning (simplified - no legacy banner logic)
+        if (scrollTop > 0) {
+          mainNav.classList.add('visible');
+          if (scrollTop > 50) {
+            mainNav.classList.add('nav-scrolled');
+          }
+        } else {
+          mainNav.classList.remove('visible', 'nav-scrolled');
+        }
+
+        lastScroll = scrollTop;
+        ticking = false;
+      }
+
+      // Impact Banner Functions
+      function dismissImpactBanner() {
+        impactBanner.classList.add('hidden');
+        impactBanner.style.transform = 'translateY(-100%)';
+        impactBanner.style.opacity = '0';
+        // Reset navigation position to normal
+        if (mainNav) {
+          mainNav.style.transform = 'translateY(0)';
+        }
+        // Update states
+        isImpactBannerActive = false;
+        localStorage.setItem('cabanaImpactBannerDismissed', 'true');
+      }
+
+      // Make dismiss function globally available
+      window.dismissImpactBanner = dismissImpactBanner;
+
+      // Impact Banner Scroll Transition
+      const heroImpactText = document.querySelector('h1 span:last-child');
+      let isImpactBannerActive = false;
+      let lastScrollY = 0;
+
+      function handleImpactBannerTransition() {
+        // Don't show banner if user has dismissed it
+        if (bannerDismissed) {
+          return;
+        }
+
+        const currentScrollY = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+        const scrollThreshold = heroHeight * 0.6; // Trigger at 60% of hero height
+
+        const scrollingDown = currentScrollY > lastScrollY;
+        const shouldShowBanner = currentScrollY > scrollThreshold && scrollingDown;
+        const shouldHideBanner = currentScrollY < scrollThreshold && !scrollingDown;
+
+        if (
+          shouldShowBanner &&
+          !isImpactBannerActive &&
+          !impactBanner.classList.contains('hidden')
+        ) {
+          // Show impact banner with smooth transition
+          impactBanner.style.background = 'linear-gradient(90deg, #d4af37, #f5d061)';
+          impactBanner.querySelector('.impact-banner-text').textContent =
+            "15% of every purchase supports mental health and women's empowerment.";
+          impactBanner.style.transform = 'translateY(0)';
+          impactBanner.style.opacity = '1';
+          isImpactBannerActive = true;
+
+          // Adjust navigation position
+          if (mainNav) {
+            mainNav.style.transform = 'translateY(48px)'; // Move nav below banner
+          }
+        } else if (shouldHideBanner && isImpactBannerActive) {
+          // Hide impact banner with bounce back
+          impactBanner.style.transform = 'translateY(-100%)';
+          impactBanner.style.opacity = '0';
+          isImpactBannerActive = false;
+
+          // Reset navigation position
+          if (mainNav) {
+            mainNav.style.transform = 'translateY(0)';
+          }
+        }
+
+        lastScrollY = currentScrollY;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updateNavigation();
+            handleImpactBannerTransition();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+
+      // Ensure navigation starts hidden
+      mainNav.classList.remove('visible', 'nav-scrolled');
+
+      // Removed test-only immediate banner reveal for production
+
+      // Mobile Menu with Accessibility
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isOpen = mobileMenu.classList.contains('translate-y-0');
+
+          if (isOpen) {
+            mobileMenu.classList.remove('translate-y-0');
+            mobileMenu.classList.add('-translate-y-full');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+          } else {
+            mobileMenu.classList.add('translate-y-0');
+            mobileMenu.classList.remove('-translate-y-full');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+          }
+        });
+      }
+
+      // Cart Count with Error Handling
+      function updateCartCount() {
+        try {
+          const cartCount = localStorage.getItem('cabanaCartCount') || 0;
+          const cartCountElements = document.querySelectorAll('.cabana-cart-count');
+
+          cartCountElements.forEach((el) => {
+            if (cartCount > 0) {
+              el.textContent = cartCount;
+              el.classList.remove('hidden');
+              // Update screen reader text
+              const srText = el.querySelector('.sr-only');
+              if (srText) {
+                srText.textContent = `Items in cart: ${cartCount}`;
+              }
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+        } catch (error) {
+          console.error('Error updating cart count:', error);
+        }
+      }
+
+      updateCartCount();
+
+      // AOS is now handled by performance-optimiser.js
+
+      // SIMPLIFIED: Performance optimisations
+      function optimisePerformance() {
+        // Reduce animation complexity on slower devices
+        if (navigator.hardwareConcurrency < 4) {
+          // Disable animations on low-end devices
+          const style = document.createElement('style');
+          style.textContent = `
+                    * {
+                        animation-duration: 0.1s !important;
+                        transition-duration: 0.1s !important;
+                    }
+                `;
+          document.head.appendChild(style);
+        }
+      }
+
+      // Initialise performance optimisations
+      setTimeout(optimisePerformance, 100);
+
+      // Newsletter Subscription
+      function subscribeNewsletter(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value.trim();
+        const emailInput = form.querySelector('#newsletter-email');
+        const errorDiv = document.getElementById('newsletter-error');
+        const successDiv = document.getElementById('newsletter-success');
+        const submitButton = form.querySelector('.newsletter-submit');
+        const submitText = submitButton.querySelector('.submit-text');
+        const loadingText = submitButton.querySelector('.loading-text');
+        const honeypot = form.querySelector('input[name="website"]');
+
+        // Reset states
+        errorDiv.classList.add('hidden');
+        successDiv.classList.add('hidden');
+        if (emailInput) {
+          emailInput.removeAttribute('aria-invalid');
+        }
+
+        // Spam honeypot: if filled, do nothing
+        if (honeypot && honeypot.value.trim() !== '') {
+          // silently ignore bot submissions
+          return;
+        }
+
+        // Validate email
+        if (!email) {
+          showNewsletterError('Please enter your email address.');
+          return;
+        }
+
+        if (!validateNewsletterEmail(email)) {
+          showNewsletterError('Please enter a valid email address.');
+          return;
+        }
+
+        // Show loading state
+        submitButton.disabled = true;
+        submitText.classList.add('hidden');
+        loadingText.classList.remove('hidden');
+
+        // Simulate API call (replace with actual newsletter service)
+        setTimeout(() => {
+          try {
+            // Store email locally for now (replace with actual service)
+            const subscribers = JSON.parse(localStorage.getItem('newsletterSubscribers') || '[]');
+
+            if (subscribers.includes(email)) {
+              showNewsletterError('This email is already subscribed to our newsletter.');
+              return;
+            }
+
+            subscribers.push(email);
+            localStorage.setItem('newsletterSubscribers', JSON.stringify(subscribers));
+
+            // Track newsletter signup
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'newsletter_signup');
+            }
+
+            // Show success
+            form.classList.add('hidden');
+            successDiv.classList.remove('hidden');
+          } catch (error) {
+            console.error('Newsletter subscription error:', error);
+            showNewsletterError('Something went wrong. Please try again.');
+          } finally {
+            // Reset button state
+            submitButton.disabled = false;
+            submitText.classList.remove('hidden');
+            loadingText.classList.add('hidden');
+          }
+        }, 1500); // Simulate network delay
+
+        function showNewsletterError(message) {
+          errorDiv.textContent = message;
+          errorDiv.classList.remove('hidden');
+          submitButton.disabled = false;
+          submitText.classList.remove('hidden');
+          loadingText.classList.add('hidden');
+          if (emailInput) {
+            emailInput.setAttribute('aria-invalid', 'true');
+            emailInput.focus();
+          }
+        }
+      }
+
+      function validateNewsletterEmail(email) {
+        const re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email.toLowerCase());
+      }
+
+      // Make newsletter function globally available
+      window.subscribeNewsletter = subscribeNewsletter;
+
+      // Hero: Text carousel and video optimisation
+      document.addEventListener('DOMContentLoaded', function () {
+        // Text carousel phrases (avoid the word often overused by premium brands)
+        const phrases = [
+          'Quiet refinement, worn every day',
+          'Sustainably crafted. Designed to last',
+          'Considered materials, considered impact',
+          'Comfort that contributes',
+        ];
+        const el = document.getElementById('heroTextCarousel');
+        if (el) {
+          let idx = 0;
+          el.textContent = phrases[idx];
+          setInterval(() => {
+            idx = (idx + 1) % phrases.length;
+            el.style.opacity = '0';
+            setTimeout(() => {
+              el.textContent = phrases[idx];
+              el.style.opacity = '1';
+            }, 250);
+          }, 3500);
+        }
+
+        // Video optimisation: image-first LCP; reveal/play video only when appropriate
+        const heroVideo = document.getElementById('heroBgVideo');
+        const heroImage = document.getElementById('heroImageFallback');
+        const saveData = navigator.connection && navigator.connection.saveData;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (heroVideo) {
+          const allowMotion = !saveData && !prefersReduced && window.innerWidth >= 768;
+
+          if (!allowMotion) {
+            // Keep fast image background; do not show the video
+            try {
+              heroVideo.pause();
+            } catch (_) {}
+            heroVideo.removeAttribute('autoplay');
+            heroVideo.style.display = 'none';
+            if (heroImage) heroImage.style.display = 'block';
+          } else {
+            // Reveal video and hide image once playing; manage play/pause via IO
+            heroVideo.style.display = 'block';
+            heroVideo.addEventListener(
+              'playing',
+              () => {
+                if (heroImage) heroImage.style.display = 'none';
+              },
+              { once: true }
+            );
+
+            if ('IntersectionObserver' in window) {
+              const obs = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      heroVideo.play().catch(() => {});
+                    } else {
+                      try {
+                        heroVideo.pause();
+                      } catch (_) {}
+                    }
+                  });
+                },
+                { threshold: 0.1 }
+              );
+              obs.observe(heroVideo);
+            } else {
+              heroVideo.play().catch(() => {});
+            }
+          }
+        }
+      });
+    </script>
+
+    <!-- ========== PERFORMANCE SCRIPTS ========== -->
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then(async (reg) => {
+              // Force an update check to reduce stale cache issues after deploys
+              try {
+                await reg.update();
+              } catch (_) {}
+            })
+            .catch((err) => {
+              // Service Worker registration failed
+            });
+        });
+      }
+    </script>
+
+    <!-- Performance Optimiser Script -->
+    <script src="/js/performance-optimizer.js" defer></script>
+    <!-- Shared UI Enhancements (nav shadow, etc.) -->
+    <script src="/js/ui.js" defer></script>
+    <!-- Mobile Nav Drawer -->
+    <script src="/js/nav.js" defer></script>
+
+    <!-- Error Handling and Debugging -->
+    <script>
+      // Global error handler
+      window.addEventListener('error', function (e) {
+        console.error('Page Error:', e.error);
+        console.error('Line:', e.lineno, 'Column:', e.colno);
+        console.error('Source:', e.filename);
+      });
+
+      // Check if all sections are properly loaded
+      document.addEventListener('DOMContentLoaded', function () {
+        const sections = {
+          hero: document.getElementById('heroSection'),
+          philosophy: document.querySelector('[aria-labelledby="philosophy-heading"]'),
+          collection: document.querySelector('[aria-labelledby="collection-heading"]'),
+          impact: document.querySelector('[aria-labelledby="impact-heading"]'),
+          newsletter: document.querySelector('[aria-labelledby="newsletter-heading"]'),
+          footer: document.querySelector('footer'),
+        };
+
+        console.log('=== CABANA Page Load Status ===');
+        Object.entries(sections).forEach(([name, element]) => {
+          const status = element ? '✓ Found' : '✗ Missing';
+          console.log(`${name.toUpperCase()}: ${status}`);
+          if (!element) {
+            console.error(`Missing section: ${name}`);
+          }
+        });
+
+        // Check if page is fully scrollable
+        const pageHeight = document.documentElement.scrollHeight;
+        const viewportHeight = window.innerHeight;
+        console.log(`Page height: ${pageHeight}px, Viewport: ${viewportHeight}px`);
+        console.log(`Scrollable: ${pageHeight > viewportHeight ? 'Yes' : 'No'}`);
+
+        // Verify footer is at bottom
+        const footer = sections.footer;
+        if (footer) {
+          const footerRect = footer.getBoundingClientRect();
+          const footerBottom = footerRect.bottom + window.scrollY;
+          console.log(`Footer bottom position: ${footerBottom}px`);
+        }
+      });
+
+      // Monitor for layout shifts that might hide content
+      if ('ResizeObserver' in window) {
+        const resizeObserver = new ResizeObserver((entries) => {
+          for (let entry of entries) {
+            if (entry.target === document.documentElement) {
+              console.log('Page height changed:', entry.contentRect.height);
+            }
+          }
+        });
+        resizeObserver.observe(document.documentElement);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "cabana-collection-website",
+  "version": "1.0.0",
+  "description": "CABANA Collection - Conscious Underwear Brand Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "lint:js": "eslint . --ext .js",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:spell": "cspell --no-progress --no-must-find-files \"**/*.{html,css,js,json,md}\"",
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "underwear",
+    "sustainable",
+    "fashion",
+    "eco-friendly"
+  ],
+  "author": "CABANA",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.34.3"
+  },
+  "devDependencies": {
+    "cspell": "^8.19.4",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.8.1",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

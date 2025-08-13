@@ -1,0 +1,35 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:8000/",
+        "http://localhost:8000/products/mens-boxer-brief-black.html",
+        "http://localhost:8000/products/womens-set.html",
+        "http://localhost:8000/privacy-policy.html",
+        "http://localhost:8000/terms-of-service.html"
+      ],
+      "settings": {
+        "preset": "desktop",
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 360,
+          "height": 640,
+          "deviceScaleFactor": 2,
+          "disabled": false
+        }
+      }
+    },
+    "assert": {
+      "assertions": {
+        "content-width": ["warn", { "maxNumericValue": 360 }],
+        "viewport": "error",
+        "first-contentful-paint": ["warn", { "maxNumericValue": 4000 }],
+        "largest-contentful-paint": ["warn", { "maxNumericValue": 2500 }],
+        "cumulative-layout-shift": ["warn", { "maxNumericValue": 0.08 }],
+        "total-blocking-time": ["warn", { "maxNumericValue": 200 }],
+        "errors-in-console": "warn"
+      }
+    }
+  }
+}

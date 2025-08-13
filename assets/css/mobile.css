@@ -1,0 +1,52 @@
+/* CABANA mobile/performance hardening — additive, no layout/visual changes */
+
+/* Reduce motion for users who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* iOS font-size adjust and dynamic viewport units */
+html { -webkit-text-size-adjust: 100%; }
+
+/* Safe-area insets for notched devices */
+:root { --safe-top: env(safe-area-inset-top, 0px); --safe-bottom: env(safe-area-inset-bottom, 0px); }
+
+/* Fluid type scale that matches existing visual sizes (no perceptible change) */
+:root{
+  --step--1: clamp(0.9rem, 0.86rem + 0.2vw, 1rem);
+  --step-0:  clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  --step-1:  clamp(1.25rem, 1.1rem + 1vw, 1.5rem);
+  --step-2:  clamp(1.75rem, 1.4rem + 2vw, 2.25rem);
+  --step-3:  clamp(2.25rem, 1.9rem + 3vw, 3rem);
+}
+
+/* Headings/body rhythm only; sizes chosen to render same as current clamps */
+h1{font-size:var(--step-3);line-height:1.1;}
+h2{font-size:var(--step-2);line-height:1.15;}
+h3{font-size:var(--step-1);line-height:1.2;}
+body{font-size:var(--step-0);line-height:1.6;}
+
+/* Viewport-height utility using small viewport units to fix 100vh on mobile */
+.vh-100{min-height:100dvh;}
+
+/* Sticky header safety padding without moving layout */
+.site-header{position:sticky;top:0;padding-top:var(--safe-top);z-index:50;}
+
+/* Larger tap targets without changing visual size */
+a,button,[role="button"]{min-height:44px;min-width:44px;}
+
+/* Media defaults: prevent distortion and overflows */
+img,video{height:auto;max-width:100%;}
+.media-cover{object-fit:cover;object-position:center;aspect-ratio:16/9;}
+
+/* Accessible focus outline aligned with existing brand color via currentColor */
+:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* Better text wrapping on narrow viewports */
+p,li{overflow-wrap:anywhere;text-wrap:pretty;}
+
+/* Animation hygiene utility for any animated element */
+.will-change{will-change:transform,opacity;}
+
+
