@@ -8,23 +8,14 @@
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="format-detection" content="telephone=no" />
     <title>Men's Essential Boxer Brief — Black | CABANA</title>
-    <!-- Canonical + social for vercel.app -->
-    <link rel="canonical" href="https://cabanacollections.vercel.app/products/mens-boxer-brief-black.html" />
-    <meta property="og:title" content="Men's Essential Boxer Brief — Black | CABANA" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://cabanacollections.vercel.app/products/mens-boxer-brief-black.html" />
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="description" content="Men's Essential Boxer Brief in Black. 95% Modal / 5% Elastane, anatomical 3D pouch, discreet U‑mesh ventilation, left side‑fly. Sizes XS–XXL." />
-    <!-- Tailwind CSS (utilities used in this template) -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
     <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
     <link rel="stylesheet" href="/assets/css/mobile.css" />
   </head>
   <body class="bg-white text-black font-body">
-    <!-- Add site-header class for safe-area padding without layout changes -->
-    <header class="sticky-header site-header" role="banner">
+    <header class="sticky-header" role="banner">
       <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
         <a href="/" class="font-heading tracking-luxury font-light leading-tight">
           <span class="block text-2xl">CABANA</span>
@@ -40,8 +31,7 @@
         </nav>
         <div class="flex items-center gap-4">
           <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
-          <!-- Align with global mobile toggle attributes so nav.js can bind -->
-          <button class="md:hidden p-2" aria-label="Open menu" data-menu-toggle aria-controls="mobile-nav" aria-expanded="false">
+          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -52,7 +42,7 @@
     <div class="mobile-overlay" data-mobile-overlay></div>
     <aside class="mobile-drawer" data-mobile-drawer aria-hidden="true" role="dialog" aria-label="Mobile Menu">
       <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
-      <nav class="drawer-nav mt-6" aria-label="Mobile" id="mobile-nav">
+      <nav class="drawer-nav mt-6" aria-label="Mobile">
         <a href="/">Home</a>
         <a href="/products/mens-boxer-brief-black.html" aria-current="page">Men</a>
         <a href="/products/womens-set.html">Women</a>
@@ -69,7 +59,7 @@
           <div>
             <picture>
               <source srcset="/assets/Images/CABANA-MODEL-BOXERS-FRONT.webp" type="image/webp" />
-              <img src="/assets/Images/CABANA-MODEL-BOXERS-FRONT.png" alt="Men's Essential Boxer Brief — Black" width="800" height="1000" loading="eager" decoding="async" fetchpriority="high" />
+              <img src="/assets/Images/CABANA-MODEL-BOXERS-FRONT.png" alt="Men's Essential Boxer Brief — Black" width="800" height="1000" loading="eager" decoding="async" />
             </picture>
           </div>
           <div>
