@@ -433,17 +433,17 @@
               aria-label="Toggle menu"
               aria-expanded="false"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="1"
                   d="M4 6h16M4 12h16M4 18h16"
                 ></path>
-              </svg>
-            </button>
-          </div>
+            </svg>
+          </button>
         </div>
+      </div>
       </div>
 
       <!-- Mobile Menu -->
@@ -469,7 +469,7 @@
           <a href="/contact.html" class="link-hover block text-sm tracking-wider">CONTACT</a>
         </div>
       </div>
-    </nav>
+      </nav>
 
     <!-- Breadcrumbs -->
     <nav class="pt-24 px-6 md:px-12" aria-label="Breadcrumb">
@@ -703,10 +703,10 @@
                   data-bundle="3"
                 >
                   <div class="flex justify-between items-center">
-                    <div>
+          <div>
                       <div class="font-medium text-sm">3-Day Essential Pack</div>
                       <div class="text-xs text-gray-500">Perfect for a long weekend</div>
-                    </div>
+          </div>
                     <div class="text-right">
                       <div class="flex items-center gap-2">
                         <span class="text-xs text-gray-400 line-through">$150</span>
@@ -724,7 +724,7 @@
                   data-bundle="5"
                 >
                   <div class="flex justify-between items-center">
-                    <div>
+          <div>
                       <div class="font-medium text-sm">5-Day Work Week</div>
                       <div class="text-xs text-gray-500">Your weekday confidence</div>
                     </div>
@@ -862,12 +862,12 @@
                     <li>• Tag-free, gentle support, flattering silhouette</li>
                     <li>• 95% less water usage than cotton, biodegradable</li>
                     <li>• Precision-crafted in small batches, carbon-neutral shipping</li>
-                  </ul>
+            </ul>
                   <!-- UPDATED: care link -->
                   <p class="text-xs mt-3">
                     <a href="/care-instructions.html" class="underline">Care Instructions</a>
                   </p>
-                </div>
+            </div>
               </details>
 
               <details class="group border-b border-gray-100 pb-4">
@@ -893,7 +893,7 @@
                       <li>• <strong>Tag-Free:</strong> Zero irritation vs scratchy labels</li>
                       <li>• <strong>Set Coordination:</strong> Perfect matching pieces</li>
                     </ul>
-                  </div>
+          </div>
                   <div>
                     <h4 class="text-black font-medium mb-2">Beyond Comfort:</h4>
                     <ul class="space-y-1 ml-4">
@@ -904,7 +904,7 @@
                         • <strong>Australian Values:</strong> Local design, global responsibility
                       </li>
                     </ul>
-                  </div>
+        </div>
                 </div>
               </details>
             </div>
@@ -1284,7 +1284,7 @@
         <div class="col-span-1 flex flex-col items-start">
           <h4 class="font-heading text-2xl tracking-luxury mb-4">CABANA</h4>
           <p class="text-sm text-gray-400">Quiet refinement for body and earth.</p>
-        </div>
+      </div>
 
         <!-- Customer Care -->
         <div>
@@ -1635,7 +1635,7 @@
               });
             }
 
-            localStorage.setItem('cabanaCart', JSON.stringify(cart));
+        localStorage.setItem('cabanaCart', JSON.stringify(cart));
 
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             localStorage.setItem('cabanaCartCount', totalItems);
@@ -1989,4 +1989,4 @@
       // Add mobile sticky CTA HTML at the end
     </script>
   </body>
-</html>
+  </html>
