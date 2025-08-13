@@ -40,7 +40,8 @@
         </nav>
         <div class="flex items-center gap-4">
           <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
-          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
+          <!-- Align with global mobile toggle attributes so nav.js can bind -->
+          <button class="md:hidden p-2" aria-label="Open menu" data-menu-toggle aria-controls="mobile-nav" aria-expanded="false">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -51,7 +52,7 @@
     <div class="mobile-overlay" data-mobile-overlay></div>
     <aside class="mobile-drawer" data-mobile-drawer aria-hidden="true" role="dialog" aria-label="Mobile Menu">
       <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
-      <nav class="drawer-nav mt-6" aria-label="Mobile">
+      <nav class="drawer-nav mt-6" aria-label="Mobile" id="mobile-nav">
         <a href="/">Home</a>
         <a href="/products/mens-boxer-brief-black.html">Men</a>
         <a href="/products/womens-set.html" aria-current="page">Women</a>
