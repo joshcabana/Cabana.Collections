@@ -49,4 +49,9 @@ p,li{overflow-wrap:anywhere;text-wrap:pretty;}
 /* Animation hygiene utility for any animated element */
 .will-change{will-change:transform,opacity;}
 
+/* Subtle enter animation for headings/content */
+@keyframes softFadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.soft-fade-up{opacity:0;animation:softFadeUp .8s ease-out both}
+@media (prefers-reduced-motion: reduce){.soft-fade-up{animation:none;opacity:1}}
+
 
