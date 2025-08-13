@@ -391,7 +391,19 @@
       }
     </script>
   </head>
-  <body class="bg-white text-black font-body pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+  <body
+    class="bg-white text-black font-body pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
+  >
+    <script>
+      // Permanent redirect to new product URL
+      (function () {
+        var newUrl = '/products/mens-boxer-brief-black.html';
+        if (location.pathname.endsWith('/products/mens-underwear.html')) {
+          // Use replace to avoid back button loop
+          location.replace(newUrl);
+        }
+      })();
+    </script>
     <!-- Skip Navigation -->
     <a
       href="#product-details"
@@ -505,9 +517,9 @@
       <ol class="flex items-center space-x-2 text-xs text-gray-600">
         <li><a href="../index.html" class="hover:text-gold">Home</a></li>
         <li aria-hidden="true">/</li>
-        <li><a href="mens-boxer-brief-black.html" class="hover:text-gold">Men</a></li>
+        <li><a href="mens-underwear.html" class="hover:text-gold">Men</a></li>
         <li aria-hidden="true">/</li>
-        <li aria-current="page" class="text-black">CABANA Men’s Boxer Brief</li>
+        <li aria-current="page" class="text-black">Essential Boxer Brief</li>
       </ol>
     </nav>
 
@@ -695,9 +707,16 @@
               <h1 class="font-heading text-4xl md:text-5xl font-light mb-4">
                 CABANA Men’s Boxer Brief
               </h1>
-              <div class="flex items-baseline gap-4 mb-6">
+              <div class="flex items-baseline gap-4 mb-6 flex-wrap">
                 <p class="font-heading text-3xl font-light">$50 AUD</p>
                 <p class="text-xs tracking-wider text-gray-500">INCLUDING GST</p>
+                <a
+                  href="#impact-heading"
+                  id="impactAnchor"
+                  class="ml-auto inline-flex items-center gap-2 text-xs tracking-wider px-3 py-1 rounded-full border border-gray-200 text-gray-700 hover:text-gold hover:border-gold transition-colors duration-200 pill-shimmer"
+                >
+                  <span>Your Impact</span>
+                </a>
               </div>
 
               <!-- Trust Signals -->
@@ -1106,7 +1125,7 @@
           </div>
         </div>
       </div>
-      <!-- Live Impact Calculator moved up inside main for immediate visibility -->
+      <!-- Live Impact Calculator: moved directly below product gallery -->
       <section class="pt-8 md:pt-12 relative overflow-hidden" aria-labelledby="impact-heading">
         <div class="hairline-dark mb-8" aria-hidden="true"></div>
         <div class="max-w-6xl mx-auto px-6 md:px-12 relative">
@@ -1129,8 +1148,9 @@
             </p>
           </div>
 
-          <!-- Interactive Calculator (unchanged content) -->
+          <!-- Interactive Calculator -->
           <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100">
+            <!-- Quantity Selector -->
             <div class="text-center mb-12">
               <h3 class="text-xl font-heading mb-6 text-gray-900">Calculate Your Real Impact</h3>
               <div class="flex items-center justify-center gap-4 mb-8">
@@ -1169,20 +1189,23 @@
                   </svg>
                 </button>
               </div>
+
+              <!-- Investment Display -->
               <div class="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-6 mb-8">
                 <div class="flex justify-between items-center text-lg mb-3">
-                  <span class="text-gray-700 font-medium">Your Investment:</span
-                  ><span class="font-heading text-2xl text-gray-900" id="totalPrice">$50 AUD</span>
+                  <span class="text-gray-700 font-medium">Your Investment:</span>
+                  <span class="font-heading text-2xl text-gray-900" id="totalPrice">$50 AUD</span>
                 </div>
                 <div class="flex justify-between items-center text-lg">
-                  <span class="text-gray-700 font-medium">Mental Health Contribution (15%):</span
-                  ><span class="font-heading text-2xl text-gold font-medium" id="donationAmount"
+                  <span class="text-gray-700 font-medium">Mental Health Contribution (15%):</span>
+                  <span class="font-heading text-2xl text-gold font-medium" id="donationAmount"
                     >$7.50 AUD</span
                   >
                 </div>
               </div>
             </div>
 
+            <!-- Impact Visualization -->
             <div class="grid md:grid-cols-1 gap-8 mb-12">
               <div
                 class="impact-card bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
@@ -1237,6 +1260,7 @@
               </div>
             </div>
 
+            <!-- Sustainability Impact -->
             <div
               class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8 mb-8 border border-gray-200"
             >
@@ -1282,6 +1306,7 @@
               </div>
             </div>
 
+            <!-- Combined Impact Summary -->
             <div
               class="bg-gradient-to-b from-neutral-900 via-black to-neutral-900 text-white rounded-xl p-8 border border-neutral-800"
             >
@@ -1316,6 +1341,7 @@
               </div>
             </div>
 
+            <!-- Partnership Transparency -->
             <div class="mt-12 text-center">
               <h5 class="text-lg font-heading mb-6 text-gray-900">Verified Impact Partners</h5>
               <div
@@ -1386,6 +1412,12 @@
                 </tr>
               </thead>
               <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium">2XS</td>
+                  <td class="py-3">24–26″</td>
+                  <td class="py-3">61–66 cm</td>
+                  <td class="py-3 text-gray-600">For very slim builds or younger fit</td>
+                </tr>
                 <tr class="border-b border-gray-200">
                   <td class="py-3 font-medium">XS</td>
                   <td class="py-3">26–28″</td>
@@ -1712,6 +1744,28 @@
           });
         }
       }
+
+      // Track impact anchor clicks
+      (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+          const impactAnchor = document.getElementById('impactAnchor');
+          const impactAnchorMobile = document.getElementById('impactAnchorMobile');
+          if (impactAnchor) {
+            impactAnchor.addEventListener('click', function () {
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'impact_anchor_click', { position: 'product_header' });
+              }
+            });
+          }
+          if (impactAnchorMobile) {
+            impactAnchorMobile.addEventListener('click', function () {
+              if (typeof gtag !== 'undefined') {
+                gtag('event', 'impact_anchor_click', { position: 'mobile_sticky' });
+              }
+            });
+          }
+        });
+      })();
 
       function toggleVideo() {
         const video = document.getElementById('mainVideo');
@@ -2311,11 +2365,6 @@
       });
     </script>
 
-    <!-- Mobile swipe hint (mobile only) -->
-    <div class="md:hidden px-6 mt-2 text-center text-xs text-gray-500 swipe-hint">
-      Swipe to view • Pinch to zoom
-    </div>
-
     <!-- Footer -->
     <footer class="bg-black text-white py-10 footer-textured">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -2404,6 +2453,15 @@
             ></span>
           </span>
         </button>
+
+        <!-- Impact Anchor on mobile sticky bar -->
+        <a
+          href="#impact-heading"
+          id="impactAnchorMobile"
+          class="ml-2 inline-flex items-center text-xs tracking-wider px-3 py-2 rounded-full border border-gray-300 text-gray-700 pill-shimmer"
+        >
+          Your Impact
+        </a>
       </div>
 
       <!-- Progress bar for free shipping -->

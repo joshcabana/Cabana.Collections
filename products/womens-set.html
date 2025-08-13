@@ -1,103 +1,1992 @@
 <!doctype html>
-<html lang="en-AU">
+<html lang="en-AU" class="scroll-smooth">
   <head>
+    <!-- UPDATED: canonical -->
+    <link rel="canonical" href="https://cabanacollections.com.au/products/womens-set.html" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Women's Essential Set — Black | CABANA</title>
-    <meta name="description" content="Women's Essential Set in Black. Wireless bralette and high-waisted brief in modal-soft stretch. Sizes XS–XXL." />
+    <title>Women's Essential Set | CABANA</title>
+    <meta
+      name="description"
+      content="Premium modal bralette and brief set with all-day ease. Crafted for effortless elegance. Australian owned. $50 AUD"
+    />
+
+    <!-- UPDATED: Open Graph (absolute values, one set) -->
+    <meta property="og:title" content="Women's Essential Set | CABANA" />
+    <meta
+      property="og:description"
+      content="Premium modal bralette and brief set with luxurious comfort. Sustainably crafted for all-day elegance."
+    />
+    <meta property="og:url" content="https://cabanacollections.com.au/products/womens-set.html" />
+    <meta
+      property="og:image"
+      content="https://cabanacollections.com.au/assets/Images/CABANA-WOMEN.PNG"
+    />
+    <meta property="og:type" content="product" />
+    <meta property="product:price:amount" content="50" />
+    <meta property="product:price:currency" content="AUD" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Critical CSS -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+        background: linear-gradient(135deg, #fafaf8 0%, #f8f6f3 50%, #ffffff 100%);
+        overflow-x: hidden;
+      }
+      .font-heading {
+        font-family: 'Playfair Display', serif;
+      }
+      .text-gold {
+        color: #d4af37;
+      }
+      .tracking-luxury {
+        letter-spacing: 0.4em;
+      }
+
+      /* Background System */
+      .bg-luxury-cream {
+        background: linear-gradient(135deg, #fafaf8 0%, #f8f6f3 100%);
+      }
+      .bg-luxury-white {
+        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+      }
+      .bg-luxury-charcoal {
+        background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+      }
+
+      /* Product Image Gallery */
+      .product-gallery {
+        position: sticky;
+        top: 100px;
+      }
+
+      /* Luxury hover effects for product images */
+      .product-image {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .product-image::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 0%,
+          rgba(212, 175, 55, 0.03) 50%,
+          transparent 100%
+        );
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        z-index: 1;
+      }
+
+      .product-image:hover::before {
+        opacity: 1;
+      }
+
+      .product-image:hover {
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+      }
+
+      /* Size selector accessibility and luxury styling */
+      .size-button {
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .size-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .size-button:focus {
+        outline: 2px solid #d4af37;
+        outline-offset: 2px;
+      }
+
+      .size-button::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(45deg, #d4af37, #f4d03f);
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        z-index: -1;
+      }
+
+      .size-button:hover::before {
+        transform: translateX(0);
+      }
+
+      .size-button:hover {
+        color: white;
+        border-color: #d4af37;
+      }
+
+      /* Luxury button animations */
+      .luxury-button {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .luxury-button::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          45deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 100%
+        );
+        transform: translateX(-200%);
+        transition: transform 0.6s ease;
+      }
+
+      .luxury-button:hover::before {
+        transform: translateX(200%);
+      }
+
+      .luxury-button:active {
+        transform: translateY(1px);
+      }
+
+      /* Touch-friendly mobile targets */
+      @media (max-width: 768px) {
+        .size-button {
+          min-height: 48px;
+          min-width: 48px;
+        }
+      }
+
+      /* Image zoom on hover/focus */
+      .zoomable-image {
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+      }
+
+      .zoomable-image:hover {
+        transform: scale(1.05);
+      }
+
+      /* Loading skeleton */
+      .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* Mobile Conversion Enhancements */
+      .mobile-sticky-cta {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-sticky-cta button:active {
+        transform: scale(0.95);
+      }
+
+      /* Enhanced Mobile Gallery */
+      @media (max-width: 768px) {
+        .product-gallery {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .gallery-dots {
+          margin-top: 1rem;
+        }
+
+        .gallery-dot {
+          transition: all 0.2s ease;
+        }
+
+        .gallery-dot.active {
+          background-color: #000;
+          transform: scale(1.2);
+        }
+
+        /* Mobile touch enhancements */
+        .thumbnail {
+          touch-action: manipulation;
+        }
+
+        .size-button {
+          touch-action: manipulation;
+          min-height: 48px;
+          min-width: 48px;
+        }
+      }
+
+      /* Trust signals enhancements */
+      .trust-signals {
+        animation: slideInFade 0.6s ease-out 0.3s both;
+      }
+
+      @keyframes slideInFade {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Progress bar animation */
+      @keyframes progressFill {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 42.5%;
+        }
+      }
+
+      .mobile-sticky-cta .bg-gradient-to-r {
+        animation: progressFill 1s ease-out 0.5s both;
+      }
+
+      /* Toast notification */
+      .cabana-toast {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 24px;
+        background: #111111;
+        color: #ffffff;
+        border: 1px solid #2a2a2a;
+        padding: 12px 16px;
+        border-radius: 8px;
+        z-index: 60;
+        display: none;
+        letter-spacing: 0.05em;
+      }
+      .cabana-toast.show {
+        display: inline-flex;
+        animation: toastIn 0.25s ease-out;
+      }
+      @keyframes toastIn {
+        from {
+          opacity: 0;
+          transform: translate(-50%, 8px);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, 0);
+        }
+      }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .luxury-button,
+        .size-button,
+        .product-image,
+        .zoomable-image {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- UPDATED: global stylesheet -->
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
+    <!-- Shared UI Enhancements -->
+    <script src="/js/ui.js" defer></script>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <!-- UPDATED: Product Schema (absolute image URLs and offers.url) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Women's Essential Set",
+        "image": [
+          "https://cabanacollections.com.au/assets/Images/CABANA-WOMEN.PNG",
+          "https://cabanacollections.com.au/assets/Images/CABANA-WOMEN2.PNG",
+          "https://cabanacollections.com.au/assets/Images/CABANA-WOMEN3.PNG"
+        ],
+        "description": "Premium modal bralette and brief set crafted from sustainably sourced materials",
+        "brand": {
+          "@type": "Brand",
+          "name": "CABANA"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://cabanacollections.com.au/products/womens-set.html",
+          "priceCurrency": "AUD",
+          "price": "50",
+          "availability": "https://schema.org/InStock"
+        },
+        "material": "95% Modal, 5% Elastane",
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "CABANA"
+        }
+      }
+    </script>
   </head>
-  <body class="bg-white text-black font-body">
-    <header class="sticky-header" role="banner">
-      <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-        <a href="/" class="font-heading tracking-luxury font-light leading-tight">
-          <span class="block text-2xl">CABANA</span>
-          <span class="block text-xs tracking-wider -mt-0.5">Collections</span>
-        </a>
-        <nav class="hidden md:flex items-center gap-10" aria-label="Primary">
-          <a href="/" class="link-hover text-xs tracking-widest">HOME</a>
-          <a href="/products/mens-boxer-brief-black.html" class="link-hover text-xs tracking-widest">MEN</a>
-          <a href="/products/womens-set.html" class="link-hover text-xs tracking-widest text-gold" aria-current="page">WOMEN</a>
-          <a href="/about.html" class="link-hover text-xs tracking-widest">ABOUT</a>
-          <a href="/impact.html" class="link-hover text-xs tracking-widest">IMPACT</a>
-          <a href="/contact.html" class="link-hover text-xs tracking-widest">CONTACT</a>
-        </nav>
-        <div class="flex items-center gap-4">
-          <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
-          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+  <body class="bg-white text-black font-body pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+    <!-- Skip Navigation -->
+    <a
+      href="#product-details"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 z-50"
+      >Skip to product details</a
+    >
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100 pt-[env(safe-area-inset-top)]"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="container mx-auto px-6 md:px-12 py-5">
+        <div class="flex justify-between items-center">
+          <!-- Logo -->
+          <a href="/" class="font-heading text-2xl tracking-luxury font-light cabana-logo-nav"
+            >CABANA</a
+          >
+
+          <!-- Navigation Links -->
+          <div class="hidden md:flex items-center space-x-10">
+            <a href="/" class="link-hover text-xs tracking-widest font-medium">HOME</a>
+            <a
+              href="/products/mens-boxer-brief-black.html"
+              class="link-hover text-xs tracking-widest font-medium"
+              >MEN</a
+            >
+            <a
+              href="/products/womens-set.html"
+              class="link-hover text-xs tracking-widest font-medium text-gold"
+              aria-current="page"
+              >WOMEN</a
+            >
+            <a href="/about.html" class="link-hover text-xs tracking-widest font-medium">ABOUT</a>
+            <a href="/impact.html" class="link-hover text-xs tracking-widest font-medium">IMPACT</a>
+            <a href="/contact.html" class="link-hover text-xs tracking-widest font-medium"
+              >CONTACT</a
+            >
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center space-x-6">
+            <!-- Cart Icon -->
+            <a href="/cart.html" class="relative group" aria-label="Shopping cart">
+              <svg
+                class="w-5 h-5 transition-colors duration-300 group-hover:text-gold"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                ></path>
+              </svg>
+              <span
+                class="cabana-cart-count absolute -top-2 -right-2 bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center hidden"
+                aria-live="polite"
+                >0</span
+              >
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+              class="md:hidden p-2"
+              id="mobileMenuBtn"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-    </header>
-    <div class="mobile-overlay" data-mobile-overlay></div>
-    <aside class="mobile-drawer" data-mobile-drawer aria-hidden="true" role="dialog" aria-label="Mobile Menu">
-      <button class="drawer-close" aria-label="Close menu" data-mobile-close>&times;</button>
-      <nav class="drawer-nav mt-6" aria-label="Mobile">
-        <a href="/">Home</a>
-        <a href="/products/mens-boxer-brief-black.html">Men</a>
-        <a href="/products/womens-set.html" aria-current="page">Women</a>
-        <a href="/about.html">About</a>
-        <a href="/impact.html">Impact</a>
-        <a href="/contact.html">Contact</a>
-        <a href="/cart.html">Cart</a>
-      </nav>
-    </aside>
 
-    <main class="pt-24 pb-16">
-      <section class="max-w-6xl mx-auto px-6 md:px-12">
-        <div class="grid md:grid-cols-2 gap-10 items-start">
-          <div>
-            <picture>
-              <source srcset="/assets/Images/CABANA-WOMEN.webp" type="image/webp" />
-              <img src="/assets/Images/CABANA-WOMEN.PNG" alt="Women's Essential Set — Black" width="800" height="1000" loading="eager" decoding="async" />
-            </picture>
+      <!-- Mobile Menu -->
+      <div
+        class="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 transform -translate-y-full transition-transform duration-300"
+        id="mobileMenu"
+        aria-hidden="true"
+      >
+        <div class="px-6 py-6 space-y-4">
+          <a href="/" class="link-hover block text-sm tracking-wider">HOME</a>
+          <a
+            href="/products/mens-boxer-brief-black.html"
+            class="link-hover block text-sm tracking-wider"
+            >MEN</a
+          >
+          <a
+            href="/products/womens-set.html"
+            class="link-hover block text-sm tracking-wider text-gold"
+            >WOMEN</a
+          >
+          <a href="/about.html" class="link-hover block text-sm tracking-wider">ABOUT</a>
+          <a href="/impact.html" class="link-hover block text-sm tracking-wider">IMPACT</a>
+          <a href="/contact.html" class="link-hover block text-sm tracking-wider">CONTACT</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <nav class="pt-24 px-6 md:px-12" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2 text-xs text-gray-600">
+        <li><a href="../index.html" class="hover:text-gold">Home</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href="womens-set.html" class="hover:text-gold">Women</a></li>
+        <li aria-hidden="true">/</li>
+        <li aria-current="page" class="text-black">Essential Set</li>
+      </ol>
+    </nav>
+
+    <!-- Product Section -->
+    <main id="product-details" class="py-8 md:py-12 bg-luxury-white">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 max-w-7xl mx-auto">
+          <!-- Image Gallery -->
+          <div class="product-gallery space-y-6">
+            <!-- Main Image with Zoom -->
+            <div class="product-image aspect-[3/4] relative group">
+              <img
+                id="mainImage"
+                src="../assets/Images/CABANA-WOMEN.PNG"
+                alt="Women's Essential Set - Front view"
+                class="w-full h-full object-cover zoomable-image"
+                tabindex="0"
+                role="img"
+                aria-describedby="image-zoom-instruction"
+              />
+              <span id="image-zoom-instruction" class="sr-only"
+                >Click or press Enter to zoom image</span
+              >
+
+              <!-- Mobile touch indicator -->
+              <div
+                class="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 text-xs rounded md:hidden"
+              >
+                Pinch to zoom
+              </div>
+            </div>
+
+            <!-- Thumbnail Images -->
+            <div class="grid grid-cols-4 gap-3">
+              <button
+                class="thumbnail active border-2 border-black focus:outline-none focus:ring-2 focus:ring-gold"
+                onclick="changeImage('../assets/Images/CABANA-WOMEN.PNG', 'Front view', this)"
+                aria-label="View front image"
+                aria-pressed="true"
+              >
+                <img
+                  src="../assets/Images/CABANA-WOMEN.PNG"
+                  alt=""
+                  class="w-full aspect-square object-cover"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="thumbnail border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold"
+                onclick="changeImage('../assets/Images/CABANA-WOMEN2.PNG', 'Side view', this)"
+                aria-label="View side image"
+                aria-pressed="false"
+              >
+                <img
+                  src="../assets/Images/CABANA-WOMEN2.PNG"
+                  alt=""
+                  class="w-full aspect-square object-cover"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="thumbnail border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold"
+                onclick="changeImage('../assets/Images/CABANA-WOMEN3.PNG', 'Back view', this)"
+                aria-label="View back image"
+                aria-pressed="false"
+              >
+                <img
+                  src="../assets/Images/CABANA-WOMEN3.PNG"
+                  alt=""
+                  class="w-full aspect-square object-cover"
+                  loading="lazy"
+                />
+              </button>
+              <button
+                class="thumbnail border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-gold"
+                onclick="changeImage('../assets/Images/CABANA-WOMEN4.PNG', 'Detail view', this)"
+                aria-label="View detail image"
+                aria-pressed="false"
+              >
+                <img
+                  src="../assets/Images/CABANA-WOMEN4.PNG"
+                  alt=""
+                  class="w-full aspect-square object-cover"
+                  loading="lazy"
+                />
+              </button>
+            </div>
           </div>
-          <div>
-            <h1 class="font-heading text-3xl md:text-4xl mb-4">Women's Essential Set — Black</h1>
-            <p class="text-gray-700 mb-2">Modal‑soft stretch</p>
-            <p class="text-xl mb-6">$125 AUD</p>
-            <ul class="list-disc pl-5 space-y-2 text-gray-700 mb-6">
-              <li>Wireless bralette with seamless construction</li>
-              <li>High‑waisted brief with full coverage</li>
-              <li>Designed for all‑day comfort and movement</li>
-              <li>Coordinated set for a refined look</li>
-            </ul>
-            <div class="flex gap-3">
-              <button class="cabana-button-primary" onclick="addToCart()">Add to Cart</button>
-              <a href="/size-guide.html" class="cabana-button-secondary">Size Guide</a>
+
+          <!-- Product Details -->
+          <div class="space-y-10 lg:pl-8">
+            <!-- Title and Price -->
+            <header>
+              <h1 class="font-heading text-4xl md:text-5xl font-light mb-4">Essential Set</h1>
+              <div class="flex items-baseline gap-4 mb-6 flex-wrap">
+                <p class="font-heading text-3xl font-light">$50 AUD</p>
+                <p class="text-xs tracking-wider text-gray-500">INCLUDING GST</p>
+                <a
+                  href="#impact-heading"
+                  id="impactAnchor"
+                  class="ml-auto inline-flex items-center gap-2 text-xs tracking-wider px-3 py-1 rounded-full border border-gray-200 text-gray-700 hover:text-gold hover:border-gold transition-colors duration-200 pill-shimmer"
+                >
+                  <span>Your Impact</span>
+                </a>
+              </div>
+
+              <p class="font-heading text-lg italic text-gray-700 mb-4">
+                "Where power lives in quiet spaces, where elegance becomes empowerment."
+              </p>
+
+              <!-- Premium Value Propositions -->
+              <div class="space-y-2 mb-6">
+                <p class="text-sm text-gray-700">
+                  • Seamless modal set for gentle, all-day elegance
+                </p>
+                <p class="text-sm text-gray-700">• Wire-free, tag-free, natural shaping</p>
+                <p class="text-sm text-gray-700">• Precision-crafted, sustainably made</p>
+                <p class="text-sm text-gray-700">• Supporting women's empowerment initiatives</p>
+              </div>
+            </header>
+
+            <!-- Trust Signals -->
+            <div class="trust-signals space-y-3 mb-6">
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <span class="text-gold text-lg">&#9733;</span>
+                <span class="font-heading text-base text-black"
+                  >15% of every purchase supports women's empowerment</span
+                >
+              </div>
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span class="bg-gray-50 text-gray-700 px-2 py-1 rounded-full border border-gray-200"
+                  >Free shipping over $200</span
+                >
+                <span class="bg-gray-50 text-gray-700 px-2 py-1 rounded-full border border-gray-200"
+                  >30-day guarantee</span
+                >
+              </div>
+            </div>
+
+            <!-- Size Selector -->
+            <div role="group" aria-labelledby="size-label">
+              <div class="flex justify-between items-baseline mb-4">
+                <h3 id="size-label" class="text-xs tracking-widest">SELECT SIZE</h3>
+                <button
+                  class="hover-link text-xs tracking-wider"
+                  onclick="openSizeGuide()"
+                  aria-label="Open size guide"
+                >
+                  SIZE GUIDE
+                </button>
+              </div>
+              <!-- UPDATED: size guide link -->
+              <p class="text-xs mb-4">
+                <a href="/size-guide.html" class="underline">View full Size Guide</a>
+              </p>
+              <div class="grid grid-cols-6 gap-2" role="radiogroup" aria-required="true">
+                <button
+                  class="size-button border border-gray-300 py-4 text-xs font-light relative min-h-[48px]"
+                  data-size="XS"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="Size Extra Small"
+                >
+                  XS
+                </button>
+                <button
+                  class="size-button border border-gray-300 py-4 text-xs font-light relative min-h-[48px]"
+                  data-size="S"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="Size Small"
+                >
+                  S
+                </button>
+                <button
+                  class="size-button border border-gray-300 py-4 text-xs font-light relative selected bg-black text-white min-h-[48px]"
+                  data-size="M"
+                  role="radio"
+                  aria-checked="true"
+                  aria-label="Size Medium"
+                >
+                  M
+                </button>
+                <button
+                  class="size-button border border-gray-300 py-4 text-xs font-light relative min-h-[48px]"
+                  data-size="L"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="Size Large"
+                >
+                  L
+                </button>
+                <button
+                  class="size-button border border-gray-300 py-4 text-xs font-light relative min-h-[48px]"
+                  data-size="XL"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="Size Extra Large"
+                >
+                  XL
+                </button>
+                <button
+                  class="size-button border border-gray-300 py-4 text-xs font-light relative min-h-[48px]"
+                  data-size="2XL"
+                  role="radio"
+                  aria-checked="false"
+                  aria-label="Size Double Extra Large"
+                >
+                  2XL
+                </button>
+              </div>
+              <div id="size-error" class="text-red-600 text-sm mt-2 hidden" role="alert"></div>
+            </div>
+
+            <!-- Bundle Offers -->
+            <div class="mb-8">
+              <h3 class="text-xs tracking-widest mb-4 text-gray-700">BUNDLE & SAVE</h3>
+              <div class="space-y-3">
+                <!-- 3-Day Bundle -->
+                <div
+                  class="bundle-option border border-gray-200 rounded-lg p-4 hover:border-gold hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  data-bundle="3"
+                >
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium text-sm">3-Day Essential Pack</div>
+                      <div class="text-xs text-gray-500">Perfect for a long weekend</div>
+                    </div>
+                    <div class="text-right">
+                      <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-400 line-through">$150</span>
+                        <span class="font-heading text-lg font-medium">$135</span>
+                      </div>
+                      <div class="text-[11px] text-gray-500">≈ $45 per set</div>
+                      <div class="text-xs text-green-600 font-medium">Save $15 • $20.25 Impact</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 5-Day Bundle -->
+                <div
+                  class="bundle-option border border-gray-200 rounded-lg p-4 hover:border-gold hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  data-bundle="5"
+                >
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium text-sm">5-Day Work Week</div>
+                      <div class="text-xs text-gray-500">Your weekday confidence</div>
+                    </div>
+                    <div class="text-right">
+                      <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-400 line-through">$250</span>
+                        <span class="font-heading text-lg font-medium">$200</span>
+                      </div>
+                      <div class="text-[11px] text-gray-500">≈ $40 per set</div>
+                      <div class="text-xs text-green-600 font-medium">Save $50 • $30 Impact</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 7-Day Bundle -->
+                <div
+                  class="bundle-option border-2 border-gold bg-gold/5 rounded-lg p-4 cursor-pointer relative"
+                  data-bundle="7"
+                >
+                  <div
+                    class="absolute -top-2 left-4 bg-gold text-black text-xs px-2 py-1 rounded-full font-medium"
+                  >
+                    MOST POPULAR
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium text-sm">7-Day Complete Week</div>
+                      <div class="text-xs text-gray-500">Total comfort, every day</div>
+                    </div>
+                    <div class="text-right">
+                      <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-400 line-through">$350</span>
+                        <span class="font-heading text-lg font-medium">$280</span>
+                      </div>
+                      <div class="text-[11px] text-gray-500">≈ $40 per set</div>
+                      <div class="text-xs text-green-600 font-medium">Save $70 • $42 Impact</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 12-Day Bundle -->
+                <div
+                  class="bundle-option border border-gray-200 rounded-lg p-4 hover:border-gold hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer relative"
+                  data-bundle="12"
+                >
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <div class="font-medium text-sm">12-Day Ultimate Pack</div>
+                      <div class="text-xs text-gray-500">Maximum value & impact</div>
+                    </div>
+                    <div class="text-right">
+                      <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-400 line-through">$600</span>
+                        <span class="font-heading text-lg font-medium">$450</span>
+                      </div>
+                      <div class="text-[11px] text-gray-500">≈ $37.50 per set</div>
+                      <div class="text-xs text-green-600 font-medium">
+                        Save $150 • $67.50 Impact
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="absolute -top-2 right-4 bg-black text-white text-xs px-2 py-1 rounded-full font-medium"
+                  >
+                    BEST VALUE
+                  </div>
+                </div>
+              </div>
+              <p class="text-xs text-gray-500 mt-3 text-center">
+                All bundles include free shipping • Supports women's empowerment
+              </p>
+            </div>
+
+            <!-- Add to Cart -->
+            <div class="space-y-4">
+              <button
+                class="luxury-button w-full bg-black text-white py-5 text-sm tracking-widest hover:bg-gray-900 hover:scale-[1.02] hover:shadow-xl transition-all duration-300 relative overflow-hidden group"
+                id="addToCartBtn"
+                aria-label="Add Essential Set to cart"
+              >
+                <span class="button-text transition-transform group-active:scale-95"
+                  >ADD TO CART</span
+                >
+                <span class="loading-text hidden">
+                  <span
+                    class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
+                  ></span>
+                  ADDING...
+                </span>
+                <span class="success-text hidden">
+                  <svg
+                    class="inline-block w-5 h-5 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  ADDED TO CART
+                </span>
+              </button>
+
+              <!-- Impact Badge -->
+              <div class="text-center py-4 border-y border-gray-100">
+                <p class="text-xs tracking-wider font-light">
+                  <span class="text-gold">15%</span> OF THIS PURCHASE SUPPORTS WOMEN'S EMPOWERMENT
+                </p>
+              </div>
+
+              <p class="text-xs text-center text-gray-500 tracking-wider">
+                FREE SHIPPING ON ORDERS OVER $200
+              </p>
+            </div>
+
+            <!-- Product Details Accordion -->
+            <div class="space-y-6 pt-6">
+              <details class="group border-b border-gray-100 pb-4">
+                <summary
+                  class="flex justify-between items-center text-xs tracking-widest cursor-pointer list-none"
+                >
+                  <span>FEATURES & SUSTAINABILITY</span>
+                  <span class="transform transition-transform duration-300 group-open:rotate-45"
+                    >+</span
+                  >
+                </summary>
+                <div class="mt-4 space-y-4 text-sm text-gray-600 font-light">
+                  <ul class="space-y-1 ml-4">
+                    <li>• Seamless bralette & brief set, wire-free comfort</li>
+                    <li>• Modal from sustainably managed beech forests</li>
+                    <li>• Tag-free, gentle support, flattering silhouette</li>
+                    <li>• 95% less water usage than cotton, biodegradable</li>
+                    <li>• Precision-crafted in small batches, carbon-neutral shipping</li>
+                  </ul>
+                  <!-- UPDATED: care link -->
+                  <p class="text-xs mt-3">
+                    <a href="/care-instructions.html" class="underline">Care Instructions</a>
+                  </p>
+                </div>
+              </details>
+
+              <details class="group border-b border-gray-100 pb-4">
+                <summary
+                  class="flex justify-between items-center text-xs tracking-widest cursor-pointer list-none"
+                >
+                  <span>WHY CABANA ESSENTIAL SET</span>
+                  <span class="transform transition-transform duration-300 group-open:rotate-45"
+                    >+</span
+                  >
+                </summary>
+                <div class="mt-4 space-y-4 text-sm text-gray-600 font-light">
+                  <div>
+                    <h4 class="text-black font-medium mb-2">Versus Ordinary Lingerie:</h4>
+                    <ul class="space-y-1 ml-4">
+                      <li>
+                        • <strong>Modal vs Cotton:</strong> Softer, more breathable, longer-lasting
+                      </li>
+                      <li>• <strong>Wire-Free:</strong> Natural support without restriction</li>
+                      <li>
+                        • <strong>Seamless Design:</strong> No visible lines or uncomfortable edges
+                      </li>
+                      <li>• <strong>Tag-Free:</strong> Zero irritation vs scratchy labels</li>
+                      <li>• <strong>Set Coordination:</strong> Perfect matching pieces</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="text-black font-medium mb-2">Beyond Comfort:</h4>
+                    <ul class="space-y-1 ml-4">
+                      <li>• <strong>Social Impact:</strong> Supports women's empowerment</li>
+                      <li>• <strong>Environmental:</strong> Sustainable modal production</li>
+                      <li>• <strong>Quality:</strong> Built to last, not disposable fashion</li>
+                      <li>
+                        • <strong>Australian Values:</strong> Local design, global responsibility
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </details>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
 
+    <!-- Mobile swipe hint (mobile only) -->
+    <div class="md:hidden px-6 mt-2 text-center text-xs text-gray-500 swipe-hint">
+      Swipe to view • Pinch to zoom
+    </div>
+
+    <!-- Add impact calculator section after main product section -->
+    <!-- Live Impact Calculator Section -->
+    <section
+      class="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden"
+      aria-labelledby="impact-heading"
+    >
+      <!-- Luxury Background Elements -->
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-gold/20 to-yellow-400/20 rounded-full blur-3xl"
+        ></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-6 md:px-12 relative">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+          <h2
+            id="impact-heading"
+            class="font-heading text-3xl md:text-4xl font-light mb-6 text-gray-900"
+          >
+            Redefining Purpose Through Craft
+          </h2>
+          <div
+            class="w-20 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6"
+            aria-hidden="true"
+          ></div>
+          <p class="text-gray-600 max-w-3xl mx-auto text-lg font-light leading-relaxed">
+            True refinement isn't just about what you wear—it's about the impact you create. See
+            exactly how your CABANA purchase supports women's empowerment through our verified
+            partnerships with Australia's leading wellbeing organisations.
+          </p>
+        </div>
+
+        <!-- Interactive Calculator -->
+        <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100">
+          <!-- Quantity Selector -->
+          <div class="text-center mb-12">
+            <h3 class="text-xl font-heading mb-6 text-gray-900">Calculate Your Real Impact</h3>
+            <div class="flex items-center justify-center gap-4 mb-8">
+              <button
+                id="decreaseQty"
+                class="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gold hover:text-gold hover:scale-110 hover:shadow-lg transition-all duration-300"
+                aria-label="Decrease quantity"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 12H4"
+                  ></path>
+                </svg>
+              </button>
+
+              <div class="text-center mx-8">
+                <div class="text-5xl font-heading font-light mb-2 text-gray-900" id="currentQty">
+                  1
+                </div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Items</div>
+              </div>
+
+              <button
+                id="increaseQty"
+                class="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gold hover:text-gold hover:scale-110 hover:shadow-lg transition-all duration-300"
+                aria-label="Increase quantity"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 4v16m8-8H4"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Investment Display -->
+            <div class="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-6 mb-8">
+              <div class="flex justify-between items-center text-lg mb-3">
+                <span class="text-gray-700 font-medium">Your Investment:</span>
+                <span class="font-heading text-2xl text-gray-900" id="totalPrice">$50 AUD</span>
+              </div>
+              <div class="flex justify-between items-center text-lg">
+                <span class="text-gray-700 font-medium">Empowerment Contribution (15%):</span>
+                <span class="font-heading text-2xl text-gold font-medium" id="donationAmount"
+                  >$7.50 AUD</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Visualization -->
+          <div class="grid md:grid-cols-1 gap-8 mb-12">
+            <!-- Women's Empowerment Impact -->
+            <div
+              class="impact-card bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+            >
+              <div class="flex items-center mb-6">
+                <div
+                  class="w-14 h-14 bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl flex items-center justify-center mr-4 shadow-md"
+                >
+                  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-heading text-gray-900 mb-1">Women's Empowerment</h4>
+                  <p class="text-gray-700 text-sm">Women's Health Victoria</p>
+                </div>
+              </div>
+
+              <div class="space-y-4 mb-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700">Health information access:</span>
+                  <span class="font-bold text-gray-900 text-lg" id="womenHealth">15 women</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700">Professional training:</span>
+                  <span class="font-bold text-gray-900 text-lg" id="womenTraining">2 sessions</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700">Research & advocacy:</span>
+                  <span class="font-bold text-gray-900 text-lg" id="womenResearch">1 study</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-700">Community outreach:</span>
+                  <span class="font-bold text-gray-900 text-lg" id="womenOutreach">30 people</span>
+                </div>
+              </div>
+
+              <div class="bg-gray-200/70 rounded-lg p-4">
+                <p class="text-sm text-gray-900 italic font-medium leading-relaxed">
+                  "Supporting gender-responsive care and empowering women through evidence-based
+                  resources and advocacy."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sustainability Impact -->
+          <div
+            class="bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8 mb-8 border border-gray-200"
+          >
+            <div class="text-center mb-6">
+              <h4 class="text-2xl font-heading text-gray-900 mb-4">
+                Environmental Impact Per Item
+              </h4>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                  <div class="text-3xl mb-2">💧</div>
+                  <div class="text-2xl font-bold text-gold">-95%</div>
+                  <div class="text-xs text-gray-600 uppercase tracking-wider">
+                    Water Usage vs Cotton
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-2">🌱</div>
+                  <div class="text-2xl font-bold text-gold">100%</div>
+                  <div class="text-xs text-gray-600 uppercase tracking-wider">Biodegradable</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-2">♻️</div>
+                  <div class="text-2xl font-bold text-gold">0</div>
+                  <div class="text-xs text-gray-600 uppercase tracking-wider">
+                    Waste to Landfill
+                  </div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl mb-2">🌳</div>
+                  <div class="text-2xl font-bold text-gold">1</div>
+                  <div class="text-xs text-gray-600 uppercase tracking-wider">
+                    Tree Equivalent CO₂
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <p class="text-gray-800 font-medium text-sm leading-relaxed max-w-3xl mx-auto">
+                Our modal fabric comes from sustainably managed beech forests. When your CABANA
+                piece reaches end-of-life, it returns completely to nature—no microplastics, no
+                synthetic waste, just earth back to earth.
+              </p>
+            </div>
+          </div>
+
+          <!-- Combined Impact Summary -->
+          <div
+            class="bg-gradient-to-b from-neutral-900 via-black to-neutral-900 text-white rounded-xl p-8 border border-neutral-800"
+          >
+            <div class="text-center mb-6">
+              <h4 class="text-2xl font-heading text-white/90 mb-2">Total Lives Impacted</h4>
+              <div class="text-6xl font-heading font-light text-gold mb-2" id="totalLives">70</div>
+              <p class="text-slate-300 font-medium">
+                People directly supported by your conscious choice
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div>
+                <div class="text-2xl font-bold text-white" id="totalSupport">8</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Crisis Support</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white" id="totalEducation">5</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">
+                  Education Programs
+                </div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white" id="totalResources">13</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Resource Access</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white" id="totalAwareness">55</div>
+                <div class="text-xs text-slate-400 uppercase tracking-wider">Awareness Reach</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partnership Transparency -->
+          <div class="mt-12 text-center">
+            <h5 class="text-lg font-heading mb-6 text-gray-900">Verified Impact Partners</h5>
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-600 mb-6"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="w-10 h-10 bg-gradient-to-r from-gray-800 to-gray-700 rounded-full flex items-center justify-center shadow-md"
+                >
+                  <span class="text-white font-bold text-xs">WHV</span>
+                </div>
+                <div class="text-left">
+                  <div class="font-medium text-gray-900">Women's Health Victoria</div>
+                  <div class="text-xs text-gray-500">Gender Equity • Women's Wellbeing</div>
+                </div>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 max-w-3xl mx-auto leading-relaxed">
+              Impact calculations based on verified program costs from our partners. All
+              contributions are tracked and reported quarterly. Partnership agreements ensure 100%
+              of funds reach frontline services.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Size Guide Modal -->
+    <div
+      id="sizeGuideModal"
+      class="fixed inset-0 bg-black/50 z-50 hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="size-guide-title"
+    >
+      <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-white max-w-2xl w-full p-8 relative">
+          <button
+            onclick="closeSizeGuide()"
+            class="absolute top-4 right-4 text-gray-600 hover:text-black"
+            aria-label="Close size guide"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+
+          <h2 id="size-guide-title" class="font-heading text-2xl mb-6">
+            CABANA Women's Collection Size Chart
+          </h2>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-300">
+                  <th class="text-left py-3 font-medium">Size</th>
+                  <th class="text-left py-3 font-medium">Bust (inches)</th>
+                  <th class="text-left py-3 font-medium">Bust (cm)</th>
+                  <th class="text-left py-3 font-medium">Hip (inches)</th>
+                  <th class="text-left py-3 font-medium">Hip (cm)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium">XS</td>
+                  <td class="py-3">30–32″</td>
+                  <td class="py-3">76–81 cm</td>
+                  <td class="py-3">33–35″</td>
+                  <td class="py-3">84–89 cm</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium">S</td>
+                  <td class="py-3">32–34″</td>
+                  <td class="py-3">81–86 cm</td>
+                  <td class="py-3">35–37″</td>
+                  <td class="py-3">89–94 cm</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium">M</td>
+                  <td class="py-3">34–36″</td>
+                  <td class="py-3">86–91 cm</td>
+                  <td class="py-3">37–39″</td>
+                  <td class="py-3">94–99 cm</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium">L</td>
+                  <td class="py-3">36–38″</td>
+                  <td class="py-3">91–97 cm</td>
+                  <td class="py-3">39–41″</td>
+                  <td class="py-3">99–104 cm</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-3 font-medium">XL</td>
+                  <td class="py-3">38–40″</td>
+                  <td class="py-3">97–102 cm</td>
+                  <td class="py-3">41–43″</td>
+                  <td class="py-3">104–109 cm</td>
+                </tr>
+                <tr>
+                  <td class="py-3 font-medium">2XL</td>
+                  <td class="py-3">40–42″</td>
+                  <td class="py-3">102–107 cm</td>
+                  <td class="py-3">43–45″</td>
+                  <td class="py-3">109–114 cm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="mt-8 space-y-4">
+            <div class="border-t border-gray-200 pt-6">
+              <h3 class="text-sm font-medium text-black mb-3">✅ Fit Guidance</h3>
+              <div class="space-y-2 text-sm text-gray-600">
+                <p>
+                  <strong>Fabric stretch:</strong> Modal-Spandex blend provides a body-contouring
+                  fit with all-day comfort.
+                </p>
+                <p><strong>Prefer a looser feel?</strong> Size up for a more relaxed fit.</p>
+                <p>
+                  <strong>In-between sizes?</strong> Choose based on your fit preference — snug
+                  (size down), comfortable (size up).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
     <footer class="bg-black text-white py-10 footer-textured">
       <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div><h4 class="font-heading text-2xl tracking-luxury mb-4">CABANA</h4><p class="text-sm text-gray-400">Quiet refinement for body and earth.</p></div>
-        <div><h3 class="text-white font-semibold mb-4">Customer Care</h3><ul class="space-y-2 text-sm"><li><a href="/shipping-policy.html" class="hover:text-gold">Shipping Policy</a></li><li><a href="/return-policy.html" class="hover:text-gold">Return Policy</a></li><li><a href="/privacy-policy.html" class="hover:text-gold">Privacy Policy</a></li><li><a href="/terms-of-service.html" class="hover:text-gold">Terms of Service</a></li></ul></div>
-        <div><h3 class="text-white font-semibold mb-4">About</h3><ul class="space-y-2 text-sm"><li><a href="/about.html" class="hover:text-gold">Our Story</a></li><li><a href="/legal/index.html" class="hover:text-gold">Legal & Policies</a></li><li><a href="/contact.html" class="hover:text-gold">Contact Us</a></li></ul></div>
-        <div><h3 class="text-white font-semibold mb-4">Follow Us</h3><div class="flex space-x-4"><a href="https://www.instagram.com/cabana.collections/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="h-5 w-5 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 1.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></svg></a></div></div>
+        <!-- Brand -->
+        <div class="col-span-1 flex flex-col items-start">
+          <h4 class="font-heading text-2xl tracking-luxury mb-4">CABANA</h4>
+          <p class="text-sm text-gray-400">Quiet refinement for body and earth.</p>
+        </div>
+
+        <!-- Customer Care -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Customer Care</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/shipping-policy.html" class="hover:text-gold">Shipping Policy</a></li>
+            <li><a href="/return-policy.html" class="hover:text-gold">Return Policy</a></li>
+            <li><a href="/privacy-policy.html" class="hover:text-gold">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html" class="hover:text-gold">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">About</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/about.html" class="hover:text-gold">Our Story</a></li>
+            <li><a href="/legal/index.html" class="hover:text-gold">Legal & Policies</a></li>
+            <li><a href="/contact.html" class="hover:text-gold">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h3 class="text-white font-semibold mb-4">Follow Us</h3>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.instagram.com/cabana.collections/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <svg class="h-5 w-5 hover:text-gold" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 1.75a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"
+                />
+              </svg>
+            </a>
+            <!-- Removed Facebook link per request -->
+          </div>
+        </div>
       </div>
-      <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">&copy; 2025 Cabana Collections. All rights reserved. <p class="mt-1">ABN 91302503433</p></div>
+
+      <!-- Bottom note -->
+      <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
+        &copy; 2025 Cabana Collections. All rights reserved.
+        <p class="mt-1">ABN 91302503433</p>
+      </div>
     </footer>
 
-    <script src="/js/ui.js" defer></script>
-    <script src="/js/nav.js" defer></script>
+    <!-- Mobile Sticky CTA Bar -->
+    <div
+      id="mobileStickyBar"
+      class="mobile-sticky-cta fixed bottom-0 left-0 right-0 bg-white border-t shadow-2xl p-4 md:hidden z-50 transform translate-y-full transition-transform duration-300"
+    >
+      <div class="flex items-center gap-4">
+        <!-- Product Info -->
+        <div class="flex-1">
+          <div class="text-lg font-medium text-black">$50 AUD</div>
+          <div class="text-sm text-gray-500">Essential Set</div>
+        </div>
+
+        <!-- Size Display -->
+        <div class="text-center">
+          <div class="text-xs text-gray-500 uppercase tracking-wider">Size</div>
+          <div class="text-sm font-medium" id="mobileSelectedSize">M</div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button
+          id="mobileAddToCart"
+          class="bg-black text-white px-6 py-3 rounded-lg font-medium min-w-[100px] transition-all duration-300 hover:bg-gray-900 hover:scale-[1.02] hover:shadow-lg active:scale-95"
+        >
+          <span class="mobile-button-text">Add to Cart</span>
+          <span class="mobile-loading-text hidden">
+            <span
+              class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"
+            ></span>
+          </span>
+        </button>
+      </div>
+
+      <!-- Progress bar for free shipping -->
+      <div class="mt-3">
+        <div class="flex justify-between text-xs text-gray-500 mb-1">
+          <span>Free shipping progress</span>
+          <span>$50 / $200</span>
+        </div>
+        <div class="bg-gray-200 rounded-full h-1.5">
+          <div
+            class="bg-gradient-to-r from-gold to-yellow-400 h-1.5 rounded-full transition-all duration-500 w-1/4"
+          ></div>
+        </div>
+        <div class="text-xs text-gray-500 mt-1">Add $150 more for free shipping</div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-      function addToCart() {
-        const cart = JSON.parse(localStorage.getItem('cabanaCart') || '[]');
-        cart.push({ name: "Women's Essential Set — Black", price: 125, quantity: 1, size: 'S', image: '/assets/Images/CABANA-WOMEN.PNG' });
-        localStorage.setItem('cabanaCart', JSON.stringify(cart));
-        const count = cart.reduce((s, i) => s + i.quantity, 0);
-        localStorage.setItem('cabanaCartCount', count);
-        alert('Added to cart');
+      // Toast helper
+      function showToast(message, ms = 1800) {
+        let t = document.getElementById('toast');
+        if (!t) {
+          t = document.createElement('div');
+          t.id = 'toast';
+          t.className = 'cabana-toast';
+          document.body.appendChild(t);
+        }
+        t.textContent = message;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), ms);
       }
+      // Update JavaScript with enhanced features from men's page, adapting calculator for women's focus
+      // Enhanced Image Gallery with Mobile Swipe
+      class ProductGallery {
+        constructor() {
+          this.images = [
+            { src: '../assets/Images/CABANA-WOMEN.PNG', alt: 'Front view' },
+            { src: '../assets/Images/CABANA-WOMEN2.PNG', alt: 'Side view' },
+            { src: '../assets/Images/CABANA-WOMEN3.PNG', alt: 'Back view' },
+            { src: '../assets/Images/CABANA-WOMEN4.PNG', alt: 'Detail view' },
+          ];
+          this.currentIndex = 0;
+          this.mainImage = document.getElementById('mainImage');
+          this.thumbnails = document.querySelectorAll('.thumbnail');
+
+          this.initializeSwipeGestures();
+          this.addMobileDots();
+        }
+
+        changeImage(src, altText, thumbnail) {
+          this.mainImage.src = src;
+          this.mainImage.alt = `Women's Essential Set - ${altText}`;
+
+          this.thumbnails.forEach((thumb) => {
+            thumb.classList.remove('active', 'border-black');
+            thumb.classList.add('border-gray-200');
+            thumb.setAttribute('aria-pressed', 'false');
+          });
+
+          if (thumbnail) {
+            thumbnail.classList.add('active', 'border-black');
+            thumbnail.classList.remove('border-gray-200');
+            thumbnail.setAttribute('aria-pressed', 'true');
+          }
+
+          this.currentIndex = this.images.findIndex((img) => img.src === src);
+          this.updateDots();
+
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'product_gallery_view', {
+              image_name: altText,
+              image_index: this.currentIndex,
+            });
+          }
+        }
+
+        initializeSwipeGestures() {
+          if (window.innerWidth > 768) return;
+
+          let startX = 0;
+          let startY = 0;
+
+          const gallery = document.querySelector('.product-gallery');
+
+          gallery.addEventListener(
+            'touchstart',
+            (e) => {
+              startX = e.touches[0].clientX;
+              startY = e.touches[0].clientY;
+            },
+            { passive: false }
+          );
+
+          gallery.addEventListener(
+            'touchmove',
+            (e) => {
+              const deltaX = Math.abs(e.touches[0].clientX - startX);
+              const deltaY = Math.abs(e.touches[0].clientY - startY);
+
+              if (deltaX > deltaY) {
+                e.preventDefault();
+              }
+            },
+            { passive: false }
+          );
+
+          gallery.addEventListener(
+            'touchend',
+            (e) => {
+              const endX = e.changedTouches[0].clientX;
+              const endY = e.changedTouches[0].clientY;
+
+              const deltaX = endX - startX;
+              const deltaY = endY - startY;
+
+              if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                  this.previousImage();
+                } else {
+                  this.nextImage();
+                }
+              }
+            },
+            { passive: false }
+          );
+        }
+
+        nextImage() {
+          this.currentIndex = (this.currentIndex + 1) % this.images.length;
+          this.updateGallery();
+        }
+
+        previousImage() {
+          this.currentIndex =
+            this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
+          this.updateGallery();
+        }
+
+        updateGallery() {
+          const currentImage = this.images[this.currentIndex];
+          this.mainImage.src = currentImage.src;
+          this.mainImage.alt = `Women's Essential Set - ${currentImage.alt}`;
+
+          this.thumbnails.forEach((thumb, index) => {
+            thumb.classList.remove('active', 'border-black');
+            thumb.classList.add('border-gray-200');
+            thumb.setAttribute('aria-pressed', 'false');
+
+            if (index === this.currentIndex) {
+              thumb.classList.add('active', 'border-black');
+              thumb.classList.remove('border-gray-200');
+              thumb.setAttribute('aria-pressed', 'true');
+            }
+          });
+
+          this.updateDots();
+
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'product_gallery_swipe', {
+              image_index: this.currentIndex,
+              image_name: currentImage.alt,
+            });
+          }
+        }
+
+        addMobileDots() {
+          if (window.innerWidth > 768) return;
+
+          const gallery = document.querySelector('.product-gallery');
+          const dotsContainer = document.createElement('div');
+          dotsContainer.className = 'gallery-dots flex justify-center mt-4 space-x-2';
+
+          this.images.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.className = `gallery-dot w-2 h-2 rounded-full transition-all duration-200 ${
+              index === 0 ? 'bg-black scale-125' : 'bg-gray-300'
+            }`;
+            dot.setAttribute('aria-label', `View image ${index + 1}`);
+
+            dot.addEventListener('click', () => {
+              this.currentIndex = index;
+              this.updateGallery();
+            });
+
+            dotsContainer.appendChild(dot);
+          });
+
+          gallery.appendChild(dotsContainer);
+        }
+
+        updateDots() {
+          const dots = document.querySelectorAll('.gallery-dot');
+          dots.forEach((dot, index) => {
+            dot.classList.remove('bg-black', 'scale-125');
+            dot.classList.add('bg-gray-300');
+
+            if (index === this.currentIndex) {
+              dot.classList.add('bg-black', 'scale-125');
+              dot.classList.remove('bg-gray-300');
+            }
+          });
+        }
+      }
+
+      const productGallery = new ProductGallery();
+
+      // Legacy function
+      function changeImage(src, altText, thumbnail) {
+        productGallery.changeImage(src, altText, thumbnail);
+      }
+
+      // Size Selection
+      const sizeButtons = document.querySelectorAll('.size-button');
+      let selectedSize = 'M';
+
+      sizeButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          sizeButtons.forEach((btn) => {
+            btn.classList.remove('selected', 'bg-black', 'text-white');
+            btn.setAttribute('aria-checked', 'false');
+          });
+
+          button.classList.add('selected', 'bg-black', 'text-white');
+          button.setAttribute('aria-checked', 'true');
+          selectedSize = button.dataset.size;
+
+          document.getElementById('size-error').classList.add('hidden');
+        });
+      });
+
+      // Add to Cart
+      const addToCartBtn = document.getElementById('addToCartBtn');
+      const buttonText = addToCartBtn.querySelector('.button-text');
+      const loadingText = addToCartBtn.querySelector('.loading-text');
+      const successText = addToCartBtn.querySelector('.success-text');
+
+      addToCartBtn.addEventListener('click', () => {
+        if (!selectedSize) {
+          const errorEl = document.getElementById('size-error');
+          errorEl.textContent = 'Please select a size';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+
+        addToCartBtn.disabled = true;
+        buttonText.classList.add('hidden');
+        loadingText.classList.remove('hidden');
+
+        setTimeout(() => {
+          try {
+            let cart = JSON.parse(localStorage.getItem('cabanaCart') || '[]');
+
+            const existingItem = cart.find(
+              (item) => item.id === 'womens-set' && item.size === selectedSize
+            );
+
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({
+                id: 'womens-set',
+                name: 'Essential Set',
+                price: 50,
+                size: selectedSize,
+                quantity: 1,
+                image: '../assets/Images/CABANA-WOMEN.PNG',
+              });
+            }
+
+            localStorage.setItem('cabanaCart', JSON.stringify(cart));
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            localStorage.setItem('cabanaCartCount', totalItems);
+            updateCartCount();
+
+            loadingText.classList.add('hidden');
+            successText.classList.remove('hidden');
+            showToast('Added to cart');
+
+            setTimeout(() => {
+              addToCartBtn.disabled = false;
+              successText.classList.add('hidden');
+              buttonText.classList.remove('hidden');
+            }, 2000);
+          } catch (error) {
+            console.error('Error adding to cart:', error);
+            loadingText.classList.add('hidden');
+            buttonText.classList.remove('hidden');
+            buttonText.textContent = 'ERROR - TRY AGAIN';
+            addToCartBtn.disabled = false;
+
+            setTimeout(() => {
+              buttonText.textContent = 'ADD TO CART';
+            }, 2000);
+          }
+        }, 800);
+      });
+
+      // Size Guide Modal
+      function openSizeGuide() {
+        const modal = document.getElementById('sizeGuideModal');
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('button').focus();
+      }
+
+      function closeSizeGuide() {
+        const modal = document.getElementById('sizeGuideModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        document.querySelector('[aria-label="Open size guide"]').focus();
+      }
+
+      // ESC key to close modal
+      document.addEventListener('keydown', (e) => {
+        if (
+          e.key === 'Escape' &&
+          !document.getElementById('sizeGuideModal').classList.contains('hidden')
+        ) {
+          closeSizeGuide();
+        }
+      });
+
+      // Mobile Menu
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isOpen = mobileMenu.classList.contains('translate-y-0');
+
+          if (isOpen) {
+            mobileMenu.classList.remove('translate-y-0');
+            mobileMenu.classList.add('-translate-y-full');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenu.setAttribute('aria-hidden', 'true');
+          } else {
+            mobileMenu.classList.add('translate-y-0');
+            mobileMenu.classList.remove('-translate-y-full');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenu.setAttribute('aria-hidden', 'false');
+          }
+        });
+      }
+
+      // Cart Count
+      function updateCartCount() {
+        try {
+          const cartCount = localStorage.getItem('cabanaCartCount') || 0;
+          const cartCountElements = document.querySelectorAll('.cabana-cart-count');
+
+          cartCountElements.forEach((el) => {
+            if (cartCount > 0) {
+              el.textContent = cartCount;
+              el.classList.remove('hidden');
+            } else {
+              el.classList.add('hidden');
+            }
+          });
+        } catch (error) {
+          console.error('Error updating cart count:', error);
+        }
+      }
+
+      // Enhanced Trust Signals
+      function initializeTrustSignals() {
+        function updateViewerCount() {
+          const viewerCountEl = document.getElementById('viewerCount');
+          if (viewerCountEl) {
+            const baseCount = 15;
+            const variation = Math.floor(Math.random() * 20) + 1;
+            const currentCount = baseCount + variation;
+            viewerCountEl.textContent = `${currentCount} people`;
+          }
+        }
+
+        updateViewerCount();
+        setInterval(updateViewerCount, Math.random() * 30000 + 30000);
+      }
+
+      // Mobile Sticky Bar
+      function initializeMobileStickyBar() {
+        const stickyBar = document.getElementById('mobileStickyBar');
+        const mobileAddToCart = document.getElementById('mobileAddToCart');
+        const mobileSelectedSize = document.getElementById('mobileSelectedSize');
+        let isVisible = false;
+
+        function updateStickyBarVisibility() {
+          const scrollY = window.scrollY;
+          const shouldShow = scrollY > 300;
+
+          if (shouldShow && !isVisible) {
+            stickyBar.classList.remove('translate-y-full');
+            stickyBar.classList.add('translate-y-0');
+            isVisible = true;
+          } else if (!shouldShow && isVisible) {
+            stickyBar.classList.add('translate-y-full');
+            stickyBar.classList.remove('translate-y-0');
+            isVisible = false;
+          }
+        }
+
+        sizeButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            mobileSelectedSize.textContent = button.dataset.size;
+          });
+        });
+
+        mobileAddToCart.addEventListener('click', () => {
+          document.getElementById('addToCartBtn').click();
+
+          const buttonText = mobileAddToCart.querySelector('.mobile-button-text');
+          const loadingText = mobileAddToCart.querySelector('.mobile-loading-text');
+
+          mobileAddToCart.disabled = true;
+          buttonText.classList.add('hidden');
+          loadingText.classList.remove('hidden');
+
+          setTimeout(() => {
+            mobileAddToCart.disabled = false;
+            buttonText.classList.remove('hidden');
+            loadingText.classList.add('hidden');
+          }, 2000);
+        });
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              updateStickyBarVisibility();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      }
+
+      // Research-Based Impact Calculator adapted for women's product
+      class ResearchBasedImpactCalculator {
+        constructor() {
+          this.quantity = 1;
+          this.pricePerItem = 50;
+          this.donationPercentage = 0.15;
+
+          // Adjusted cost structure with women's focus (60% women's, 40% men's)
+          this.costStructure = {
+            womensHealth: {
+              healthInformation: 0.34,
+              professionalTraining: 2.55,
+              researchAdvocacy: 5.1,
+              communityOutreach: 0.17,
+            },
+            mensHealth: {
+              crisisSupport: 0.95,
+              educationalMaterials: 2.55,
+              digitalResources: 0.64,
+              awarenessOutreach: 0.31,
+            },
+          };
+
+          this.initializeElements();
+          this.attachEventListeners();
+          this.updateCalculations();
+        }
+
+        initializeElements() {
+          this.quantityInput = document.getElementById('currentQty');
+          this.totalPriceElement = document.getElementById('totalPrice');
+          this.donationAmountElement = document.getElementById('donationAmount');
+          this.increaseQtyBtn = document.getElementById('increaseQty');
+          this.decreaseQtyBtn = document.getElementById('decreaseQty');
+          this.totalPrice = 0;
+          this.donationAmount = 0;
+        }
+
+        attachEventListeners() {
+          this.quantityInput.addEventListener('input', (e) => {
+            this.quantity = parseInt(e.target.value) || 0;
+            this.updateCalculations();
+          });
+
+          this.increaseQtyBtn.addEventListener('click', () => {
+            this.quantity++;
+            this.quantityInput.textContent = this.quantity;
+            this.updateCalculations();
+          });
+
+          this.decreaseQtyBtn.addEventListener('click', () => {
+            this.quantity = Math.max(1, this.quantity - 1);
+            this.quantityInput.textContent = this.quantity;
+            this.updateCalculations();
+          });
+        }
+
+        updateCalculations() {
+          const totalPrice = this.quantity * this.pricePerItem;
+          const donationAmount = totalPrice * this.donationPercentage;
+
+          // 100% goes to women's empowerment on women's page
+          const womensDonation = donationAmount;
+
+          const impacts = {
+            womenHealth: Math.floor(
+              womensDonation / this.costStructure.womensHealth.healthInformation
+            ),
+            womenTraining: Math.floor(
+              womensDonation / this.costStructure.womensHealth.professionalTraining
+            ),
+            womenResearch: Math.floor(
+              womensDonation / this.costStructure.womensHealth.researchAdvocacy
+            ),
+            womenOutreach: Math.floor(
+              womensDonation / this.costStructure.womensHealth.communityOutreach
+            ),
+          };
+
+          // Update display elements (same as men's)
+          this.totalPriceElement.textContent = `$${totalPrice.toFixed(2)} AUD`;
+          this.donationAmountElement.textContent = `$${donationAmount.toFixed(2)} AUD`;
+
+          // Update impact visualization (women's focus only)
+          document.getElementById('womenHealth').textContent = impacts.womenHealth;
+          document.getElementById('womenTraining').textContent = impacts.womenTraining;
+          document.getElementById('womenResearch').textContent = impacts.womenResearch;
+          document.getElementById('womenOutreach').textContent = impacts.womenOutreach;
+
+          // Update total lives impacted (women's focus only)
+          const totalLives =
+            impacts.womenHealth +
+            impacts.womenTraining +
+            impacts.womenResearch +
+            impacts.womenOutreach;
+          document.getElementById('totalLives').textContent = totalLives;
+
+          // Update summary totals (women's focus only)
+          const totalSupport = impacts.womenHealth;
+          const totalEducation = impacts.womenTraining;
+          const totalResources = impacts.womenResearch;
+          const totalAwareness = impacts.womenOutreach;
+
+          document.getElementById('totalSupport').textContent = totalSupport;
+          document.getElementById('totalEducation').textContent = totalEducation;
+          document.getElementById('totalResources').textContent = totalResources;
+          document.getElementById('totalAwareness').textContent = totalAwareness;
+        }
+      }
+
+      // Bundle Selection Logic
+      let selectedBundle = null;
+      const bundlePricing = {
+        3: { original: 150, sale: 135, savings: 15 },
+        5: { original: 250, sale: 200, savings: 50 },
+        7: { original: 350, sale: 280, savings: 70 },
+        12: { original: 600, sale: 450, savings: 150 },
+      };
+
+      function initializeBundles() {
+        const bundleOptions = document.querySelectorAll('.bundle-option');
+        bundleOptions.forEach((option) => {
+          option.addEventListener('click', () => {
+            // Remove previous selection
+            bundleOptions.forEach((opt) => {
+              opt.classList.remove('border-black', 'bg-black/5');
+              opt.classList.add('border-gray-200');
+            });
+
+            // Select current bundle
+            option.classList.remove('border-gray-200', 'hover:border-gold');
+            option.classList.add('border-black', 'bg-black/5');
+
+            const bundleSize = parseInt(option.dataset.bundle);
+            selectedBundle = bundleSize;
+
+            // Update add to cart button
+            updateAddToCartButton(bundleSize);
+          });
+        });
+      }
+
+      function updateAddToCartButton(bundleSize) {
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const buttonText = addToCartBtn.querySelector('.button-text');
+        const pricing = bundlePricing[bundleSize];
+
+        if (bundleSize) {
+          buttonText.textContent = `ADD ${bundleSize}-PACK - $${pricing.sale}`;
+          addToCartBtn.setAttribute(
+            'aria-label',
+            `Add ${bundleSize}-day bundle to cart for $${pricing.sale}`
+          );
+        } else {
+          buttonText.textContent = 'ADD TO CART';
+          addToCartBtn.setAttribute('aria-label', 'Add Essential Set to cart');
+        }
+      }
+
+      // Initialize all features
+      document.addEventListener('DOMContentLoaded', () => {
+        // Urgency/FOMO elements removed to align with brand tone
+        initializeTrustSignals();
+        initializeBundles();
+        if (window.innerWidth <= 768) {
+          initializeMobileStickyBar();
+        }
+        if (document.getElementById('currentQty')) {
+          new ResearchBasedImpactCalculator();
+        }
+        updateCartCount();
+
+        // Track impact anchor clicks
+        const impactAnchor = document.getElementById('impactAnchor');
+        if (impactAnchor) {
+          impactAnchor.addEventListener('click', function () {
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'impact_anchor_click', { position: 'product_header_women' });
+            }
+          });
+        }
+      });
+
+      // Add mobile sticky CTA HTML at the end
     </script>
   </body>
-  </html>
-
-
+</html>
