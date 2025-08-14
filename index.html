@@ -11,14 +11,14 @@
     <!-- UPDATED: SEO meta -->
     <meta
       name="description"
-      content="CABANA — sustainable essentials crafted from premium modal. Timeless men's and women's underwear and apparel, with 15% of every purchase funding mental health and women's empowerment."
+      content="CABANA — sustainable essentials crafted from premium modal. Timeless men's and women's underwear and apparel, with 10% of every purchase funding mental health and women's empowerment."
     />
 
     <!-- UPDATED: Open Graph -->
     <meta property="og:title" content="CABANA | Quiet Refinement for Body and Earth" />
     <meta
       property="og:description"
-      content="CABANA — sustainable essentials crafted from premium modal. Timeless men's and women's underwear and apparel, with 15% of every purchase funding mental health and women's empowerment."
+      content="CABANA — sustainable essentials crafted from premium modal. Timeless men's and women's underwear and apparel, with 10% of every purchase funding mental health and women's empowerment."
     />
     <meta property="og:url" content="https://cabanacollections.com.au/" />
     <meta
@@ -634,6 +634,8 @@
 
     <!-- UPDATED: global stylesheet -->
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/optimized/lazy-loading.css" />
+    <link rel="stylesheet" href="/css/optimized/performance.css" />
     <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
     <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
     <link rel="stylesheet" href="/assets/css/mobile.css" />
@@ -669,7 +671,7 @@
       <div class="container mx-auto px-6 flex items-center justify-between">
         <div class="flex-1 text-center">
           <p class="impact-banner-text text-black">
-            15% of every purchase supports mental health and women's empowerment.
+            10% of every purchase supports mental health and women's empowerment.
           </p>
         </div>
         <button
@@ -715,6 +717,7 @@
         </nav>
         <div class="flex items-center gap-4">
           <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <a href="#" data-login-open class="hidden md:inline text-xs tracking-widest">Login</a>
           <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -813,7 +816,7 @@
         >
           <span class="block">Timeless Design, Born From Nature</span>
           <span class="block mt-4 text-[clamp(1rem,2.1vw,1.35rem)] text-white/90">
-            15% of every purchase supports mental health and women's empowerment.
+            10% of every purchase supports mental health and women's empowerment.
           </span>
           <!-- Rotating text carousel -->
           <span
@@ -926,7 +929,7 @@
               ></div>
               <!-- UPDATED: Philosophy short copy + CTA -->
               <p class="text-gray-300 mb-6 leading-relaxed text-lg font-light">
-                Refinement with purpose. We make premium modal essentials that last—and 15% of every
+                Refinement with purpose. We make premium modal essentials that last—and 10% of every
                 purchase funds men's mental health and women's empowerment in Australia. Quality
                 that feels good and does good.
               </p>
@@ -934,10 +937,10 @@
                 <a
                   href="/impact.html"
                   class="link-hover text-gold hover:text-white transition-colors duration-300 font-medium"
-                  aria-label="Learn how our 15% give-back works"
+                  aria-label="Learn how our 10% give-back works"
                 >
-                  <span aria-hidden="true">How the 15% works →</span>
-                  <span class="sr-only">Learn how our 15% give-back works on the Impact page</span>
+                  <span aria-hidden="true">How the 10% works →</span>
+                  <span class="sr-only">Learn how our 10% give-back works on the Impact page</span>
                 </a>
               </div>
 
@@ -1192,7 +1195,7 @@
                   <p class="text-sm tracking-wider opacity-70">TOTAL DONATED TO DATE</p>
                   <!-- UPDATED: Impact note for consistency -->
                   <p class="text-[11px] text-gray-400 mt-1">
-                    15% donated (e.g., $7.50 per $50). See
+                    10% donated (e.g., $5.00 per $50). See
                     <a href="/impact.html" class="underline">Impact</a> for details.
                   </p>
                 </div>
@@ -1367,7 +1370,7 @@
               Conscious craft that creates meaningful change through considered essentials.
             </p>
             <p class="text-xs text-gold font-medium uppercase tracking-wider">
-              15% OF EVERY PURCHASE GIVES BACK
+              10% OF EVERY PURCHASE GIVES BACK
             </p>
           </div>
 
@@ -1654,7 +1657,7 @@
           // Show impact banner with smooth transition
           impactBanner.style.background = 'linear-gradient(90deg, #d4af37, #f5d061)';
           impactBanner.querySelector('.impact-banner-text').textContent =
-            "15% of every purchase supports mental health and women's empowerment.";
+            "10% of every purchase supports mental health and women's empowerment.";
           impactBanner.style.transform = 'translateY(0)';
           impactBanner.style.opacity = '1';
           isImpactBannerActive = true;
@@ -1945,6 +1948,8 @@
     <script src="/js/ui.js" defer></script>
     <!-- Mobile Nav Drawer -->
     <script src="/js/nav.js" defer></script>
+    <!-- Auth modal/login system -->
+    <script src="/js/auth.js" defer></script>
 
     <!-- Error Handling and Debugging -->
     <script>

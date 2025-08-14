@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="/assets/css/mobile.css" />
     <script src="/js/ui.js" defer></script>
     <script src="/js/nav.js" defer></script>
+    <script src="/js/auth.js" defer></script>
 
     <style>
       /* Custom styles */
@@ -133,6 +134,7 @@
         </nav>
         <div class="flex items-center gap-4">
           <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <a href="#" data-login-open class="hidden md:inline text-xs tracking-widest">Login</a>
           <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -217,23 +219,39 @@
                 <div class="space-y-2 mb-6">
                   <div class="flex justify-between">
                     <span>Subtotal</span>
-                    <span id="subtotal">$0</span>
+                    <span id="subtotal">$0 AUD</span>
                   </div>
                   <div class="flex justify-between">
                     <span>Shipping</span>
-                    <span id="shipping">$0</span>
+                    <span id="shipping">$0 AUD</span>
                   </div>
                   <div id="discountRow" class="flex justify-between text-green-600 hidden">
                     <span>Discount</span>
-                    <span id="discount">-$0</span>
+                    <span id="discount">-$0 AUD</span>
                   </div>
                   <div class="flex justify-between font-medium text-lg pt-4 border-t">
                     <span>Total</span>
-                    <span id="total">$0</span>
+                    <span id="total">$0 AUD</span>
                   </div>
                   <div class="flex justify-between text-sm text-gold pt-2">
-                    <span>Impact Donation (15%)</span>
-                    <span id="impactAmount">$0</span>
+                    <span class="flex items-center gap-1">
+                      Community contribution (10%)
+                      <button 
+                        type="button" 
+                        class="inline-flex items-center justify-center w-4 h-4 text-gray-400 hover:text-gray-600"
+                        title="Calculated on merchandise total after discounts, excl. shipping"
+                        aria-label="Donation calculation info"
+                      >
+                        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                      </button>
+                    </span>
+                    <span id="impactAmount">$0 AUD</span>
+                  </div>
+                  <div class="flex justify-between text-xs text-gray-600">
+                    <span>Lives supported (estimate)</span>
+                    <span id="impactLives">0</span>
                   </div>
                 </div>
 
@@ -245,6 +263,25 @@
                 </button>
 
                 <p class="text-sm text-gray-600 mt-4">Free shipping on orders over $200</p>
+                <!-- Free shipping banner -->
+                <div id="free-ship-banner" class="mt-4 p-3 bg-gray-50 rounded-lg">
+                  <div class="flex justify-between text-sm text-gray-700 mb-2">
+                    <span data-free-ship-msg>Loading...</span>
+                    <span class="text-xs text-gray-500">$200 AUD threshold</span>
+                  </div>
+                  <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                    <div 
+                      class="h-2 bg-gradient-to-r from-gold to-yellow-400 transition-all duration-500" 
+                      style="width:0%" 
+                      data-free-ship-bar
+                      role="progressbar"
+                      aria-label="Free shipping progress"
+                      aria-valuenow="0"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -356,6 +393,8 @@
 
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Cart utilities (cents-based calculations) -->
+    <script src="/js/cart-utils.js"></script>
 
     <!-- Custom JavaScript -->
     <script>
@@ -481,22 +520,31 @@
         updateCartCount();
       }
 
-      // Update summary
+      // Update summary using cents-based totals
       function updateSummary() {
-        const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        const shipping = subtotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
-        const total = subtotal + shipping - discountAmount;
-        const impactAmount = subtotal * 0.15; // 15% of subtotal goes to charity
+        const totals = calcCartTotals({
+          lineItems: cart,
+          discountsCents: discountAmountCents,
+          shippingCents: CART_CONFIG.DEFAULT_SHIPPING_CENTS,
+        });
 
-        document.getElementById('subtotal').textContent = `${subtotal.toFixed(2)}`;
+        document.getElementById('subtotal').textContent = formatAUD(totals.subtotalCents);
         document.getElementById('shipping').textContent =
-          shipping === 0 ? 'Free' : `${shipping.toFixed(2)}`;
-        document.getElementById('total').textContent = `${total.toFixed(2)}`;
-        document.getElementById('impactAmount').textContent = `${impactAmount.toFixed(2)}`;
+          totals.qualifiesFreeShip ? 'Free' : formatAUD(totals.shippingAppliedCents);
+        document.getElementById('total').textContent = formatAUD(totals.totalCents);
+        document.getElementById('impactAmount').textContent = formatAUD(totals.donationCents);
 
-        if (discountAmount > 0) {
+        const lives = Math.floor(centsToDollars(totals.donationCents));
+        const livesEl = document.getElementById('impactLives');
+        if (livesEl) livesEl.textContent = lives.toString();
+
+        updateFreeShippingUI(totals);
+
+        if (discountAmountCents > 0) {
           document.getElementById('discountRow').classList.remove('hidden');
-          document.getElementById('discount').textContent = `-${discountAmount.toFixed(2)}`;
+          document.getElementById('discount').textContent = `-${formatAUD(discountAmountCents)}`;
+        } else {
+          document.getElementById('discountRow').classList.add('hidden');
         }
       }
 
@@ -505,8 +553,19 @@
         const promoCode = document.getElementById('promoCode').value.toUpperCase();
         const promoMessage = document.getElementById('promoMessage');
 
+        const subtotalCents = cart.reduce(
+          (sum, item) => sum + dollarsToCents(item.price) * item.quantity,
+          0
+        );
+
         if (promoCode === 'WELCOME10') {
-          discountAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0) * 0.1;
+          discountAmountCents = Math.floor(subtotalCents * 0.1);
+          promoMessage.textContent = 'Promo code applied successfully!';
+          promoMessage.classList.remove('hidden', 'text-red-600');
+          promoMessage.classList.add('text-green-600');
+          updateSummary();
+        } else if (promoCode === 'CABANA20') {
+          discountAmountCents = Math.floor(subtotalCents * 0.2);
           promoMessage.textContent = 'Promo code applied successfully!';
           promoMessage.classList.remove('hidden', 'text-red-600');
           promoMessage.classList.add('text-green-600');

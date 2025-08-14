@@ -6,6 +6,13 @@
   "scripts": {
     "start": "python3 -m http.server 8000",
     "serve": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "install:tools": "bash ./scripts/install-tools.sh",
+    "optimize:images": "bash ./scripts/optimize-images.sh",
+    "optimize": "npm run optimize:images",
+    "build": "node ./build/build.js",
+    "test:performance": "node ./build/performance-test.js",
+    "deploy:prep": "npm run optimize && npm run build",
     "lint:js": "eslint . --ext .js",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:spell": "cspell --no-progress --no-must-find-files \"**/*.{html,css,js,json,md}\"",
@@ -24,11 +31,20 @@
     "sharp": "^0.34.3"
   },
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "clean-css": "^5.3.3",
+    "critical": "^6.0.7",
     "cspell": "^8.19.4",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "glob": "^11.0.0",
+    "html-minifier-terser": "^7.2.0",
+    "lighthouse": "^12.3.0",
+    "ora": "^8.0.1",
     "prettier": "^3.3.3",
+    "replace-in-file": "^7.1.0",
+    "rollup": "^4.20.0",
     "stylelint": "^16.8.1",
     "stylelint-config-standard": "^36.0.1"
   }

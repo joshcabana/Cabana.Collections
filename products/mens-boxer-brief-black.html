@@ -349,6 +349,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- UPDATED: global stylesheet -->
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/optimized/lazy-loading.css" />
+    <link rel="stylesheet" href="/css/optimized/performance.css" />
     <!-- Shared UI Enhancements -->
     <script src="/js/ui.js" defer></script>
 
@@ -385,7 +387,7 @@
         },
         "material": "95% Modal, 5% Elastane",
         "manufacturer": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "CABANA"
         }
       }
@@ -456,6 +458,7 @@
                 >0</span
               >
             </a>
+            <a href="#" data-login-open class="hidden md:inline text-xs tracking-widest">Login</a>
 
             <!-- Mobile Menu Button -->
             <button
@@ -696,7 +699,7 @@
                 CABANA Men’s Boxer Brief
               </h1>
               <div class="flex items-baseline gap-4 mb-6">
-                <p class="font-heading text-3xl font-light">$50 AUD</p>
+                <p class="font-heading text-3xl font-light" data-product-price>$50 AUD</p>
                 <p class="text-xs tracking-wider text-gray-500">INCLUDING GST</p>
               </div>
 
@@ -705,13 +708,13 @@
                 <div class="flex items-center gap-2 text-sm text-gray-600">
                   <span class="text-gold text-lg">&#9733;</span>
                   <span class="font-heading text-base text-black"
-                    >15% of every purchase supports men’s mental health & women’s empowerment</span
+                    >10% of every purchase supports men’s mental health & women’s empowerment</span
                   >
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs">
                   <span
                     class="bg-gray-50 text-gray-700 px-2 py-1 rounded-full border border-gray-200"
-                    >Free shipping over $200</span
+                     >Free shipping on orders over $200</span
                   >
                   <span
                     class="bg-gray-50 text-gray-700 px-2 py-1 rounded-full border border-gray-200"
@@ -736,7 +739,7 @@
                   <li>• Modal-soft stretch (95% modal / 5% elastane) that keeps its shape</li>
                   <li>• Stay‑put leg with clean, cover‑stitched hems</li>
                   <li>• Matte black waistband with double gold piping; rear monogram tab</li>
-                  <li>• Purpose built‑in: 15% of every purchase funds impact initiatives</li>
+                  <li>• Purpose built‑in: 10% of every purchase funds impact initiatives</li>
                 </ul>
               </div>
             </header>
@@ -958,7 +961,7 @@
               <!-- Impact Badge -->
               <div class="text-center py-4 border-y border-gray-100">
                 <p class="text-xs tracking-wider font-light">
-                  <span class="text-gold">15%</span> OF THIS PURCHASE SUPPORTS MEN’S MENTAL HEALTH &
+                  <span class="text-gold">10%</span> OF THIS PURCHASE SUPPORTS MEN’S MENTAL HEALTH &
                   WOMEN’S EMPOWERMENT
                 </p>
               </div>
@@ -987,7 +990,7 @@
                     <li>• Modal‑soft stretch (95% modal / 5% elastane) that keeps its shape</li>
                     <li>• Stay‑put leg with clean, cover‑stitched hems</li>
                     <li>• Matte black waistband with double gold piping; rear monogram tab</li>
-                    <li>• Purpose built‑in: 15% of every purchase funds impact initiatives</li>
+                    <li>• Purpose built‑in: 10% of every purchase funds impact initiatives</li>
             </ul>
             </div>
               </details>
@@ -1060,7 +1063,7 @@
                     <li>• Modal‑rich hand feel: Cool, silky, resilient after many washes</li>
                     <li>• Quiet details: Gold‑edge waistband, minimal branding, refined finish</li>
                     <li>
-                      • Purpose built‑in: 15% supports men’s mental health & women’s empowerment
+                      • Purpose built‑in: 10% supports men’s mental health & women’s empowerment
                     </li>
                   </ul>
                 </div>
@@ -1149,7 +1152,7 @@
                   </svg>
                 </button>
                 <div class="text-center mx-8">
-                  <div class="text-5xl font-heading font-light mb-2 text-gray-900" id="currentQty">
+                  <div class="text-5xl font-heading font-light mb-2 text-gray-900" id="currentQty" data-product-price>
                     1
                   </div>
                   <div class="text-sm text-gray-500 uppercase tracking-wider">Items</div>
@@ -1175,7 +1178,7 @@
                   ><span class="font-heading text-2xl text-gray-900" id="totalPrice">$50 AUD</span>
                 </div>
                 <div class="flex justify-between items-center text-lg">
-                  <span class="text-gray-700 font-medium">Mental Health Contribution (15%):</span
+                  <span class="text-gray-700 font-medium">Mental Health Contribution (10%):</span
                   ><span class="font-heading text-2xl text-gold font-medium" id="donationAmount"
                     >$7.50 AUD</span
                   >
@@ -1446,6 +1449,33 @@
       </div>
     </div>
 
+    <script src="/js/cart-utils.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const priceElement = document.querySelector('[data-product-price]');
+        const price = parseFloat(priceElement?.textContent.replace(/[^0-9.]/g, '')) || 50;
+
+        const priceCents = dollarsToCents(price);
+        const progressPercent = Math.min(
+          100,
+          Math.round((priceCents / CART_CONFIG.FREE_SHIP_THRESHOLD_CENTS) * 100)
+        );
+        const remaining = Math.max(0, CART_CONFIG.FREE_SHIP_THRESHOLD_CENTS - priceCents);
+
+        const progressBar = document.querySelector('#mobileStickyBar .bg-gradient-to-r');
+        if (progressBar) {
+          progressBar.style.width = `${progressPercent}%`;
+        }
+
+        const progressText = document.querySelector('#mobileStickyBar .text-xs.text-gray-500.mt-1');
+        if (progressText) {
+          progressText.textContent =
+            remaining > 0
+              ? `Add ${formatAUD(remaining)} more for free shipping`
+              : 'Free shipping unlocked!';
+        }
+      });
+    </script>
     <!-- Optimised JavaScript -->
     <script>
       // Toast helper
@@ -1837,7 +1867,18 @@
             // Show success state
             loadingText.classList.add('hidden');
             successText.classList.remove('hidden');
-            showToast('Added to cart');
+            try {
+              const totals = calcCartTotals({ lineItems: cart, discountsCents: 0 });
+              showToast(
+                `Added to cart! ${
+                  totals.remainingForFreeShipCents > 0
+                    ? `${formatAUD(totals.remainingForFreeShipCents)} away from free shipping`
+                    : 'Free shipping unlocked!'
+                }`
+              );
+            } catch (_) {
+              showToast('Added to cart');
+            }
 
             // Reset after delay
             setTimeout(() => {
@@ -2049,7 +2090,7 @@
         constructor() {
           this.quantity = 1;
           this.pricePerItem = 50;
-          this.donationPercentage = 0.15;
+          this.donationPercentage = 0.10;
 
           // Research-based cost structures (AUD)
           // Data sources: Lifeline Annual Report 2023-24, Beyond Blue program data, WHV initiatives
@@ -2382,7 +2423,7 @@
       <div class="flex items-center gap-4">
         <!-- Product Info -->
         <div class="flex-1">
-          <div class="text-lg font-medium text-black">$50 AUD</div>
+          <div class="text-lg font-medium text-black" data-product-price>$50 AUD</div>
           <div class="text-sm text-gray-500">Essential Boxer Brief</div>
         </div>
 
@@ -2410,14 +2451,12 @@
       <div class="mt-3">
         <div class="flex justify-between text-xs text-gray-500 mb-1">
           <span>Free shipping progress</span>
-          <span>$50 / $200</span>
+          <span class="threshold-note">$200</span>
         </div>
         <div class="bg-gray-200 rounded-full h-1.5">
-          <div
-            class="bg-gradient-to-r from-gold to-yellow-400 h-1.5 rounded-full transition-all duration-500 w-1/4"
-          ></div>
+          <div class="bg-gradient-to-r from-gold to-yellow-400 h-1.5 rounded-full transition-all duration-500" style="width: 0"></div>
         </div>
-        <div class="text-xs text-gray-500 mt-1">Add $150 more for free shipping</div>
+        <div class="text-xs text-gray-500 mt-1"></div>
       </div>
     </div>
   </body>

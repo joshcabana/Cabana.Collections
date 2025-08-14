@@ -1,1 +1,28 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# macOS
+.DS_Store
+
+# Build outputs
+dist/
+build/.cache/
+build/output/
+build/reports/
+
+# Optimized assets
+assets/Images/webp/
+assets/Images/responsive/
+
+# Performance reports
+reports/
+lighthouse-*.html
+lighthouse-*.json
+
+# Editor
+.vscode/
+.idea/
+
 .vercel

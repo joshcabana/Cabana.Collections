@@ -385,7 +385,7 @@
         },
         "material": "95% Modal, 5% Elastane",
         "manufacturer": {
-          "@type": "Organization",
+          "@type": "Organisation",
           "name": "CABANA"
         }
       }
@@ -709,7 +709,7 @@
                 CABANA Men's 1st Classics
               </h1>
               <div class="flex items-baseline gap-4 mb-6 flex-wrap">
-                <p class="font-heading text-3xl font-light">$50 AUD</p>
+                <p class="font-heading text-3xl font-light" data-product-price>$50 AUD</p>
                 <p class="text-xs tracking-wider text-gray-500">INCLUDING GST</p>
                 <a
                   href="#impact-heading"
@@ -725,7 +725,7 @@
                 <div class="flex items-center gap-2 text-sm text-gray-600">
                   <span class="text-gold text-lg">&#9733;</span>
                   <span class="font-heading text-base text-black"
-                    >15% of every purchase supports men’s mental health & women’s empowerment</span
+                    >10% of every purchase supports men's mental health & women's empowerment</span
                   >
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs">
@@ -742,7 +742,7 @@
 
               <p class="text-base text-gray-800 mb-4">
                 Everyday comfort, engineered. Modal softness, an anatomical 3D pouch, and a discreet
-                U‑mesh cradle keep you cooler where it counts—finished with CABANA’s gold‑edge
+                U‑mesh cradle keep you cooler where it counts—finished with CABANA's gold‑edge
                 waistband.
               </p>
 
@@ -756,7 +756,7 @@
                   <li>• Modal-soft stretch (95% modal / 5% elastane) that keeps its shape</li>
                   <li>• Stay‑put leg with clean, cover‑stitched hems</li>
                   <li>• Matte black waistband with double gold piping; rear monogram tab</li>
-                  <li>• Purpose built‑in: 15% of every purchase funds impact initiatives</li>
+                  <li>• Purpose built‑in: 10% of every purchase funds impact initiatives</li>
                 </ul>
               </div>
             </header>
@@ -978,8 +978,8 @@
               <!-- Impact Badge -->
               <div class="text-center py-4 border-y border-gray-100">
                 <p class="text-xs tracking-wider font-light">
-                  <span class="text-gold">15%</span> OF THIS PURCHASE SUPPORTS MEN’S MENTAL HEALTH &
-                  WOMEN’S EMPOWERMENT
+                  <span class="text-gold">10%</span> OF THIS PURCHASE SUPPORTS MEN'S MENTAL HEALTH &
+                  WOMEN'S EMPOWERMENT
                 </p>
               </div>
 
@@ -1007,7 +1007,7 @@
                     <li>• Modal‑soft stretch (95% modal / 5% elastane) that keeps its shape</li>
                     <li>• Stay‑put leg with clean, cover‑stitched hems</li>
                     <li>• Matte black waistband with double gold piping; rear monogram tab</li>
-                    <li>• Purpose built‑in: 15% of every purchase funds impact initiatives</li>
+                    <li>• Purpose built‑in: 10% of every purchase funds impact initiatives</li>
                   </ul>
                 </div>
               </details>
@@ -1067,7 +1067,7 @@
                 <summary
                   class="flex justify-between items-center text-xs tracking-widest cursor-pointer list-none"
                 >
-                  <span>WHY IT’S DIFFERENT</span>
+                  <span>WHY IT'S DIFFERENT</span>
                   <span class="transform transition-transform duration-300 group-open:rotate-45"
                     >+</span
                   >
@@ -1080,7 +1080,7 @@
                     <li>• Modal‑rich hand feel: Cool, silky, resilient after many washes</li>
                     <li>• Quiet details: Gold‑edge waistband, minimal branding, refined finish</li>
                     <li>
-                      • Purpose built‑in: 15% supports men’s mental health & women’s empowerment
+                      • Purpose built‑in: 10% supports men's mental health & women's empowerment
                     </li>
                   </ul>
                 </div>
@@ -1198,7 +1198,7 @@
                   <span class="font-heading text-2xl text-gray-900" id="totalPrice">$50 AUD</span>
                 </div>
                 <div class="flex justify-between items-center text-lg">
-                  <span class="text-gray-700 font-medium">Mental Health Contribution (15%):</span>
+                  <span class="text-gray-700 font-medium">Mental Health Contribution (10%):</span>
                   <span class="font-heading text-2xl text-gold font-medium" id="donationAmount"
                     >$7.50 AUD</span
                   >
@@ -1526,7 +1526,7 @@
 
           this.mainImage.classList.remove('hidden');
           this.mainImage.src = src;
-          this.mainImage.alt = `CABANA Men’s Boxer Brief - ${altText}`;
+          this.mainImage.alt = `CABANA Men's Boxer Brief - ${altText}`;
 
           // Update thumbnail states
           this.thumbnails.forEach((thumb) => {
@@ -1636,7 +1636,7 @@
           this.mainImage.classList.remove('hidden');
           const currentImage = this.images[this.currentIndex];
           this.mainImage.src = currentImage.src;
-          this.mainImage.alt = `CABANA Men’s Boxer Brief - ${currentImage.alt}`;
+          this.mainImage.alt = `CABANA Men's Boxer Brief - ${currentImage.alt}`;
 
           // Update thumbnails
           this.thumbnails.forEach((thumb, index) => {
@@ -1906,7 +1906,18 @@
             // Show success state
             loadingText.classList.add('hidden');
             successText.classList.remove('hidden');
-            showToast('Added to cart');
+            try {
+              const totals = calcCartTotals({ lineItems: cart, discountsCents: 0 });
+              showToast(
+                `Added to cart! ${
+                  totals.remainingForFreeShipCents > 0
+                    ? `${formatAUD(totals.remainingForFreeShipCents)} away from free shipping`
+                    : 'Free shipping unlocked!'
+                }`
+              );
+            } catch (_) {
+              showToast('Added to cart');
+            }
 
             // Reset after delay
             setTimeout(() => {
@@ -2118,7 +2129,7 @@
         constructor() {
           this.quantity = 1;
           this.pricePerItem = 50;
-          this.donationPercentage = 0.15;
+          this.donationPercentage = 0.10;
 
           // Research-based cost structures (AUD)
           // Data sources: Lifeline Annual Report 2023-24, Beyond Blue program data, WHV initiatives
@@ -2446,7 +2457,7 @@
       <div class="flex items-center gap-4">
         <!-- Product Info -->
         <div class="flex-1">
-          <div class="text-lg font-medium text-black">$50 AUD</div>
+          <div class="text-lg font-medium text-black" data-product-price>$50 AUD</div>
               <div class="text-sm text-gray-500">CABANA Men's 1st Classics</div>
         </div>
 
@@ -2483,15 +2494,30 @@
       <div class="mt-3">
         <div class="flex justify-between text-xs text-gray-500 mb-1">
           <span>Free shipping progress</span>
-          <span>$50 / $200</span>
+          <span class="threshold-note">$200</span>
         </div>
         <div class="bg-gray-200 rounded-full h-1.5">
-          <div
-            class="bg-gradient-to-r from-gold to-yellow-400 h-1.5 rounded-full transition-all duration-500 w-1/4"
-          ></div>
+          <div class="bg-gradient-to-r from-gold to-yellow-400 h-1.5 rounded-full transition-all duration-500" style="width: 0"></div>
         </div>
-        <div class="text-xs text-gray-500 mt-1">Add $150 more for free shipping</div>
+        <div class="text-xs text-gray-500 mt-1"></div>
       </div>
     </div>
+
+    <script src="/js/cart-utils.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const priceElement = document.querySelector('[data-product-price]');
+        const price = parseFloat(priceElement?.textContent.replace(/[^0-9.]/g, '')) || 50;
+        const priceCents = dollarsToCents(price);
+        const progressPercent = Math.min(100, Math.round((priceCents / CART_CONFIG.FREE_SHIP_THRESHOLD_CENTS) * 100));
+        const remaining = Math.max(0, CART_CONFIG.FREE_SHIP_THRESHOLD_CENTS - priceCents);
+        const progressBar = document.querySelector('#mobileStickyBar .bg-gradient-to-r');
+        if (progressBar) progressBar.style.width = `${progressPercent}%`;
+        const progressText = document.querySelector('#mobileStickyBar .text-xs.text-gray-500.mt-1');
+        if (progressText) {
+          progressText.textContent = remaining > 0 ? `Add ${formatAUD(remaining)} more for free shipping` : 'Free shipping unlocked!';
+        }
+      });
+    </script>
   </body>
 </html>
