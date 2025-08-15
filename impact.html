@@ -102,6 +102,7 @@
     </style>
   </head>
   <body class="bg-white text-black font-body">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-black text-white px-4 py-2 z-50 rounded">Skip to main content</a>
     <style>
       /* moved from inline style to satisfy linter */
       .impact-bg {
@@ -171,129 +172,68 @@
     </aside>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 min-h-[60vh] flex items-center">
-      <div class="container mx-auto px-6 md:px-12">
-        <div class="max-w-4xl mx-auto text-center">
-          <h1 class="font-heading-luxe text-5xl md:text-7xl font-light tracking-refined mb-8" data-aos="fade-up">
-            Purpose in Every Thread
-          </h1>
-          <div class="w-24 h-px bg-gold mx-auto mb-8" data-aos="zoom-in" data-aos-delay="100"></div>
-          <p class="text-xl text-gray-600 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="150">
-            <strong>10% of every purchase</strong> supports mental-health initiatives with Beyond Blue.
-          </p>
-          <div class="mt-6">
-            <div class="text-sm leading-relaxed">
-              <p>Helping fund nationwide mental-health support, resources, and community programs.</p>
-              <a href="https://www.beyondblue.org.au/" class="inline-block mt-3 underline underline-offset-4 focus:outline-none focus:ring" target="_blank" rel="noopener" aria-label="Learn more at Beyond Blue">Learn more</a>
-            </div>
-          </div>
-          <div class="mt-6">
-            <div class="text-sm leading-relaxed">
-              <p>Helping fund programs focused on ending violence, economic empowerment, leadership, and women’s peace & security.</p>
-              <a href="https://unwomen.org.au/" class="inline-block mt-3 underline underline-offset-4 focus:outline-none focus:ring" target="_blank" rel="noopener" aria-label="Learn more at UN Women Australia">Learn more</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Impact Stats -->
-    <section class="py-20 bg-gray-50 relative overflow-hidden impact-bg">
-      <!-- Overlay for readability -->
-      <div class="absolute inset-0 bg-white/70"></div>
-      <div class="container mx-auto px-6 md:px-12">
-        <div class="max-w-5xl mx-auto relative z-10">
-          <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="impact-stat text-center p-8 bg-white" data-aos="zoom-in">
-              <div class="text-5xl font-heading text-gold mb-4" id="totalDonated">$12,450</div>
-              <p class="text-xs tracking-widest text-gray-600 mb-2">TOTAL DONATED</p>
-              <p class="text-sm text-gray-500 font-light">Since January 2025</p>
-            </div>
-            <div class="impact-stat text-center p-8 bg-white" data-aos="zoom-in" data-aos-delay="100">
-              <div class="text-5xl font-heading mb-4" id="livesImpacted">2,490</div>
-              <p class="text-xs tracking-widest text-gray-600 mb-2">LIVES IMPACTED</p>
-              <p class="text-sm text-gray-500 font-light">Through our partner organisations</p>
-            </div>
-            <div class="impact-stat text-center p-8 bg-white" data-aos="zoom-in" data-aos-delay="200">
-              <div class="text-5xl font-heading mb-4">10%</div>
-              <p class="text-xs tracking-widest text-gray-600 mb-2">OF EVERY PURCHASE</p>
-              <p class="text-sm text-gray-500 font-light">Automatically donated to mental health and women's empowerment</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="py-20">
-      <div class="container mx-auto px-6 md:px-12">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="font-heading-luxe text-4xl font-light tracking-refined text-center mb-16" data-aos="fade-up">
-            How It Works
-          </h2>
-
-          <div class="grid md:grid-cols-2 gap-12">
-            <!-- Men's Impact -->
-            <div class="text-center" data-aos="fade-up">
-              <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-                <svg
-                  class="w-20 h-20 text-gold"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-2xl font-light mb-4">Men's Collection</h3>
-              <p class="text-gray-600 font-light mb-6">
-                10% of every men's purchase supports mental health initiatives, breaking stigmas and
-                providing crucial resources for men in need.
+    <main id="main-content" class="pt-28 pb-24">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <h1 class="font-heading-luxe text-4xl md:text-6xl font-light tracking-refined mb-10">Our Impact</h1>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Left: Our 10% Promise -->
+          <section aria-labelledby="promise-heading">
+            <h2 id="promise-heading" class="font-heading text-2xl md:text-3xl font-light mb-4">Our 10% Promise</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Every purchase you make carries impact. We allocate <strong>10% of every purchase</strong> to initiatives that improve mental health and advance gender equality.
+            </p>
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm text-gray-700">
+              <h3 class="font-medium mb-1">Impact Math</h3>
+              <p>
+                Example: On a $50 purchase, $5.00 is designated to impact programs. Funds are tracked and reported transparently.
               </p>
-              <div class="space-y-3 text-sm">
-                <p><strong>Current Partner:</strong> Beyond Blue</p>
-                <p><strong>Impact:</strong> $7,230 donated</p>
-                <p><strong>Focus:</strong> Mental health support & awareness</p>
-              </div>
             </div>
+          </section>
 
-            <!-- Women's Impact -->
-            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
-              <div class="w-32 h-32 mx-auto mb-8 flex items-center justify-center">
-                <svg
-                  class="w-20 h-20 text-gold"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1"
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="font-heading text-2xl font-light mb-4">Women's Collection</h3>
-              <p class="text-gray-600 font-light mb-6">
-                10% of every women's purchase empowers women through education, career development,
-                and global equity initiatives.
-              </p>
-              <div class="space-y-3 text-sm">
-                <p><strong>Current Partner:</strong> UN Women Australia</p>
-                <p><strong>Impact:</strong> $5,220 donated</p>
-                <p><strong>Focus:</strong> Economic empowerment & equality</p>
-              </div>
+          <!-- Right: Partners -->
+          <section aria-labelledby="partners-heading">
+            <h2 id="partners-heading" class="font-heading text-2xl md:text-3xl font-light mb-4">Our Partners</h2>
+            <div class="space-y-6">
+              <!-- Beyond Blue Card -->
+              <a href="https://www.beyondblue.org.au/" target="_blank" rel="noopener noreferrer" class="block">
+                <div class="p-6 border rounded-lg hover:shadow transition-colors bg-blue-50/50 border-blue-200">
+                  <h3 class="text-lg font-medium text-blue-900">Beyond Blue</h3>
+                  <p class="text-sm text-blue-900/80 mt-1">Supporting nationwide mental-health resources and community programs in Australia.</p>
+                  <span class="inline-block mt-3 text-xs underline">Visit site →</span>
+                </div>
+              </a>
+              <!-- UN Women Card -->
+              <a href="https://unwomen.org.au" target="_blank" rel="noopener noreferrer" class="block">
+                <div class="p-6 border rounded-lg hover:shadow transition-colors bg-pink-50/50 border-pink-200">
+                  <h3 class="text-lg font-medium text-pink-900">UN Women Australia</h3>
+                  <p class="text-sm text-pink-900/80 mt-1">Advancing women's empowerment, leadership, and safety through evidence-based programs.</p>
+                  <span class="inline-block mt-3 text-xs underline">Visit site →</span>
+                </div>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <!-- Transparency -->
+        <section class="mt-16" aria-labelledby="transparency-heading">
+          <h2 id="transparency-heading" class="font-heading text-2xl md:text-3xl font-light mb-6">Transparency</h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-6 border rounded-lg">
+              <h3 class="text-base font-medium">Quarterly Reports</h3>
+              <p class="text-sm text-gray-600 mt-1">We publish donation summaries every quarter and share program outcomes.</p>
+            </div>
+            <div class="p-6 border rounded-lg">
+              <h3 class="text-base font-medium">Direct Allocation</h3>
+              <p class="text-sm text-gray-600 mt-1">10% allocation goes directly to designated initiatives—no vague rounding.</p>
+            </div>
+            <div class="p-6 border rounded-lg">
+              <h3 class="text-base font-medium">Independent Verification</h3>
+              <p class="text-sm text-gray-600 mt-1">We validate program costs and track designated funds for accuracy.</p>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </main>
 
     <!-- Partner Organisations -->
     <section class="py-20 bg-gray-50">
