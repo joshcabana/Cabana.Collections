@@ -54,3 +54,21 @@ for (const width of widths) {
     }
   });
 }
+
+test('impact messaging present on key pages', async ({ page }) => {
+  const pages = [
+    '/',
+    '/impact.html',
+    '/products/mens-boxer-brief-black.html',
+    '/products/womens-set.html',
+  ];
+  for (const path of pages) {
+    await page.goto(path);
+    const content = await page.content();
+    expect(
+      content.includes('10% Give-Back') ||
+        content.includes('10% of every purchase') ||
+        content.includes('10% donated')
+    ).toBeTruthy();
+  }
+});
