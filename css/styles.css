@@ -110,6 +110,11 @@
   white-space: normal !important;
 }
 
+/* Keep skip link visually hidden when not using keyboard focus */
+.sr-only:focus:not(:focus-visible) {
+  position: absolute !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;
