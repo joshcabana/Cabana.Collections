@@ -22,7 +22,7 @@
         "@type": "WebPage",
         "url": "https://cabanacollections.com.au/impact.html",
         "name": "Our Impact | CABANA",
-        "description": "Discover how CABANA creates positive change through sustainable craft and social impact partnerships."
+        "description": "Premium essentials. 10% of every purchase supports women’s empowerment through UN Women Australia."
       }
     </script>
     <meta charset="UTF-8" />
@@ -34,7 +34,7 @@
     <title>Our Impact | CABANA</title>
     <meta
       name="description"
-      content="Discover how CABANA creates positive change through sustainable craft and social impact partnerships."
+      content="Premium essentials. 10% of every purchase supports women’s empowerment through UN Women Australia."
     />
 
     <!-- Tailwind CSS -->
@@ -60,6 +60,18 @@
     <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
     <!-- Mobile/perf hardening: additive utilities; import last to avoid overrides -->
     <link rel="stylesheet" href="/assets/css/mobile.css" />
+
+    <!-- Organization JSON-LD for impact credibility -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CABANA Collections",
+        "url": "https://cabanacollections.com.au/",
+        "sameAs": ["https://unwomen.org.au/"],
+        "description": "Premium essentials. 10% of every purchase supports women’s empowerment through UN Women Australia."
+      }
+    </script>
 
     <style>
       /* Page-specific styles */
@@ -167,9 +179,14 @@
           </h1>
           <div class="w-24 h-px bg-gold mx-auto mb-8" data-aos="zoom-in" data-aos-delay="100"></div>
           <p class="text-xl text-gray-600 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="150">
-            Every CABANA purchase creates positive impact. We automatically donate 10% of proceeds
-            to causes that matter — because exceptional craft should create meaningful change.
+            <strong>10% of every purchase</strong> supports women’s empowerment through UN Women Australia.
           </p>
+          <div class="mt-6">
+            <div class="text-sm leading-relaxed">
+              <p>Helping fund programs focused on ending violence, economic empowerment, leadership, and women’s peace & security.</p>
+              <a href="https://unwomen.org.au/" class="inline-block mt-3 underline underline-offset-4 focus:outline-none focus:ring" target="_blank" rel="noopener" aria-label="Learn more at UN Women Australia">Learn more</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -709,6 +726,7 @@
       <div class="mt-10 border-t border-gray-800 pt-6 text-center text-xs text-gray-500">
         &copy; 2025 Cabana Collections. All rights reserved.
         <p class="mt-1">ABN 91302503433</p>
+        <div class="text-xs opacity-90 text-center py-3"><strong>10% Give-Back</strong> | Proud supporter of women’s empowerment</div>
       </div>
     </footer>
 
