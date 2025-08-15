@@ -29,6 +29,22 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   } catch (_) {}
+
+  // Seasonal Mental Health Month (October) flag
+  try {
+    const now = new Date();
+    const isOctober = now.getMonth() === 9; // 9 = October
+    const forceMhm = typeof window !== 'undefined' && window.CABANA_SHOW_MHM === true;
+    const showMhm = isOctober || forceMhm;
+    const mhmEl = document.querySelector('[data-mhm-block]');
+    if (mhmEl) {
+      if (showMhm) {
+        mhmEl.hidden = false;
+      } else {
+        mhmEl.remove();
+      }
+    }
+  } catch (_) {}
 });
 
 

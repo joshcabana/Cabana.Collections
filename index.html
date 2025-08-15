@@ -11,14 +11,14 @@
     <!-- UPDATED: SEO meta -->
     <meta
       name="description"
-      content="Premium essentials. 10% of every purchase supports women’s empowerment through UN Women Australia."
+      content="Premium essentials. 10% of every purchase supports mental-health initiatives with Beyond Blue."
     />
 
     <!-- UPDATED: Open Graph -->
     <meta property="og:title" content="CABANA | Quiet Refinement for Body and Earth" />
     <meta
       property="og:description"
-      content="Premium essentials. 10% of every purchase supports women’s empowerment through UN Women Australia."
+      content="Premium essentials. 10% of every purchase supports mental-health initiatives with Beyond Blue."
     />
     <meta property="og:url" content="https://cabanacollections.com.au/" />
     <meta
@@ -643,15 +643,15 @@
     <!-- REMOVED: duplicate OG/Twitter block to keep one clean OG set only -->
 
     <!-- Structured Data for SEO -->
-    <!-- UPDATED: JSON-LD for Organization with impact line -->
+    <!-- UPDATED: JSON-LD for Organization with impact line (Beyond Blue) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "CABANA Collections",
         "url": "https://cabanacollections.com.au/",
-        "sameAs": ["https://unwomen.org.au/"],
-        "description": "Premium essentials. 10% of every purchase supports women’s empowerment through UN Women Australia."
+        "sameAs": ["https://www.beyondblue.org.au/"],
+        "description": "Premium essentials. 10% of every purchase supports mental-health initiatives with Beyond Blue."
       }
     </script>
     <!-- UPDATED: SEO canonical -->
@@ -665,7 +665,7 @@
       <div class="container mx-auto px-6 flex items-center justify-between">
         <div class="flex-1 text-center">
           <p class="impact-banner-text text-black">
-            10% of every purchase supports women’s empowerment through UN Women Australia.
+            10% of every purchase supports mental-health initiatives with Beyond Blue.
           </p>
         </div>
         <button
@@ -810,7 +810,7 @@
         >
           <span class="block">Timeless Design, Born From Nature</span>
           <span class="block mt-4 text-[clamp(1rem,2.1vw,1.35rem)] text-white/90">
-            10% of every purchase supports women’s empowerment through UN Women Australia.
+            10% of every purchase supports mental-health initiatives with Beyond Blue.
           </span>
           <!-- Rotating text carousel -->
           <span
@@ -848,6 +848,12 @@
           Each March, we support UN Women Australia’s <strong>International Women’s Day</strong> campaign—shop the capsule, attend an event, make an impact.
         </p>
         <a href="https://unwomen.org.au/" target="_blank" rel="noopener" class="mt-3 inline-block underline underline-offset-4">Learn more</a>
+      </section>
+      <!-- Optional Mental Health Month block (flag-controlled via window.CABANA_SHOW_MHM or October) -->
+      <section class="my-10 p-6 rounded-2xl border" data-mhm-block hidden>
+        <h3 class="text-lg font-semibold">Mental Health Month</h3>
+        <p class="mt-2">This October (Mental Health Month), we support Beyond Blue—spark conversations that change lives.</p>
+        <a href="https://www.beyondblue.org.au/" target="_blank" rel="noopener" class="mt-3 inline-block underline underline-offset-4">Learn more</a>
       </section>
       <!-- Mid-Page Newsletter (after Philosophy, before Collection) -->
       <section class="py-16 md:py-20 bg-white" aria-labelledby="mid-newsletter-heading">
@@ -1660,7 +1666,7 @@
           // Show impact banner with smooth transition
           impactBanner.style.background = 'linear-gradient(90deg, #d4af37, #f5d061)';
           impactBanner.querySelector('.impact-banner-text').textContent =
-            "10% of every purchase supports women’s empowerment through UN Women Australia.";
+            "10% of every purchase supports mental-health initiatives with Beyond Blue.";
           impactBanner.style.transform = 'translateY(0)';
           impactBanner.style.opacity = '1';
           isImpactBannerActive = true;
