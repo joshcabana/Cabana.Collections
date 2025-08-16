@@ -364,6 +364,13 @@
     </script>
   </head>
   <body class="bg-white text-black font-body pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+    <!-- Impact banner (women's) -->
+    <div class="bg-purple-50 text-center py-3 px-4 border-b border-purple-100">
+      <p class="text-sm">
+        <span class="font-medium">10% of every women's purchase supports UN Women Australia</span>
+        <a href="/impact.html" class="ml-2 underline hover:no-underline">Learn more →</a>
+      </p>
+    </div>
     <!-- Skip Navigation -->
     <a
       href="#product-details"
@@ -920,6 +927,35 @@
     <div class="md:hidden px-6 mt-2 text-center text-xs text-gray-500 swipe-hint">
       Swipe to view • Pinch to zoom
     </div>
+
+    <!-- The Fabric (Video) -->
+    <section class="py-24 md:py-32 relative overflow-hidden" aria-labelledby="fabric-heading">
+      <div class="absolute inset-0 z-0">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          webkit-playsinline
+          class="w-full h-full object-cover"
+          poster="/assets/Images/CABANA-WOMEN.webp"
+          data-offscreen-pause
+        >
+          <source src="/assets/Images/Women.mp4" type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/40" aria-hidden="true"></div>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+        <h2 id="fabric-heading" class="font-heading text-3xl md:text-4xl font-light mb-6 text-white">
+          The Fabric
+        </h2>
+        <p class="text-gray-200 max-w-3xl text-lg font-light leading-relaxed">
+          Modal from sustainably managed beech forests — naturally breathable, gently supportive, and
+          designed to move with you. Luxuriously soft, consciously made.
+        </p>
+      </div>
+    </section>
 
     <!-- Add impact calculator section after main product section -->
     <!-- Live Impact Calculator Section -->
