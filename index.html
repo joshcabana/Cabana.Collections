@@ -92,7 +92,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- 2. Preload Critical Resources -->
-    <!-- (Removed duplicate LCP image preload to reduce head work) -->
+    <!-- LCP image preload — HOME ONLY -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/Images/HERO-BANNER.webp"
+      imagesrcset="/assets/Images/HERO-BANNER-mobile.webp 768w, /assets/Images/HERO-BANNER.webp 1920w"
+      imagesizes="100vw"
+    />
 
     <!-- 3. Critical Inline CSS (above-the-fold styles) -->
     <style>
@@ -609,19 +616,26 @@
 
     <!-- 5. Async Font Loading with display=swap -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
       rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&display=swap"
       as="style"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
 
-    <!-- 6. Tailwind CSS (runtime CDN removed for faster FCP) -->
-    
+    <!-- 6. Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- UPDATED: global stylesheet -->
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/optimized/lazy-loading.css" />
@@ -778,7 +792,7 @@
           class="w-full h-full object-cover"
           poster="/assets/Images/HERO-BANNER.webp"
           data-offscreen-pause
-          preload="none"
+          preload="auto"
           style="display: none"
           aria-hidden="true"
         >
@@ -880,13 +894,11 @@
             muted
             loop
             playsinline
-            webkit-playsinline
             onloadedmetadata="this.muted = true; this.playsInline = true;"
             onplay="this.playsInline = true;"
             class="w-full h-full object-cover"
             poster="/assets/Images/CABANA-WOMEN.webp"
             data-offscreen-pause
-            preload="none"
           >
             <source src="/assets/Images/Women.mp4" type="video/mp4" />
             <!-- Fallback for browsers that don't support video -->
