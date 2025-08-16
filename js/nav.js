@@ -31,6 +31,24 @@ document.addEventListener('DOMContentLoaded', function () {
       closeDrawer();
     }
   });
+
+  // Consistent top-nav shadow across pages (home, PDPs, legal)
+  try {
+    const navEls = Array.from(
+      document.querySelectorAll('.sticky-header, [role="navigation"]')
+    );
+    if (navEls.length) {
+      const updateNavShadow = () => {
+        const scrolled = (window.pageYOffset || document.documentElement.scrollTop) > 4;
+        navEls.forEach((el) => {
+          if (scrolled) el.classList.add('nav-shadow');
+          else el.classList.remove('nav-shadow');
+        });
+      };
+      updateNavShadow();
+      window.addEventListener('scroll', updateNavShadow, { passive: true });
+    }
+  } catch (_) {}
 });
 
 
