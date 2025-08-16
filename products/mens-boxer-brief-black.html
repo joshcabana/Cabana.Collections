@@ -2,6 +2,17 @@
 <html lang="en-AU">
   <head>
     <!-- UPDATED: canonical -->
+    <style>
+      /* critical.css - inline this in <head> */
+      * { margin:0; padding:0; box-sizing:border-box; }
+      body { font-family: Inter, sans-serif; background: #fff; }
+      .font-heading { font-family: 'Playfair Display', serif; }
+      .sticky-header { position: sticky; top: 0; z-index: 50; background: white; }
+      .hidden { display: none; }
+      .text-gold { color: #d4af37; }
+      .tracking-luxury { letter-spacing: 0.3em; }
+      .cabana-hero { min-height: 100vh; position: relative; }
+    </style>
     <link
       rel="canonical"
       href="https://cabanacollections.com.au/products/mens-boxer-brief-black.html"
@@ -9,6 +20,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Men's Modal Boxer Brief - Black | CABANA Collections</title>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta
       name="description"
       content="Premium modal boxer brief with anatomical 3D pouch. 10% of every purchase supports Beyond Blue. $50 AUD. Free shipping over $200."
@@ -38,6 +51,7 @@
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/assets/Images/CABANA-BOXERS-FRONT.png" />
 
     <!-- Critical CSS -->
     <style>
@@ -347,16 +361,18 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- UPDATED: global stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- UPDATED: global stylesheet (async) -->
+    <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
     <link rel="stylesheet" href="/css/optimized/lazy-loading.css" />
     <link rel="stylesheet" href="/css/optimized/performance.css" />
     <!-- Shared UI Enhancements -->
     <script src="/js/ui.js" defer></script>
+    <script src="/js/size-guide.js" defer></script>
 
-    <!-- Fonts -->
+    <!-- Fonts (trimmed weights) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@100;200;300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Inter:wght@300;400&display=swap"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
@@ -529,14 +545,21 @@
           <div class="product-gallery space-y-6">
             <!-- Main Image/Video with Zoom -->
             <div class="product-image aspect-[3/4] relative group">
-              <img
-                id="mainImage"
-                src="../assets/Images/CABANA-BOXERS-FRONT.png"
-                alt="Front view of CABANA black boxer brief with gold-edge waistband and side-fly"
-                class="w-full h-full object-cover zoomable-image"
-                tabindex="0"
-                aria-describedby="image-zoom-instruction"
-              />
+              <picture>
+                <source srcset="/assets/Images/CABANA-BOXERS-FRONT.webp" type="image/webp" />
+                <img
+                  id="mainImage"
+                  src="/assets/Images/CABANA-BOXERS-FRONT.png"
+                  alt="Front view of CABANA black boxer brief with gold-edge waistband and side-fly"
+                  class="w-full h-full object-cover zoomable-image"
+                  width="800"
+                  height="800"
+                  decoding="async"
+                  fetchpriority="high"
+                  tabindex="0"
+                  aria-describedby="image-zoom-instruction"
+                />
+              </picture>
 
               <!-- 360° Video Element -->
               <video
@@ -547,7 +570,8 @@
                 loop
                 playsinline
                 webkit-playsinline
-                preload="metadata"
+                preload="none"
+                poster="/assets/Images/CABANA-BOXERS-FRONT.png"
                 aria-describedby="video-instruction"
               >
                 <source
@@ -624,7 +648,10 @@
                   src="../assets/Images/CABANA-BOXERS-FRONT.png"
                   alt="Front view of CABANA black boxer brief with gold-edge waistband and side-fly"
                   class="w-full aspect-square object-cover"
+                  width="80"
+                  height="80"
                   loading="lazy"
+                  decoding="async"
                 />
               </button>
               <button
@@ -637,7 +664,10 @@
                   src="../assets/Images/CABANA-BOXERS-BACK.png"
                   alt="Back view with gold-edge waistband and CABANA monogram tab"
                   class="w-full aspect-square object-cover"
+                  width="80"
+                  height="80"
                   loading="lazy"
+                  decoding="async"
                 />
               </button>
               <button
@@ -650,7 +680,10 @@
                   src="../assets/Images/CABANA-BOXERS-SIDE.png"
                   alt="Side profile highlighting pouch contour and breathable mesh"
                   class="w-full aspect-square object-cover"
+                  width="80"
+                  height="80"
                   loading="lazy"
+                  decoding="async"
                 />
               </button>
               <button
@@ -663,7 +696,10 @@
                   src="../assets/Images/CABANA BOXERS3 flat.png"
                   alt="Flat lay highlighting U-mesh cradle and coverstitch seams"
                   class="w-full aspect-square object-cover"
+                  width="80"
+                  height="80"
                   loading="lazy"
+                  decoding="async"
                 />
               </button>
               <button
@@ -1735,7 +1771,7 @@
 
         // Start video
         mainVideo.play().catch((e) => {
-          console.log('Video autoplay prevented:', e);
+          /* suppressed */
         });
 
         // Track video view
@@ -1905,34 +1941,7 @@
         }, 800);
       });
 
-      // Size Guide Modal
-      function openSizeGuide() {
-        const modal = document.getElementById('sizeGuideModal');
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-
-        // Focus management
-        modal.querySelector('button').focus();
-      }
-
-      function closeSizeGuide() {
-        const modal = document.getElementById('sizeGuideModal');
-        modal.classList.add('hidden');
-        document.body.style.overflow = '';
-
-        // Return focus to size guide button
-        document.querySelector('[aria-label="Open size guide"]').focus();
-      }
-
-      // ESC key to close modal
-      document.addEventListener('keydown', (e) => {
-        if (
-          e.key === 'Escape' &&
-          !document.getElementById('sizeGuideModal').classList.contains('hidden')
-        ) {
-          closeSizeGuide();
-        }
-      });
+      // Size Guide Modal moved to external script
 
       // Mobile Menu
       const mobileMenuBtn = document.getElementById('mobileMenuBtn');

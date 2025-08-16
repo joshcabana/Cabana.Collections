@@ -1,0 +1,11 @@
+/* critical.css - inline this in <head> */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Inter, sans-serif; background: #fff; }
+.font-heading { font-family: 'Playfair Display', serif; }
+.sticky-header { position: sticky; top: 0; z-index: 50; background: white; }
+.hidden { display: none; }
+.text-gold { color: #d4af37; }
+.tracking-luxury { letter-spacing: 0.3em; }
+.cabana-hero { min-height: 100vh; position: relative; }
+
+

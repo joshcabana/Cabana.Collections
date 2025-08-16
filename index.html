@@ -2,6 +2,17 @@
 <html lang="en-AU" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <style>
+      /* critical.css - inline this in <head> */
+      * { margin:0; padding:0; box-sizing:border-box; }
+      body { font-family: Inter, sans-serif; background: #fff; }
+      .font-heading { font-family: 'Playfair Display', serif; }
+      .sticky-header { position: sticky; top: 0; z-index: 50; background: white; }
+      .hidden { display: none; }
+      .text-gold { color: #d4af37; }
+      .tracking-luxury { letter-spacing: 0.3em; }
+      .cabana-hero { min-height: 100vh; position: relative; }
+    </style>
     <!-- Mobile + notch safety -->
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
@@ -35,7 +46,7 @@
     <!-- Google Analytics -->
     <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3W997HDC19"></script>
-    <script>
+    <script defer>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -636,8 +647,9 @@
     <!-- 6. Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- UPDATED: global stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- UPDATED: global stylesheet (async) -->
+    <link rel="preload" href="/css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/styles.css"></noscript>
     <link rel="stylesheet" href="/css/optimized/lazy-loading.css" />
     <link rel="stylesheet" href="/css/optimized/performance.css" />
     <link rel="stylesheet" href="/public/css/mobile-fixes.css" />
@@ -759,24 +771,18 @@
       <div class="absolute inset-0 z-0">
         <!-- Image-first for fast LCP; video is revealed later when allowed -->
         <picture id="heroImageWrap" class="absolute inset-0 block z-0">
-          <source
-            srcset="
-              /assets/Images/HERO-BANNER.webp        1920w,
-              /assets/Images/HERO-BANNER-mobile.webp  768w
-            "
-            type="image/webp"
-            sizes="100vw"
-          />
+          <source srcset="/assets/Images/HERO-BANNER.webp" type="image/webp" media="(min-width: 768px)">
+          <source srcset="/assets/Images/HERO-BANNER-mobile.webp" type="image/webp" media="(max-width: 767px)">
           <img
             id="heroImageFallback"
             src="/assets/Images/HERO-BANNER.png"
-            sizes="100vw"
             alt="CABANA hero background"
             class="w-full h-full object-cover"
             width="1920"
             height="1080"
             fetchpriority="high"
             decoding="async"
+            loading="eager"
           />
         </picture>
 
@@ -792,7 +798,8 @@
           class="w-full h-full object-cover"
           poster="/assets/Images/HERO-BANNER.webp"
           data-offscreen-pause
-          preload="auto"
+          preload="none"
+          loading="lazy"
           style="display: none"
           aria-hidden="true"
         >
@@ -1562,7 +1569,7 @@
     </footer>
 
     <!-- Optimised JavaScript -->
-    <script>
+    <script defer>
       // Lazy Loading Images
       document.addEventListener('DOMContentLoaded', function () {
         const lazyImages = document.querySelectorAll('.lazy-load');
@@ -1937,7 +1944,7 @@
     <!-- ========== PERFORMANCE SCRIPTS ========== -->
 
     <!-- Service Worker Registration -->
-    <script>
+    <script defer>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker
@@ -1964,61 +1971,7 @@
     <!-- Auth modal/login system -->
     <script src="/js/auth.js" defer></script>
 
-    <!-- Error Handling and Debugging -->
-    <script>
-      // Global error handler
-      window.addEventListener('error', function (e) {
-        console.error('Page Error:', e.error);
-        console.error('Line:', e.lineno, 'Column:', e.colno);
-        console.error('Source:', e.filename);
-      });
-
-      // Check if all sections are properly loaded
-      document.addEventListener('DOMContentLoaded', function () {
-        const sections = {
-          hero: document.getElementById('heroSection'),
-          philosophy: document.querySelector('[aria-labelledby="philosophy-heading"]'),
-          collection: document.querySelector('[aria-labelledby="collection-heading"]'),
-          impact: document.querySelector('[aria-labelledby="impact-heading"]'),
-          newsletter: document.querySelector('[aria-labelledby="newsletter-heading"]'),
-          footer: document.querySelector('footer'),
-        };
-
-        console.log('=== CABANA Page Load Status ===');
-        Object.entries(sections).forEach(([name, element]) => {
-          const status = element ? '✓ Found' : '✗ Missing';
-          console.log(`${name.toUpperCase()}: ${status}`);
-          if (!element) {
-            console.error(`Missing section: ${name}`);
-          }
-        });
-
-        // Check if page is fully scrollable
-        const pageHeight = document.documentElement.scrollHeight;
-        const viewportHeight = window.innerHeight;
-        console.log(`Page height: ${pageHeight}px, Viewport: ${viewportHeight}px`);
-        console.log(`Scrollable: ${pageHeight > viewportHeight ? 'Yes' : 'No'}`);
-
-        // Verify footer is at bottom
-        const footer = sections.footer;
-        if (footer) {
-          const footerRect = footer.getBoundingClientRect();
-          const footerBottom = footerRect.bottom + window.scrollY;
-          console.log(`Footer bottom position: ${footerBottom}px`);
-        }
-      });
-
-      // Monitor for layout shifts that might hide content
-      if ('ResizeObserver' in window) {
-        const resizeObserver = new ResizeObserver((entries) => {
-          for (let entry of entries) {
-            if (entry.target === document.documentElement) {
-              console.log('Page height changed:', entry.contentRect.height);
-            }
-          }
-        });
-        resizeObserver.observe(document.documentElement);
-      }
-    </script>
+    <!-- Error Handling and Debugging moved to external (deferred) -->
+    <script src="/js/home-interactions.js" defer></script>
   </body>
 </html>
