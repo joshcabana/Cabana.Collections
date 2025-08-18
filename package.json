@@ -34,7 +34,7 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "clean-css": "^5.3.3",
-    "critical": "^6.0.7",
+    "critical": "^7.2.1",
     "cspell": "^8.19.4",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
