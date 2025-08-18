@@ -1,5 +1,5 @@
 // sw.js - Service Worker for CABANA
-const CACHE_NAME = 'cabana-v8';
+const CACHE_NAME = 'cabana-v9';
 const urlsToCache = [
   // App shell (no HTML documents to avoid stale pages)
   '/css/styles.css',
