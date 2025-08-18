@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cabana-collections-v1-h72srf1bu-josh-cabanas-projects.vercel.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cabana-collections-v1-h72srf1bu-josh-cabanas-projects.vercel.app/products/mens-boxer-brief-black.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cabana-collections-v1-h72srf1bu-josh-cabanas-projects.vercel.app/products/womens-set.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cabana-collections-v1-h72srf1bu-josh-cabanas-projects.vercel.app/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cabana-collections-v1-h72srf1bu-josh-cabanas-projects.vercel.app/impact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cabana-collections-v1-h72srf1bu-josh-cabanas-projects.vercel.app/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- TODO: update to https://cabanacollections.com.au/ when domain is live -->
+</urlset>
+
+
