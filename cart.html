@@ -581,13 +581,46 @@
       }
 
       // Proceed to checkout (feature-flagged)
-      function proceedToCheckout() {
+      async function proceedToCheckout() {
         try {
           if (!window.CABANA_FLAGS || window.CABANA_FLAGS.checkoutEnabled !== true) {
             return;
           }
-        } catch (_) {}
-        alert('Redirecting to secure checkout...');
+        } catch (_) {
+          return;
+        }
+
+        if (!Array.isArray(cart) || cart.length === 0) {
+          alert('Your cart is empty.');
+          return;
+        }
+
+        // Map cart -> minimal line items (server validates and sanitises)
+        const lineItems = cart.map((item) => ({
+          name: String(item.name || 'CABANA Item'),
+          image: item.image || '',
+          unit_amount: Math.round((Number(item.price) || 0) * 100),
+          quantity: Math.max(1, parseInt(item.quantity || 1, 10)),
+        }));
+
+        try {
+          const resp = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ lineItems }),
+          });
+
+          const data = await resp.json().catch(() => ({}));
+          if (!resp.ok || !data.url) {
+            throw new Error(data.error || 'Checkout unavailable');
+          }
+
+          // Navigate without needing Stripe.js
+          window.location.href = data.url;
+        } catch (err) {
+          console.error('Checkout error:', err);
+          alert('Checkout is unavailable right now. Please try again later.');
+        }
       }
 
       // Cart Count
