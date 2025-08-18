@@ -1,5 +1,17 @@
 // CABANA auth (modal-based, localStorage-backed)
 (function () {
+  // Feature flag: if auth is disabled, hide login links and skip initializing auth modal
+  try {
+    var authEnabled = typeof window !== 'undefined' && window.CABANA_FLAGS && window.CABANA_FLAGS.authEnabled === true;
+    if (!authEnabled) {
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('[data-login-open]')?.forEach(function (el) {
+          el.remove();
+        });
+      });
+      return;
+    }
+  } catch (_) {}
   const USER_KEY = 'cabanaUser';
 
   function createModal() {
