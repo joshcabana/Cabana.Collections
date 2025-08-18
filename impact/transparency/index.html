@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transparency | CABANA Collections</title>
+    <meta name="description" content="How we calculate 10%, allocation by cause, quarterly summaries and receipts." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-white text-black font-sans">
+    <header class="sticky-header" role="banner">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
+        <a href="/" class="font-heading tracking-luxury font-light leading-tight">
+          <span class="block text-2xl">CABANA</span>
+          <span class="block text-xs tracking-wider -mt-0.5">Collections</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10" aria-label="Primary">
+          <a href="/" class="link-hover text-xs tracking-widest">HOME</a>
+          <a href="/impact.html" class="link-hover text-xs tracking-widest text-gold" aria-current="page">IMPACT</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/cart.html" aria-label="Cart" class="hidden md:inline">🛒</a>
+          <button class="md:hidden p-2" aria-label="Open menu" data-mobile-open>
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="max-w-7xl mx-auto px-6 md:px-12 py-16">
+      <h1 class="font-heading text-4xl md:text-5xl mb-8">Transparency</h1>
+      <p class="text-gray-700 max-w-3xl mb-10">We designate 10% of every purchase to impact. Below is a scaffold showing how we calculate 10%, how funds are allocated, and quarterly summaries. Receipts will be linked as they become available.</p>
+
+      <section class="mb-12" aria-labelledby="how-heading">
+        <h2 id="how-heading" class="text-2xl font-heading mb-3">How we calculate 10%</h2>
+        <p class="text-gray-700">10% is calculated on merchandise subtotal after discounts, excluding shipping.</p>
+      </section>
+
+      <section class="mb-12" aria-labelledby="alloc-heading">
+        <h2 id="alloc-heading" class="text-2xl font-heading mb-3">Allocation (Men/Women)</h2>
+        <p class="text-gray-700">Designated proportion varies by collection focus. Men’s purchases prioritise men’s mental health; women’s purchases prioritise women’s empowerment.</p>
+      </section>
+
+      <section class="mb-12" aria-labelledby="quarterly-heading">
+        <h2 id="quarterly-heading" class="text-2xl font-heading mb-6">Quarterly Summaries</h2>
+        <div class="overflow-auto border rounded-lg">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr class="text-left">
+                <th class="px-4 py-3">Quarter</th>
+                <th class="px-4 py-3">Subtotal (AUD)</th>
+                <th class="px-4 py-3">10% (AUD)</th>
+                <th class="px-4 py-3">Men's Allocation</th>
+                <th class="px-4 py-3">Women's Allocation</th>
+                <th class="px-4 py-3">Notes</th>
+              </tr>
+            </thead>
+            <tbody id="impactRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12" aria-labelledby="receipts-heading">
+        <h2 id="receipts-heading" class="text-2xl font-heading mb-3">Receipts (PDF/links)</h2>
+        <ul id="receiptList" class="list-disc ml-6 text-sm text-gray-700"></ul>
+        <!-- TODO: Replace with live receipts as they become available. -->
+      </section>
+    </div>
+
+    <script>
+      async function loadImpact() {
+        try {
+          const res = await fetch('/impact/sample-q1.json', { cache: 'no-store' });
+          const data = await res.json();
+          const tbody = document.getElementById('impactRows');
+          tbody.innerHTML = (data.quarters || []).map((q) => {
+            return `<tr class="border-t">
+              <td class="px-4 py-3">${q.quarter}</td>
+              <td class="px-4 py-3">$${Number(q.subtotal_aud).toFixed(2)}</td>
+              <td class="px-4 py-3">$${Number(q.ten_percent_aud).toFixed(2)}</td>
+              <td class="px-4 py-3">$${Number(q.mens_allocation_aud).toFixed(2)}</td>
+              <td class="px-4 py-3">$${Number(q.womens_allocation_aud).toFixed(2)}</td>
+              <td class="px-4 py-3">${q.notes || ''}</td>
+            </tr>`;
+          }).join('');
+          const receipts = document.getElementById('receiptList');
+          receipts.innerHTML = (data.receipts || []).map((r) => `<li><a class="underline" href="${r.url}" target="_blank" rel="noopener">${r.label}</a></li>`).join('');
+        } catch (e) {
+          console.error('Failed loading transparency data', e);
+        }
+      }
+      loadImpact();
+    </script>
+    <script src="/js/nav.js" defer></script>
+  </body>
+  </html>
+
+

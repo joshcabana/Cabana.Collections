@@ -1,0 +1,18 @@
+{
+  "quarters": [
+    {
+      "quarter": "2025-Q1",
+      "subtotal_aud": 12000,
+      "ten_percent_aud": 1200,
+      "mens_allocation_aud": 700,
+      "womens_allocation_aud": 500,
+      "notes": "Sample placeholder figures for scaffold only"
+    }
+  ],
+  "receipts": [
+    { "label": "Beyond Blue – Example Receipt (PDF)", "url": "#" },
+    { "label": "UN Women Australia – Example Receipt (PDF)", "url": "#" }
+  ]
+}
+
+
